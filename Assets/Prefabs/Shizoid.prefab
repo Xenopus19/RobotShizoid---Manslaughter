@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7888027847699253034}
   - component: {fileID: 5586642170506913818}
   - component: {fileID: 3171825871289309467}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shizoid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  EdgeOfArena: []
 --- !u!114 &4837589587157466932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +118,7 @@ GameObject:
   - component: {fileID: 8104875185024021357}
   - component: {fileID: 3225929498356795223}
   - component: {fileID: 6823736013670850592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4038009953765607592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
