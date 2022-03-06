@@ -15,7 +15,7 @@ public abstract class Health : MonoBehaviour
     public void GetDamage(float Damage) 
     {
         HealthAmount -= Damage;
-        Debug.LogError(HealthAmount);
+        Debug.Log(HealthAmount);
 
         if(HealthAmount<=0)
         {

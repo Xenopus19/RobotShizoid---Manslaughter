@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 641602336102431763}
   - component: {fileID: -9091305716761593630}
   - component: {fileID: 4837589587157466932}
+  - component: {fileID: 7888027847699253034}
   - component: {fileID: 5586642170506913818}
   - component: {fileID: 3171825871289309467}
-  - component: {fileID: 7888027847699253034}
   m_Layer: 0
   m_Name: Shizoid
   m_TagString: Untagged
@@ -63,6 +63,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 0
+--- !u!114 &7888027847699253034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063377500034208592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ec98aacf2c0664e87ef8b854cba42d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackOrigin: {fileID: 4038009953765607592}
 --- !u!136 &5586642170506913818
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -93,19 +106,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &7888027847699253034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063377500034208592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79ec98aacf2c0664e87ef8b854cba42d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttackOrigin: {fileID: 4038009953765607592}
 --- !u!1 &2253031383270060303
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3225929498356795223}
   - component: {fileID: 6823736013670850592}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

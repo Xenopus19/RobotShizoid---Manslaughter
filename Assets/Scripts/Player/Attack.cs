@@ -22,7 +22,6 @@ public class Attack : MonoBehaviour
         foreach(Collider collider in colliders)
         {
             GameObject ColliderObject = collider.gameObject;
-            Debug.Log(ColliderObject.name);
 
             if (ColliderObject.GetComponent<Health>() != null)
                 ColliderObject.GetComponent<Health>().GetDamage(5f);
