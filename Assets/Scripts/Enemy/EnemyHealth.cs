@@ -6,7 +6,6 @@ public class EnemyHealth : Health
 {
     public override void Die()
     {
-        Debug.Log("Enemy died");
-        GlobalEventManager.OnEnemyKilled();
+        GlobalEventManager.EnemyKilled();
     }
 }

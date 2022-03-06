@@ -16,11 +16,11 @@ public class HealthBar : MonoBehaviour
     {
         playerHealth.OnHealthChanged += UpdateHealthBar;
     }
+    
 
     private void UpdateHealthBar()
     {
         float HealthPercent = playerHealth.HealthAmount / playerHealth.MaxHealth;
-        Debug.LogWarning(HealthPercent);
         HealthBarImage.fillAmount = HealthPercent;
 
         ManageLowHpAnimation(HealthPercent);

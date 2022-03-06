@@ -17,7 +17,6 @@ public abstract class Health : MonoBehaviour
     {
         HealthAmount -= Damage;
 
-        Debug.Log(HealthAmount);
         OnHealthChanged?.Invoke();
 
         if(HealthAmount<=0)

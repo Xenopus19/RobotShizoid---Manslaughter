@@ -11,7 +11,6 @@ public class Attack : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.W))
         {
-            Debug.Log("Attacked");
             DoAttack();
         }
     }
