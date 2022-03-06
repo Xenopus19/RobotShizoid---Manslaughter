@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public abstract class Health : MonoBehaviour
 {
-    [SerializeField] private float MaxHealth;
+    public float MaxHealth;
     public float HealthAmount { get; private set; }
-
+    public Action OnHealthChanged;
     private void Start()
     {
         RestoreHealth();
@@ -15,7 +16,9 @@ public abstract class Health : MonoBehaviour
     public void GetDamage(float Damage) 
     {
         HealthAmount -= Damage;
+
         Debug.Log(HealthAmount);
+        OnHealthChanged?.Invoke();
 
         if(HealthAmount<=0)
         {
@@ -26,6 +29,7 @@ public abstract class Health : MonoBehaviour
     public void RestoreHealth()
     {
         HealthAmount = MaxHealth;
+        OnHealthChanged?.Invoke();
     }
 
     public virtual void Die() { }
