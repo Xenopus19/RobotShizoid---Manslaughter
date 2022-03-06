@@ -5,7 +5,9 @@ using System.Collections.Generic;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private GameObject Player;
-    [SerializeField] private List<GameObject> Targets = new List<GameObject>();
+    [SerializeField] private GameObject Target;
+
+    private float MaxDistanceToPlayer = 30f;
     private NavMeshAgent Agent;
     private void Start() {
         Agent = GetComponent<NavMeshAgent>();
@@ -16,10 +18,10 @@ public class EnemyMovement : MonoBehaviour
 
     private void Move() {
         float distanceToPlayer = Math.Length(Player.transform.position.x, transform.position.x, Player.transform.position.z, transform.position.z);
-        if (distanceToPlayer < 11) {
+        if (distanceToPlayer < MaxDistanceToPlayer) {
             Agent.destination = Player.transform.position;
         } else {
-            Agent.destination = Targets[Random.Range(0, 3)].transform.position;
+            Agent.destination = Target.transform.position;
         }
     }
 
