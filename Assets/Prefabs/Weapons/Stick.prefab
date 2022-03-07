@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 5
   AttackRadius: 4
+  Cooldown: 0.25
 --- !u!1 &6161568325677728665
 GameObject:
   m_ObjectHideFlags: 0

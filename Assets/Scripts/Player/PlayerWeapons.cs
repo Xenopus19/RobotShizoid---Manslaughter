@@ -13,9 +13,9 @@ public class PlayerWeapons : MonoBehaviour
 
     private void Start()
     {
-        AviableWeapons = new GameObject[5];
         AddWeapon(Stick);
         AddWeapon(Pencil);
+        ChangeWeapon(0);
     }
 
     private void Update()
@@ -24,13 +24,30 @@ public class PlayerWeapons : MonoBehaviour
         {
             DoAttack();
         }
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        CheckChangeWeaponKey();
+    }
+
+    private void CheckChangeWeaponKey()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             ChangeWeapon(0);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             ChangeWeapon(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ChangeWeapon(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            ChangeWeapon(3);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            ChangeWeapon(4);
         }
     }
     private void AddWeapon(GameObject newWeapon)
