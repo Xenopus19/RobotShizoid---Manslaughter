@@ -4,13 +4,16 @@ using System.Collections.Generic;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private GameObject Player;
-    [SerializeField] private GameObject Target;
+    private GameObject Target;
+    private GameObject Player;
 
-    private float MaxDistanceToPlayer = 30f;
+    private float MaxDistanceToPlayer = 100f;
+    private float IncreasingSpeed = 1.2f;
     private NavMeshAgent Agent;
     private void Start() {
         Agent = GetComponent<NavMeshAgent>();
+        Player = GameObject.FindGameObjectWithTag("Player");
+        Target = GameObject.FindGameObjectWithTag("Target");
     }
     void Update() {
         Move();
@@ -20,8 +23,10 @@ public class EnemyMovement : MonoBehaviour
         float distanceToPlayer = Math.Length(Player.transform.position.x, transform.position.x, Player.transform.position.z, transform.position.z);
         if (distanceToPlayer < MaxDistanceToPlayer) {
             Agent.destination = Player.transform.position;
+            Agent.speed += IncreasingSpeed;
         } else {
-            Agent.destination = Target.transform.position;
+            Vector3 TargetPosition = new Vector3(transform.position.x, transform.position.y, Target.transform.position.z);
+            Agent.destination = TargetPosition;
         }
     }
 

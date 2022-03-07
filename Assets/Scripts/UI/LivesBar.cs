@@ -10,6 +10,7 @@ public class LivesBar : MonoBehaviour
 
     private void Start()
     {
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         playerHealth.OnLivesChange += UpdateLivesPanel;
     }
     private void UpdateLivesPanel()
