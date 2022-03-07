@@ -1,18 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealth : Health
 {
-    private int LivesAmount = 3;
+    public Action OnLivesChange;
+    public int LivesAmount;
     public override void Die()
     {
-        Debug.Log("ShizoidDied");
         LivesAmount--;
+        OnLivesChange?.Invoke();
 
         if (LivesAmount < 0)
         {
-            GlobalEventManager.OnPlayerDied();
+            GlobalEventManager.PlayerDied();
         }
         else
         {

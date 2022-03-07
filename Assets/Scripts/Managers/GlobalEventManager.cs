@@ -3,24 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GlobalEventManager : MonoBehaviour
+public static class GlobalEventManager
 {
-    public static Action OnPlayerDied;
-    public static Action OnEnemyKilled;
+    public static Action OnPlayerDiedEvent;
+    public static Action OnEnemyKilledEvent;
 
     public static void EnemyKilled()
     {
-        if(OnEnemyKilled!=null)
+        if(OnEnemyKilledEvent!=null)
         {
-            OnEnemyKilled.Invoke();
+            OnEnemyKilledEvent.Invoke();
         }
     }
 
     public static void PlayerDied()
     {
-        if (OnPlayerDied != null)
+        if (OnPlayerDiedEvent != null)
         {
-            OnPlayerDied.Invoke();
+            OnPlayerDiedEvent.Invoke();
         }
     }
 }
