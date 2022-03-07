@@ -1,0 +1,69 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerWeapons : MonoBehaviour
+{
+    [SerializeField] Transform AttackOrigin;
+
+    [SerializeField] private GameObject Stick;
+    [SerializeField] private GameObject Pencil;
+    [SerializeField]private GameObject[] AviableWeapons;
+    private Weapon CurrentWeapon;
+
+    private void Start()
+    {
+        AviableWeapons = new GameObject[5];
+        AddWeapon(Stick);
+        AddWeapon(Pencil);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            DoAttack();
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ChangeWeapon(0);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ChangeWeapon(1);
+        }
+    }
+    private void AddWeapon(GameObject newWeapon)
+    {
+        for(int i = 0; i<AviableWeapons.Length; i++)
+        {
+            if (AviableWeapons[i] == null)
+            {
+                AviableWeapons[i] = newWeapon;
+                return;
+            } 
+        }
+
+        AviableWeapons[AviableWeapons.Length - 1] = newWeapon;
+    }
+
+    private void ChangeWeapon(int NewWeaponIndex)
+    {
+        if(CurrentWeapon!=null)
+            Destroy(CurrentWeapon.gameObject);
+        
+        if(AviableWeapons[NewWeaponIndex]!=null)
+            CurrentWeapon = Instantiate(AviableWeapons[NewWeaponIndex], AttackOrigin).GetComponent<Weapon>();
+    }
+
+    private void DoAttack()
+    {
+        if (CurrentWeapon == null)
+        {
+            Debug.LogWarning("Ha palki net");
+            return;
+        }
+            
+        CurrentWeapon.Attack(AttackOrigin.position);
+    }
+}

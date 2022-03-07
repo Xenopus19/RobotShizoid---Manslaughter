@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 0
+  LivesAmount: 0
 --- !u!114 &7888027847699253034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +78,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackOrigin: {fileID: 4038009953765607592}
+  Stick: {fileID: 5954854359248386767, guid: 78871435cb7e340439b41639dc474c1e, type: 3}
+  Pencil: {fileID: 7734099713240920792, guid: 3d122080ed6ece84fa2682fa6f820d30, type: 3}
+  AviableWeapons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!136 &5586642170506913818
 CapsuleCollider:
   m_ObjectHideFlags: 0
