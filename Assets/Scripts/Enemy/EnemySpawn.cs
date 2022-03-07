@@ -9,6 +9,7 @@ public class EnemySpawn : MonoBehaviour {
     private float TimeBetweenSpawn = 3f;
     void Start() {
         InvokeRepeating("SpawnEnemy", 2f, TimeBetweenSpawn);
+        
     }
     public void SpawnEnemy() {
         int i = Random.Range(0, 4);

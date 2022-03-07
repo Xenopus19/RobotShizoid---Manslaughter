@@ -74,13 +74,7 @@ public class PlayerWeapons : MonoBehaviour
     }
 
     private void DoAttack()
-    {
-        if (CurrentWeapon == null)
-        {
-            Debug.LogWarning("Ha palki net");
-            return;
-        }
-            
-        CurrentWeapon.Attack(AttackOrigin.position);
+    { 
+        CurrentWeapon?.Attack(AttackOrigin.position);
     }
 }
