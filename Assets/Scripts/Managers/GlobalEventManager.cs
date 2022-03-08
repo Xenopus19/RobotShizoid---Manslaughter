@@ -7,10 +7,19 @@ public static class GlobalEventManager
 {
     public static Action OnPlayerDiedEvent;
     public static Action<int> OnEnemyKilledEvent;
+    public static Action OnEnemyDestroyedEvent;
+
+    public static void EnemyDestroyed() 
+    {
+        if (OnEnemyDestroyedEvent != null) 
+        {
+            OnEnemyDestroyedEvent.Invoke();
+        }
+    }
 
     public static void EnemyKilled(int ScoreBonus)
     {
-        if(OnEnemyKilledEvent!=null)
+        if(OnEnemyKilledEvent != null)
         {
             OnEnemyKilledEvent.Invoke(ScoreBonus);
         }

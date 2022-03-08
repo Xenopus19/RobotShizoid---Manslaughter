@@ -5,6 +5,11 @@ using UnityEngine;
 public class EnemyHealth : Health
 {
     [SerializeField] int ScoreBonus;
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.tag == "Target") {
+            Destroy();
+        }
+    }
     public override void Die()
     {
         GlobalEventManager.EnemyKilled(ScoreBonus);
@@ -14,5 +19,10 @@ public class EnemyHealth : Health
     public override void GetDamage(float Damage)
     {
         CoreGetDamage(Damage);
+    }
+
+    private void Destroy()
+    {
+        GlobalEventManager.EnemyDestroyed();
     }
 }
