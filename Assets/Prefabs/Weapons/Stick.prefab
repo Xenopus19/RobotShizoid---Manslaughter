@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8977181469106122058}
   - component: {fileID: 8961919528199794452}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 690347897463420703}
   - component: {fileID: 627901292833576802}
   - component: {fileID: 305482932263387852}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

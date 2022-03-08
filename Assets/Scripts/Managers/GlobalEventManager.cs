@@ -7,13 +7,13 @@ public static class GlobalEventManager
 {
     public static Action OnPlayerDiedEvent;
     public static Action<int> OnEnemyKilledEvent;
-    public static Action OnEnemyDestroyedEvent;
+    public static Action OnEnemyTouchedWallEvent;
 
-    public static void EnemyDestroyed() 
+    public static void EnemyTouchedWall() 
     {
-        if (OnEnemyDestroyedEvent != null) 
+        if (OnEnemyTouchedWallEvent != null) 
         {
-            OnEnemyDestroyedEvent.Invoke();
+            OnEnemyTouchedWallEvent.Invoke();
         }
     }
 

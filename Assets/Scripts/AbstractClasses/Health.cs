@@ -17,10 +17,6 @@ public abstract class Health : MonoBehaviour
 
     public virtual void GetDamage(float Damage) 
     {
-        CoreGetDamage(Damage);
-    }
-    public void CoreGetDamage(float Damage)
-    {
         HealthAmount -= Damage;
 
         OnHealthChanged?.Invoke();

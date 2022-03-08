@@ -20,7 +20,7 @@ public class PlayerHealth : Health
     public override void GetDamage(float Damage)
     {
         if (IsInvisible) return;
-        CoreGetDamage(Damage);
+        base.GetDamage(Damage);
         IsInvisible = true;
     }
 

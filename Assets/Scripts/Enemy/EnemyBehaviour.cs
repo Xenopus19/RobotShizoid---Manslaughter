@@ -46,6 +46,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             playerHealth.GetDamage(WallTouchDamage);
             Destroy(gameObject);
+            GlobalEventManager.EnemyTouchedWall();
         }
         else if(CollidedObject == Player)
         {
