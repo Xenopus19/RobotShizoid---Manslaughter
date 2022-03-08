@@ -7,7 +7,7 @@ public class SphereMelee : Weapon
     [SerializeField] float AttackRadius;
     [SerializeField] float Cooldown;
 
-    private bool IsAbleToAttack;
+    private bool IsAbleToAttack = true;
     public override void Attack(Vector3 AttackPosition)
     {
         if (!IsAbleToAttack) return;
@@ -19,6 +19,7 @@ public class SphereMelee : Weapon
             Health AttackedHealth = collider.gameObject.GetComponent<EnemyHealth>();
             if (AttackedHealth!=null)
             {
+                Debug.LogWarning(AttackedHealth.name);
                 AttackedHealth.GetDamage(Damage);
             }
         }

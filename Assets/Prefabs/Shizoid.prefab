@@ -68,7 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 50
-  LivesAmount: 0
+  LivesAmount: 4
+  InvisibilityTime: 1
 --- !u!114 &7888027847699253034
 MonoBehaviour:
   m_ObjectHideFlags: 0

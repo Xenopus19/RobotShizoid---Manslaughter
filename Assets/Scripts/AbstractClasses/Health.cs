@@ -8,18 +8,24 @@ public abstract class Health : MonoBehaviour
     public float MaxHealth;
     public float HealthAmount { get; private set; }
     public Action OnHealthChanged;
+
+    
     private void Start()
     {
         RestoreHealth();
     }
 
-    public void GetDamage(float Damage) 
+    public virtual void GetDamage(float Damage) 
+    {
+        CoreGetDamage(Damage);
+    }
+    public void CoreGetDamage(float Damage)
     {
         HealthAmount -= Damage;
 
         OnHealthChanged?.Invoke();
 
-        if(HealthAmount<=0)
+        if (HealthAmount <= 0)
         {
             Die();
         }

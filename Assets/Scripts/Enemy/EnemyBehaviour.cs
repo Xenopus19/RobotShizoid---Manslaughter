@@ -2,18 +2,25 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyBehaviour : MonoBehaviour
 {
+    [SerializeField] float WallTouchDamage;
+    [SerializeField] float PlayerTouchDamage;
+
     private GameObject Target;
     private GameObject Player;
 
     private float MaxDistanceToPlayer = 100f;
     private float IncreasingSpeed = 1.2f;
     private NavMeshAgent Agent;
+    private PlayerHealth playerHealth;
+    
+
     private void Start() {
         Agent = GetComponent<NavMeshAgent>();
         Player = GameObject.FindGameObjectWithTag("Player");
         Target = GameObject.FindGameObjectWithTag("Target");
+        playerHealth = Player.GetComponent<PlayerHealth>();
     }
     void Update() {
         Move();
@@ -27,6 +34,21 @@ public class EnemyMovement : MonoBehaviour
         } else {
             Vector3 TargetPosition = new Vector3(transform.position.x, transform.position.y, Target.transform.position.z);
             Agent.destination = TargetPosition;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameObject CollidedObject = collision.gameObject;
+
+        if(CollidedObject == Target)
+        {
+            playerHealth.GetDamage(WallTouchDamage);
+            Destroy(gameObject);
+        }
+        else if(CollidedObject == Player)
+        {
+            playerHealth.GetDamage(PlayerTouchDamage);
         }
     }
 

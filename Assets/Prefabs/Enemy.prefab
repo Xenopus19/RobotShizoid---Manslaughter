@@ -61,7 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a5107ffefa6204fa6abb3c1c194e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 20
+  MaxHealth: 10
+  ScoreBonus: 1
 --- !u!114 &-8794442123007926253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfc21cd76a11d4f89a8d9d831b629c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WallTouchDamage: 5
+  PlayerTouchDamage: 7
 --- !u!195 &-8414338599864464931
 NavMeshAgent:
   m_ObjectHideFlags: 0

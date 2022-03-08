@@ -6,13 +6,13 @@ using UnityEngine;
 public static class GlobalEventManager
 {
     public static Action OnPlayerDiedEvent;
-    public static Action OnEnemyKilledEvent;
+    public static Action<int> OnEnemyKilledEvent;
 
-    public static void EnemyKilled()
+    public static void EnemyKilled(int ScoreBonus)
     {
         if(OnEnemyKilledEvent!=null)
         {
-            OnEnemyKilledEvent.Invoke();
+            OnEnemyKilledEvent.Invoke(ScoreBonus);
         }
     }
 

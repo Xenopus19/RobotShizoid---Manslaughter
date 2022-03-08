@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
+    [SerializeField] int ScoreBonus;
     public override void Die()
     {
-        GlobalEventManager.EnemyKilled();
+        GlobalEventManager.EnemyKilled(ScoreBonus);
+        Destroy(gameObject);
+    }
+
+    public override void GetDamage(float Damage)
+    {
+        CoreGetDamage(Damage);
     }
 }
