@@ -7,17 +7,11 @@ public class Pause : MonoBehaviour
     [SerializeField] private GameObject EnemySpawnObject;
 
     private KeyCode PauseKey = KeyCode.Escape;
-    private EnemySpawn enemySpawn;
-    private void Start() {
-        enemySpawn = EnemySpawnObject.GetComponent<EnemySpawn>();
-    }
-
     void Update() => CheckPause();
 
     private void CheckPause() {
         if (Input.GetKeyDown(PauseKey)) 
             DoUndoPause();
-
     }
 
     private void DoUndoPause() {

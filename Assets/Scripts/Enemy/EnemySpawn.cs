@@ -7,19 +7,17 @@ public class EnemySpawn : MonoBehaviour {
     [SerializeField] private GameObject EnemyPrefab;
     [SerializeField] private List<GameObject> SpawnPositions = new List<GameObject>();
 
-    private float TimeBetweenSpawn = 3f;
-    private float TimeToWaitWave = 2.5f;
-    private float TimeBetweenWaves = 30f;
-    private int WavesAmount = 0;
+    [SerializeField] private float TimeBetweenSpawn = 3f;
+    [SerializeField] private float TimeToWaitWave = 2.5f;
+    [SerializeField] private float WaveTime = 30f;
+    [SerializeField] private int WavesAmount = 0;
+    [SerializeField] private float coefficientSpeed = 0.05f;
+    [SerializeField] private float coefficientTime = 0.01f;
     void Start() => StartCoroutine("StartSpawn");
-    public void StopSpawnCoroutine() {
-        StopCoroutine("StartSpawn");
-        CancelInvoke("SpawnEnemy");
-    }
 
     private IEnumerator StartSpawn() {
         InvokeRepeating("SpawnEnemy", TimeToWaitWave, TimeBetweenSpawn);
-        yield return new WaitForSeconds(TimeBetweenWaves);
+        yield return new WaitForSeconds(WaveTime);
         ChangeValuesForNewWave();
         CancelInvoke("SpawnEnemy");
         StartCoroutine("StartSpawn");
@@ -28,11 +26,11 @@ public class EnemySpawn : MonoBehaviour {
     public void SpawnEnemy() {
         int i = Random.Range(0, 4);
         GameObject Enemy = Instantiate(EnemyPrefab, SpawnPositions[i].transform.position, SpawnPositions[i].transform.rotation);
-        Enemy.GetComponent<NavMeshAgent>().speed += WavesAmount * 0.05f;
+        Enemy.GetComponent<NavMeshAgent>().speed += WavesAmount * coefficientSpeed;
     }
 
     private void ChangeValuesForNewWave() {
         WavesAmount++;
-        TimeBetweenSpawn -= WavesAmount * 0.01f;
+        TimeBetweenSpawn -= WavesAmount * coefficientTime;
     }
 }
