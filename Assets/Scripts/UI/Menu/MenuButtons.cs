@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,7 +18,7 @@ public class MenuButtons : MonoBehaviour {
             StartGameButton.onClick.AddListener(StartGame);
         }
         if (SettingsButton != null) {
-            SettingsButton.onClick.AddListener(StartGame);
+            SettingsButton.onClick.AddListener(OpenSettings);
         }
         if (QuitGameButton != null) {
             QuitGameButton.onClick.AddListener(QuitGame);
@@ -27,13 +28,13 @@ public class MenuButtons : MonoBehaviour {
         }
     }
 
-    public void QuitGame() {
-        Application.Quit();
+    public void StartGame() => SceneManager.LoadScene("Arena");
+    private void OpenSettings() {
+
     }
 
-    public void StartGame() {
-        SceneManager.LoadScene("Arena");
-    }
+    public void QuitGame() => Application.Quit();
+
 
     public void OpenDevelopers() {
         //Developers.SetActive(true);

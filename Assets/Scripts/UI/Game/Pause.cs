@@ -1,14 +1,26 @@
 using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
     [SerializeField] private GameObject PauseCanvas;
     [SerializeField] private GameObject EnemySpawnObject;
+    [SerializeField] Button ContinueButton;
+    [SerializeField] Button MenuButton;
 
     private KeyCode PauseKey = KeyCode.Escape;
     void Update() => CheckPause();
-
+    private void Start() {
+        Cursor.visible = (true);
+        Cursor.lockState = CursorLockMode.None;
+        if (ContinueButton != null) {
+            ContinueButton.onClick.AddListener(Continue);
+        }
+        if (MenuButton != null) {
+            MenuButton.onClick.AddListener(GoToMenu);
+        }
+    }
     private void CheckPause() {
         if (Input.GetKeyDown(PauseKey)) 
             DoUndoPause();
@@ -33,4 +45,8 @@ public class Pause : MonoBehaviour
     }
 
     public void Continue() => UndoPause();
+    public void GoToMenu() {
+        //Add high score and save money
+        SceneManager.LoadScene("Menu");
+    }
 }
