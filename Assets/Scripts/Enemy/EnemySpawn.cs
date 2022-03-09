@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.AI;
 
-public class EnemySpawn : MonoBehaviour {
+public class EnemySpawn : MonoBehaviour 
+{
+    public static Action<int> OnNewWaveStart;
+
     [SerializeField] private GameObject EnemyPrefab;
     [SerializeField] private List<GameObject> SpawnPositions = new List<GameObject>();
 
@@ -24,13 +28,15 @@ public class EnemySpawn : MonoBehaviour {
     }
 
     public void SpawnEnemy() {
-        int i = Random.Range(0, 4);
+        int i = UnityEngine.Random.Range(0, 4);
         GameObject Enemy = Instantiate(EnemyPrefab, SpawnPositions[i].transform.position, SpawnPositions[i].transform.rotation);
         Enemy.GetComponent<NavMeshAgent>().speed += WavesAmount * coefficientSpeed;
     }
 
-    private void ChangeValuesForNewWave() {
+    private void ChangeValuesForNewWave() 
+    {
         WavesAmount++;
         TimeBetweenSpawn -= WavesAmount * coefficientTime;
+        OnNewWaveStart.Invoke(WavesAmount);
     }
 }

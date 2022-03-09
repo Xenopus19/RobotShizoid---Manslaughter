@@ -50,7 +50,7 @@ public class PlayerWeapons : MonoBehaviour
             ChangeWeapon(4);
         }
     }
-    private void AddWeapon(GameObject newWeapon)
+    public void AddWeapon(GameObject newWeapon)
     {
         for(int i = 0; i<AviableWeapons.Length; i++)
         {
