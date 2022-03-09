@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,34 +6,37 @@ public class MenuButtons : MonoBehaviour {
 
     [SerializeField] Button StartGameButton = null;
     [SerializeField] Button SettingsButton = null;
+    [SerializeField] Button GoToMenuButton = null;
     [SerializeField] Button QuitGameButton = null;
     [SerializeField] Button DevelopersButton = null;
+    public Animator _animator;
     //[SerializeField] GameObject Developers;
 
     void Start() {
         Cursor.visible = (true);
         Cursor.lockState = CursorLockMode.None;
-        if (StartGameButton != null) {
+        if (StartGameButton != null) 
             StartGameButton.onClick.AddListener(StartGame);
-        }
-        if (SettingsButton != null) {
+
+        if (SettingsButton != null) 
             SettingsButton.onClick.AddListener(OpenSettings);
-        }
-        if (QuitGameButton != null) {
+
+        if (GoToMenuButton != null)
+            GoToMenuButton.onClick.AddListener(CloseSettings);
+
+        if (QuitGameButton != null) 
             QuitGameButton.onClick.AddListener(QuitGame);
-        }
-        if (DevelopersButton != null) {
+
+        if (DevelopersButton != null) 
             DevelopersButton.onClick.AddListener(OpenDevelopers);
-        }
+
+        _animator = GetComponent<Animator>();
     }
 
     public void StartGame() => SceneManager.LoadScene("Arena");
-    private void OpenSettings() {
-
-    }
-
+    public void OpenSettings() => _animator.SetBool("IsOpening", true);
+    public void CloseSettings() => _animator.SetBool("IsOpening", false);
     public void QuitGame() => Application.Quit();
-
 
     public void OpenDevelopers() {
         //Developers.SetActive(true);
