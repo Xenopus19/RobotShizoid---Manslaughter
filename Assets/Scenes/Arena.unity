@@ -508,6 +508,22 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2586595636505206541, guid: 1dd77181cb511ea4abbe1d9a4882c46a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b3a474046ceaa584cb8a9fd52db7d3ed, type: 3}
+    - target: {fileID: 2586595636505206541, guid: 1dd77181cb511ea4abbe1d9a4882c46a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586595636505206541, guid: 1dd77181cb511ea4abbe1d9a4882c46a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586595636505206541, guid: 1dd77181cb511ea4abbe1d9a4882c46a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3042395330028073458, guid: 1dd77181cb511ea4abbe1d9a4882c46a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -579,6 +595,10 @@ PrefabInstance:
     - target: {fileID: 3546897061313082425, guid: 1dd77181cb511ea4abbe1d9a4882c46a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510017427115226633, guid: 1dd77181cb511ea4abbe1d9a4882c46a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 54.82
       objectReference: {fileID: 0}
     - target: {fileID: 6095076272720382374, guid: 1dd77181cb511ea4abbe1d9a4882c46a, type: 3}
       propertyPath: playerHealth
@@ -1338,6 +1358,14 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2432579068779956330, guid: 10bcb0c4a6d8be94abe3afed00769837, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432579068779956330, guid: 10bcb0c4a6d8be94abe3afed00769837, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -9039990162309823103, guid: 337dced4103e1cb43b698abff95c5df6, type: 2}
     - target: {fileID: 3733715339050500622, guid: 10bcb0c4a6d8be94abe3afed00769837, type: 3}
       propertyPath: m_SizeDelta.x
       value: 284.6

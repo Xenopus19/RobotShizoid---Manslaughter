@@ -12,15 +12,15 @@ public class VolumeSlider : MonoBehaviour {
     [SerializeField] private int VolumeMultiplier;
 
     private void Awake() {
-        if (PlayerPrefs.HasKey("MusicVolume")) 
+        if (PlayerPrefs.HasKey("MusicVolume"))
             SetGroupVolume(MusicExposedParam, PlayerPrefs.GetFloat("MusicVolume"));
 
-        if (PlayerPrefs.HasKey("EffectsVolume")) 
+        if (PlayerPrefs.HasKey("EffectsVolume"))
             SetGroupVolume(EffectsExposedParam, PlayerPrefs.GetFloat("EffectsVolume"));
     }
 
     private void Start() {
-        if (audioSourceBGM != null) 
+        if (audioSourceBGM != null)
             audioSourceBGM.Play();
     }
 
@@ -32,6 +32,7 @@ public class VolumeSlider : MonoBehaviour {
         SetGroupVolume(MusicExposedParam, slider.value);
         PlayerPrefs.SetFloat("MusicVolume", slider.value);
     }
+
     public void ChangeEffectVolume(Slider slider) {
         SetGroupVolume(EffectsExposedParam, slider.value);
         PlayerPrefs.SetFloat("EffectsVolume", slider.value);
