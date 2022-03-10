@@ -9,8 +9,9 @@ public class MenuButtons : MonoBehaviour {
     [SerializeField] Button GoToMenuButton = null;
     [SerializeField] Button QuitGameButton = null;
     [SerializeField] Button DevelopersButton = null;
-    public Animator _animator;
     //[SerializeField] GameObject Developers;
+
+    public Animator _animator;
 
     void Start() {
         Cursor.visible = (true);
