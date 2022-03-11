@@ -512,6 +512,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6695751163336746814, guid: 1dd77181cb511ea4abbe1d9a4882c46a, type: 3}
+      propertyPath: m_Text
+      value: 'Money: 0'
+      objectReference: {fileID: 0}
     - target: {fileID: 8175860596315551275, guid: 1dd77181cb511ea4abbe1d9a4882c46a, type: 3}
       propertyPath: playerHealth
       value: 

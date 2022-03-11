@@ -41,7 +41,7 @@ public class Market : MonoBehaviour
         AllPossibletWeaponSlots = new SlotData[AllPossibleWeapons.Length];
         for(int i = 0; i<AllPossibleWeapons.Length; i++)
         {
-            AllPossibletWeaponSlots[i] = new SlotData(AllPossibleWeapons[i], 1);
+            AllPossibletWeaponSlots[i] = new SlotData(AllPossibleWeapons[i], 1);  //цена-затычка
         }
     }
 

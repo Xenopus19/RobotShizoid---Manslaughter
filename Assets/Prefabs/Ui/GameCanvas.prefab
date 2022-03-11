@@ -200,8 +200,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 146
+    m_Font: {fileID: 12800000, guid: b6c8c44a98daf20409bbc399e36d471e, type: 3}
+    m_FontSize: 175
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -212,7 +212,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Score:'
+  m_Text: 'Score: 0'
 --- !u!1 &7241710568347373607
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,8 +396,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 146
+    m_Font: {fileID: 12800000, guid: b6c8c44a98daf20409bbc399e36d471e, type: 3}
+    m_FontSize: 160
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -408,7 +408,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Monys:'
+  m_Text: 'Money: 0'
 --- !u!1 &8592496830859584432
 GameObject:
   m_ObjectHideFlags: 0
