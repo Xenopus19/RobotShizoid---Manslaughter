@@ -2,10 +2,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
 
-public class EnemyBehaviour : MonoBehaviour
-{
-    [SerializeField] float WallTouchDamage;
-    [SerializeField] float PlayerTouchDamage;
+public class EnemyBehaviour : MonoBehaviour {
+    [SerializeField] private float WallTouchDamage;
+    [SerializeField] private float PlayerTouchDamage;
 
     private GameObject Target;
     private GameObject Player;
@@ -16,18 +15,19 @@ public class EnemyBehaviour : MonoBehaviour
     private PlayerHealth playerHealth;
     public float speed;
 
-    private void Start() {
+    public void Start() {
         Agent = GetComponent<NavMeshAgent>();
         speed = Agent.speed;
         Player = GameObject.FindGameObjectWithTag("Player");
         Target = GameObject.FindGameObjectWithTag("Target");
         playerHealth = Player.GetComponent<PlayerHealth>();
     }
-    void Update() {
-         Move();
+
+    public void Update() {
+        Move();
     }
 
-    private void Move() {
+    public void Move() {
         float distanceToPlayer = Math.Length(Player.transform.position.x, transform.position.x, Player.transform.position.z, transform.position.z);
         if (distanceToPlayer < MaxDistanceToPlayer) {
             Agent.destination = Player.transform.position;
@@ -38,18 +38,14 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
+    public void OnCollisionEnter(Collision collision) {
         GameObject CollidedObject = collision.gameObject;
 
-        if(CollidedObject == Target)
-        {
+        if (CollidedObject == Target) {
             playerHealth.GetDamage(WallTouchDamage);
             Destroy(gameObject);
             GlobalEventManager.EnemyTouchedWall();
-        }
-        else if(CollidedObject == Player)
-        {
+        } else if (CollidedObject == Player) {
             playerHealth.GetDamage(PlayerTouchDamage);
         }
     }
