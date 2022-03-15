@@ -4,13 +4,16 @@ using UnityEngine;
 public class ScoreCounter : MonoBehaviour
 {
     private static int Score;
+    private static int HighScore;
 
     private Text scoreText;
 
-    private void Start()
+    private void Awake()
     {
         GlobalEventManager.OnEnemyKilledEvent += IncreaseScore;
         GlobalEventManager.OnEnemyTouchedWallEvent += DecreaseScore;
+        GlobalEventManager.OnPlayerDiedEvent += SaveHighScore;
+        int HighScore = PlayerPrefs.GetInt("HighScore");
         scoreText = GetComponent<Text>();
     }
 
@@ -22,7 +25,7 @@ public class ScoreCounter : MonoBehaviour
 
     private void DecreaseScore()
     {
-        if(Score>0)
+        if(Score > 0)
         Score -= 1;
         UpdateUI();
     }
@@ -33,4 +36,12 @@ public class ScoreCounter : MonoBehaviour
     }
 
     public static int GetScore() => Score;
+
+    public static int GetHighScore() => HighScore;
+
+    public static void SaveHighScore() 
+    {
+        if (Score > HighScore) 
+            PlayerPrefs.SetInt("HighScore", Score);
+    }
 }
