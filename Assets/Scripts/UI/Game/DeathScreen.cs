@@ -1,23 +1,24 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class DeathScreen : MonoBehaviour
+public class DeathScreen : MonoBehaviour 
 {
-    [SerializeField] string[] PossibleDeathMassages;
+    [SerializeField] private string[] PossibleDeathMassages;
 
     [Header("UI Elements")]
     [SerializeField] private Text DeathMassageText;
+
     [SerializeField] private Text Score;
     [SerializeField] private Text BestScore;
     [SerializeField] private GameObject NewBest;
 
-    private void Start()
+    private void Start() 
     {
         GlobalEventManager.OnPlayerDiedEvent += SetDeathScreen;
         gameObject.SetActive(false);
     }
 
-    private void SetDeathScreen()
+    private void SetDeathScreen() 
     {
         Time.timeScale = 0;
         gameObject.SetActive(true);
@@ -25,14 +26,15 @@ public class DeathScreen : MonoBehaviour
         SetScoreText();
     }
 
-    private void GenerateDeathMessage()
+    private void GenerateDeathMessage() 
     {
         DeathMassageText.text = PossibleDeathMassages[Random.Range(0, PossibleDeathMassages.Length - 1)];
     }
-    private void SetScoreText()
+
+    private void SetScoreText() 
     {
         int ScoreValue = ScoreCounter.GetScore();
-        int BestScoreValue = 1;                                           //затычка
+        int BestScoreValue = ScoreCounter.GetHighScore();
         Score.text = "Score: " + ScoreValue;
         BestScore.text = "Best Score: " + BestScoreValue;
 
