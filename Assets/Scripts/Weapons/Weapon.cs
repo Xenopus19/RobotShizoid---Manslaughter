@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour
 
         DamageCollidedObjects(GetAttackedColliders(AttackPosition));
 
-        StartCoroutine("StartCooldown");
+        StartCoroutine(nameof(StartCooldown));
     }
 
     public void DamageCollidedObjects(Collider[] AttackedColliders)
@@ -41,5 +41,10 @@ public class Weapon : MonoBehaviour
         IsAbleToAttack = false;
         yield return new WaitForSeconds(Cooldown);
         IsAbleToAttack = true;
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }

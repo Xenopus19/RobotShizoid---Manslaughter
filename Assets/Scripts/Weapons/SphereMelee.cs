@@ -12,8 +12,4 @@ public class SphereMelee : Weapon
         Collider[] AttackedColliders = Physics.OverlapSphere(AttackPosition, AttackRadius);
         return AttackedColliders;
     }
-
-
-
-
 }

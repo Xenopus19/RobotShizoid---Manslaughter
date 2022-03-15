@@ -1,9 +1,9 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class ScoreCouner : MonoBehaviour
+public class ScoreCounter : MonoBehaviour
 {
-    private int Score;
+    private static int Score;
 
     private Text scoreText;
 
@@ -31,4 +31,6 @@ public class ScoreCouner : MonoBehaviour
     {
         scoreText.text = "Score: " + Score;
     }
+
+    public static int GetScore() => Score;
 }
