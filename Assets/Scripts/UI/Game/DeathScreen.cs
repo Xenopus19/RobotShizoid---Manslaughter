@@ -19,6 +19,7 @@ public class DeathScreen : MonoBehaviour
 
     private void SetDeathScreen()
     {
+        Time.timeScale = 0;
         gameObject.SetActive(true);
         GenerateDeathMessage();
         SetScoreText();

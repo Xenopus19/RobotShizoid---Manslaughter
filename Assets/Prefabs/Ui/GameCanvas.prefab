@@ -767,6 +767,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 1660636216997344974, guid: 806970fb863d8704e9a390cafdf27d81, type: 3}
+      propertyPath: PossibleDeathMassages.Array.data[6]
+      value: children, BUT HERE CHILDREN EAT YOUCHILDREN EAT YOU
+      objectReference: {fileID: 0}
     - target: {fileID: 2545736089394266160, guid: 806970fb863d8704e9a390cafdf27d81, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
