@@ -1,26 +1,34 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-
-public class PlayerMovement : MonoBehaviour
-{
+public class PlayerMovement : MonoBehaviour {
     public float moveSpeed = 10f;
     [SerializeField] private List<float> EdgeOfArena = new List<float>();
-    void Update()
-    {
-        CheckMove();
-    }
+    [SerializeField] private Animator _animator;
+    private void Update() => CheckMove();
+
     public void CheckMove() {
         if (Input.GetKey(KeyCode.UpArrow) && transform.position.z < EdgeOfArena[0] - 0.1f)
-            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+            Walk(Vector3.forward, "IsUp");
+        else if (Input.GetKey(KeyCode.DownArrow) && transform.position.z > EdgeOfArena[1] + 0.1f)
+            Walk(Vector3.back, "IsDown");
+        else if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < EdgeOfArena[2] - 0.1f)
+            Walk(Vector3.right, "IsRight");
+        else if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > EdgeOfArena[3] + 0.1f)
+            Walk(Vector3.left, "IsLeft");
+        else
+            Stand();
+    }
 
-        if (Input.GetKey(KeyCode.DownArrow) && transform.position.z > EdgeOfArena[1] + 0.1f)
-            transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
+    private void Walk(Vector3 direction, string anim) {
+        transform.Translate(direction * moveSpeed * Time.deltaTime);
+        _animator.SetBool(anim, true);
+    }
 
-        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < EdgeOfArena[2] - 0.1f)
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-
-        if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > EdgeOfArena[3] + 0.1f)
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+    private void Stand() {
+        _animator.SetBool("IsUp", false);
+        _animator.SetBool("IsDown", false);
+        _animator.SetBool("IsRight", false);
+        _animator.SetBool("IsLeft", false);
     }
 }
