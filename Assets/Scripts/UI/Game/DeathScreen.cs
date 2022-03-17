@@ -21,10 +21,13 @@ public class DeathScreen : MonoBehaviour
     private void SetDeathScreen() 
     {
         Time.timeScale = 0;
+        TurnOffPause();
         gameObject.SetActive(true);
         GenerateDeathMessage();
         SetScoreText();
     }
+
+    private void TurnOffPause() => GetComponentInParent<Pause>().enabled = false;
 
     private void GenerateDeathMessage() 
     {
