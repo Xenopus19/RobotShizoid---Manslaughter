@@ -1,12 +1,14 @@
 
+using System;
 using UnityEngine;
 
 public class EnemyHealth : Health
 {
+    public Action OnDeath;
     [SerializeField] int ScoreBonus;
     public override void Die()
     {
         GlobalEventManager.EnemyKilled(ScoreBonus);
-        Destroy(gameObject);
+        if (OnDeath != null) OnDeath.Invoke();
     }
 }
