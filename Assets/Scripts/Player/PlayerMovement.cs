@@ -4,7 +4,10 @@ using System.Collections.Generic;
 public class PlayerMovement : MonoBehaviour {
     public float moveSpeed = 10f;
     [SerializeField] private List<float> EdgeOfArena = new List<float>();
+
     [SerializeField] private Animator _animator;
+    [SerializeField] private AudioSource _audioSource;
+
     private void Update() => CheckMove();
 
     public void CheckMove() {
@@ -23,6 +26,8 @@ public class PlayerMovement : MonoBehaviour {
     private void Walk(Vector3 direction, string anim) {
         transform.Translate(direction * moveSpeed * Time.deltaTime);
         _animator.SetBool(anim, true);
+        if (!_audioSource.isPlaying)
+            _audioSource.Play();
     }
 
     private void Stand() {
@@ -30,5 +35,7 @@ public class PlayerMovement : MonoBehaviour {
         _animator.SetBool("IsDown", false);
         _animator.SetBool("IsRight", false);
         _animator.SetBool("IsLeft", false);
+        if (_audioSource.isPlaying)
+            _audioSource.Stop();
     }
 }
