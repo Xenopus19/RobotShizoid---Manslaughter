@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 5059864375396529977}
   m_Layer: 0
   m_Name: WalkRobotSoundPlayer
-  m_TagString: RobotWalkSound
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,7 +199,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -9039990162309823103, guid: 337dced4103e1cb43b698abff95c5df6, type: 2}
   m_audioClip: {fileID: 8300000, guid: 01670c9d25b010b4caca110560b714d2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.155
   m_Pitch: 1
   Loop: 1
   Mute: 0

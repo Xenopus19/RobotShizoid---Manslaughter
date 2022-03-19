@@ -27,7 +27,7 @@ public class ScoreCounter : MonoBehaviour {
     }
 
     private void UpdateUI() {
-        scoreText.text = "Score: " + Score;
+        scoreText.text = $"{Score}";
     }
 
     public static int GetScore() => Score;

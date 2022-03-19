@@ -6,8 +6,6 @@ TagManager:
   tags:
   - Target
   - Enemy
-  - RobotWalkSound
-  - EnemyWalkSound
   layers:
   - Default
   - TransparentFX
