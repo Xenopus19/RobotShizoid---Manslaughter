@@ -236,8 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cfdddb0f63a604aae13e2d1ea56fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 5
+  Damage: 7
   Cooldown: 0.5
   Icon: {fileID: 21300000, guid: c73cd61f9e0b09f42a3617170d33090f, type: 3}
   AttackLength: 7
-  AttackWidth: 0.5
+  AttackWidth: 1
