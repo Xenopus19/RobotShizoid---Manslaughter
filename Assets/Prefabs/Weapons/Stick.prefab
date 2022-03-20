@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 5
-  Icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  AttackRadius: 4
   Cooldown: 0.25
+  Icon: {fileID: 21300000, guid: 8655c13116253da4db172f807eb1b36f, type: 3}
+  AttackRadius: 4
 --- !u!1 &6161568325677728665
 GameObject:
   m_ObjectHideFlags: 0
