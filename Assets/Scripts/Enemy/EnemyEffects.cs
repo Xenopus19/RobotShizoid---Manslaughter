@@ -24,7 +24,7 @@ public class EnemyEffects : MonoBehaviour
     private void CreateDeathEffects()
     {
         Instantiate(FloorBloodVariants[Random.Range(0, FloorBloodVariants.Length - 1)], FloorBloodOrigin.position, Quaternion.identity);
-        GameObject Corpse = Instantiate(RagdollPrefab, transform.position, Quaternion.identity);
+        GameObject Corpse = Instantiate(RagdollPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
     }   
 }
