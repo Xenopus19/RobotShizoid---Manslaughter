@@ -5,10 +5,10 @@ using UnityEngine.UI;
 public class MenuButtons : MonoBehaviour {
     [SerializeField] private Button StartGameButton = null;
     [SerializeField] private Button SettingsButton = null;
-    [SerializeField] private Button GoToMenuButton = null;
+    [SerializeField] private Button GoToMenuSetButton = null;
     [SerializeField] private Button QuitGameButton = null;
     [SerializeField] private Button DevelopersButton = null;
-    //[SerializeField] GameObject Developers;
+    [SerializeField] private Button GoToMenuDevButton = null;
 
     public Animator _animator;
 
@@ -22,8 +22,8 @@ public class MenuButtons : MonoBehaviour {
         if (SettingsButton != null)
             SettingsButton.onClick.AddListener(OpenSettings);
 
-        if (GoToMenuButton != null)
-            GoToMenuButton.onClick.AddListener(CloseSettings);
+        if (GoToMenuSetButton != null)
+            GoToMenuSetButton.onClick.AddListener(CloseSettings);
 
         if (QuitGameButton != null)
             QuitGameButton.onClick.AddListener(QuitGame);
@@ -31,24 +31,21 @@ public class MenuButtons : MonoBehaviour {
         if (DevelopersButton != null)
             DevelopersButton.onClick.AddListener(OpenDevelopers);
 
+        if (GoToMenuDevButton != null)
+            GoToMenuDevButton.onClick.AddListener(CloseDevelopers);
+
         _animator = GetComponent<Animator>();
     }
 
     public void StartGame() => SceneManager.LoadScene("Arena");
 
-    public void OpenSettings() => _animator.SetBool("IsOpening", true);
+    public void OpenSettings() => _animator.SetBool("IsOpeningSet", true);
 
-    public void CloseSettings() => _animator.SetBool("IsOpening", false);
+    public void CloseSettings() => _animator.SetBool("IsOpeningSet", false);
+
+    public void OpenDevelopers() => _animator.SetBool("IsOpeningDev", true);
+
+    public void CloseDevelopers() => _animator.SetBool("IsOpeningDev", false);
 
     public void QuitGame() => Application.Quit();
-
-    public void OpenDevelopers() {
-        //Developers.SetActive(true);
-        gameObject.SetActive(false);
-    }
-
-    public void CloseDevelopers() {
-        //Developers.SetActive(false);
-        gameObject.SetActive(true);
-    }
 }
