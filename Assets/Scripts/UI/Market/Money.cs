@@ -21,7 +21,7 @@ public class Money : MonoBehaviour
 
     private void AddMoney(int EnemyScore)
     {
-        MoneyAmount += EnemyScore * 2;
+        MoneyAmount += Random.Range(0, 11) / 10;
         UpdateUI();
     }
 
