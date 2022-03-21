@@ -7,7 +7,7 @@ public class ScoreCounter : MonoBehaviour {
 
     private Text scoreText;
 
-    private void Awake() {
+    private void Start() {
         GlobalEventManager.OnEnemyKilledEvent += IncreaseScore;
         GlobalEventManager.OnEnemyTouchedWallEvent += DecreaseScore;
         GlobalEventManager.OnPlayerDiedEvent += SaveHighScore;

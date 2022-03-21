@@ -12,7 +12,7 @@ public class DeathScreen : MonoBehaviour
     [SerializeField] private Text BestScore;
     [SerializeField] private GameObject NewBest;
 
-    private void Start() 
+    private void Awake() 
     {
         GlobalEventManager.OnPlayerDiedEvent += SetDeathScreen;
         gameObject.SetActive(false);
