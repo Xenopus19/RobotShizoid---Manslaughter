@@ -37,6 +37,7 @@ public class DeathScreen : MonoBehaviour
 
     private void GenerateDeathMessage() 
     {
+        Debug.Log("sdsd");
         DeathMassageText.text = PossibleDeathMassages[Random.Range(0, PossibleDeathMassages.Length - 1)];
     }
 
