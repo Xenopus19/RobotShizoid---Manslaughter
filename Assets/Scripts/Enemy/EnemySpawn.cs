@@ -17,7 +17,11 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private int WavesAmount = 0;
     [SerializeField] private float coefficientSpeed = 0.05f;
     [SerializeField] private float coefficientTime = 0.01f;
-    void Start() => StartCoroutine("StartSpawn");
+    void Start()
+    {
+        StartCoroutine("StartSpawn");
+        GlobalEventManager.OnPlayerDiedEvent += DisableIfPlayerIsDead;
+    }
 
     private IEnumerator StartSpawn() {
         InvokeRepeating("SpawnEnemy", TimeToWaitWave, TimeBetweenSpawn);
@@ -38,5 +42,15 @@ public class EnemySpawn : MonoBehaviour
         WavesAmount++;
         TimeBetweenSpawn -= WavesAmount * coefficientTime;
         OnNewWaveStart.Invoke(WavesAmount);
+    }
+
+    private void DisableIfPlayerIsDead()
+    {
+        gameObject.SetActive(false);
+    }
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+        CancelInvoke();
     }
 }

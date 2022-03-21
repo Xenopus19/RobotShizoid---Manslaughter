@@ -17,6 +17,7 @@ public class EnemyBehaviour : MonoBehaviour {
     public float speed;
 
     public void Start() {
+        GlobalEventManager.OnPlayerDiedEvent += DisableIfPlayerIsDead;
         Agent = GetComponent<NavMeshAgent>();
         speed = Agent.speed;
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -50,5 +51,15 @@ public class EnemyBehaviour : MonoBehaviour {
             playerHealth.GetDamage(PlayerTouchDamage);
             _animator.SetFloat("ProbabilityAnimation", Random.value);
         }
+    }
+
+    private void DisableIfPlayerIsDead()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 }

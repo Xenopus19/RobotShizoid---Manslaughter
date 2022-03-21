@@ -4,6 +4,8 @@ using UnityEngine;
 public class DeathScreen : MonoBehaviour 
 {
     [SerializeField] private string[] PossibleDeathMassages;
+    [SerializeField] private GameObject DeathCamera;
+    [SerializeField] private GameObject GameCanvas;
 
     [Header("UI Elements")]
     [SerializeField] private Text DeathMassageText;
@@ -20,14 +22,18 @@ public class DeathScreen : MonoBehaviour
 
     private void SetDeathScreen() 
     {
-        Time.timeScale = 0;
-        TurnOffPause();
+        DeathCamera.SetActive(true);
+        //Time.timeScale = 0;
+        TurnOffGameCanvas();
         gameObject.SetActive(true);
         GenerateDeathMessage();
         SetScoreText();
     }
 
-    private void TurnOffPause() => GetComponentInParent<Pause>().enabled = false;
+    private void TurnOffGameCanvas()
+    {
+        GameCanvas.SetActive(false);
+    }
 
     private void GenerateDeathMessage() 
     {
