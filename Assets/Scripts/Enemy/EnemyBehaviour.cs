@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class EnemyBehaviour : MonoBehaviour {
     [SerializeField] private float WallTouchDamage;
     [SerializeField] private float PlayerTouchDamage;
+    [SerializeField] private Animator _animator;
 
     private GameObject Target;
     private GameObject Player;
@@ -47,6 +48,7 @@ public class EnemyBehaviour : MonoBehaviour {
             GlobalEventManager.EnemyTouchedWall();
         } else if (CollidedObject == Player) {
             playerHealth.GetDamage(PlayerTouchDamage);
+            _animator.SetFloat("ProbabilityAnimation", Random.value);
         }
     }
 }
