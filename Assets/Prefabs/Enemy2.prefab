@@ -83,6 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WallTouchDamage: 5
   PlayerTouchDamage: 7
+  _animator: {fileID: 727108077656679532}
   speed: 0
 --- !u!114 &7274242843136878672
 MonoBehaviour:
@@ -249,6 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WallTouchDamage: 5
   PlayerTouchDamage: 7
+  _animator: {fileID: 0}
   speed: 0
 --- !u!114 &2891790139452631501
 MonoBehaviour:
