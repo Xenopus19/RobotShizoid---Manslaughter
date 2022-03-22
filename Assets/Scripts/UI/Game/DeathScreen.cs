@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeathScreen : MonoBehaviour 
 {
@@ -51,4 +52,8 @@ public class DeathScreen : MonoBehaviour
         if (ScoreValue > BestScoreValue)
             NewBest.SetActive(true);
     }
+
+    public void PlayAgain() => SceneManager.LoadScene("Arena");
+
+    public void GoToMenu() => SceneManager.LoadScene("Menu");
 }
