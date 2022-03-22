@@ -1,9 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerWeapons : MonoBehaviour
 {
+    public Action OnWeaponChanged;
+
     [SerializeField] Transform AttackOrigin;
 
     [SerializeField] private GameObject Stick;
@@ -11,6 +13,10 @@ public class PlayerWeapons : MonoBehaviour
     [SerializeField]private GameObject[] AviableWeapons;
     private Weapon CurrentWeapon;
 
+    public Weapon GetCurrentWeapon()
+    {
+        return CurrentWeapon;
+    }
     private void Start()
     {
         AddWeapon(Stick);
@@ -38,11 +44,16 @@ public class PlayerWeapons : MonoBehaviour
 
     public void ChangeWeapon(int NewWeaponIndex)
     {
-        if(CurrentWeapon!=null)
-            Destroy(CurrentWeapon.gameObject);
-        
-        if(AviableWeapons[NewWeaponIndex]!=null)
+        if (AviableWeapons[NewWeaponIndex] != null)
+        {
+            if (CurrentWeapon != null)
+                Destroy(CurrentWeapon.gameObject);
+
             CurrentWeapon = Instantiate(AviableWeapons[NewWeaponIndex], AttackOrigin).GetComponent<Weapon>();
+
+            if (OnWeaponChanged != null)
+                OnWeaponChanged.Invoke();
+        }
     }
 
     public void DoAttack()
