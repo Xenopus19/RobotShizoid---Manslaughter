@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4868685072303210225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.914, z: 0}
-  m_LocalScale: {x: 0.8077299, y: 0.8077299, z: 0.8077299}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9729779, y: 0.9729779, z: 0.9729779}
   m_Children: []
   m_Father: {fileID: 6406595586632624061}
   m_RootOrder: 0
@@ -105,14 +105,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8324026326529331578}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.39443678, y: 0.071833685, z: -0.16413975, w: 0.90128666}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3823506, y: 1.3823506, z: 1.3823506}
   m_Children:
   - {fileID: 7821481121816158120}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 47.272, y: 0, z: -20.643}
 --- !u!114 &645928438212697802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cfdddb0f63a604aae13e2d1ea56fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimationName: Spear
   Damage: 7
   Cooldown: 0.5
   Icon: {fileID: 21300000, guid: c73cd61f9e0b09f42a3617170d33090f, type: 3}

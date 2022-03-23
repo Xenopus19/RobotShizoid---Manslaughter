@@ -6,7 +6,6 @@ public class CubeMeleeWeapon : Weapon
 {
     [SerializeField] float AttackLength;
     [SerializeField] float AttackWidth;
-
     public override Collider[] GetAttackedColliders(Vector3 AttackPosition)
     {
         Vector3 AttackBorder = AttackPosition;

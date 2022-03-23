@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 5954854359248386767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5252, y: 1.5252, z: 1.5252}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6162934587268229569}
   m_Father: {fileID: 0}
@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2d68a299bf7b74b9d44df639f58f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimationName: Sword
   Damage: 5
   Cooldown: 0.25
   Icon: {fileID: 21300000, guid: 8655c13116253da4db172f807eb1b36f, type: 3}
@@ -74,13 +75,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8527072846565275989}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.60876137, w: 0.7933534}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.30325654, z: 1}
+  m_LocalScale: {x: 0.74, y: 0.22440985, z: 0.74}
   m_Children: []
   m_Father: {fileID: 8977181469106122058}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -75}
 --- !u!33 &574909306654724364
 MeshFilter:
   m_ObjectHideFlags: 0
