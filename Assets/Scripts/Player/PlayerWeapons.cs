@@ -1,4 +1,3 @@
-using System.Collections;
 using System;
 using UnityEngine;
 
@@ -24,10 +23,6 @@ public class PlayerWeapons : MonoBehaviour
         ChangeWeapon(0);
     }
 
-    private void Update()
-    {
-        
-    }
     public void AddWeapon(GameObject newWeapon)
     {
         for(int i = 0; i<AviableWeapons.Length; i++)

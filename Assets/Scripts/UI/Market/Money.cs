@@ -25,7 +25,7 @@ public class Money : MonoBehaviour
         UpdateUI();
     }
 
-    private static void UpdateUI()
+    public static void UpdateUI()
     {
         MoneyText.text = $"{MoneyAmount}";
     }

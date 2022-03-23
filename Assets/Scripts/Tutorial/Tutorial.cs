@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class Tutorial : MonoBehaviour {
     [SerializeField] private Transform SpawnPoint;
@@ -21,6 +23,8 @@ public class Tutorial : MonoBehaviour {
     private float WaitCompleteTime = 0.5f;
     private void Start() {
         PlayerPosition = GameObject.FindGameObjectWithTag("Player").transform;
+        Money.MoneyAmount = 3;
+        Money.UpdateUI();
         StartCoroutine(nameof(CompleteMovement));
     }
 
@@ -118,8 +122,38 @@ public class Tutorial : MonoBehaviour {
         yield return new WaitForSeconds(1.05f);
 
         CounterText.SetActive(false);
+        MarketText.SetActive(true);
 
         StopCoroutine(nameof(CompleteHealth));
+        StartCoroutine(nameof(DoAnimation), Market);
+        StartCoroutine(nameof(CompleteMarket));
+    }
+
+    private IEnumerator CompleteMarket() {
+        if (Money.MoneyAmount == 3) {
+            yield return new WaitForSeconds(0.014f);
+            StopCoroutine(nameof(CompleteMarket));
+            StartCoroutine(nameof(CompleteMarket));
+        }
+
+        yield return new WaitForSeconds(WaitCompleteTime);
+
+        _animatorText = MarketText.GetComponent<Animator>();
+        _animatorText.SetBool("IsComplete", true);
+        yield return new WaitForSeconds(1.05f);
+
+        _animatorPanel = Market.GetComponent<Animator>();
+        _animatorPanel.SetBool("IsStarting", false);
+
+        MarketText.SetActive(false);
+
+        StopCoroutine(nameof(CompleteMarket));
         //StartCoroutine(nameof());
+    }
+
+    public void TurnOnSlot(GameObject button) {
+        Money.MoneyAmount -= int.Parse(button.GetComponentInChildren<Text>().text);
+        Money.UpdateUI();
+        button.SetActive(false);
     }
 }

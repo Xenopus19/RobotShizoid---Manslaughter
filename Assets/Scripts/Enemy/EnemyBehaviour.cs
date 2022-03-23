@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using System.Collections.Generic;
 
 public class EnemyBehaviour : MonoBehaviour {
     [SerializeField] private float WallTouchDamage;
