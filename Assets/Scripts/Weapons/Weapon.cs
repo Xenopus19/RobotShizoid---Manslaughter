@@ -4,16 +4,24 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour
 {
+    public string AnimationName;
     public float Damage;
     public float Cooldown;
     public Sprite Icon;
 
     private bool IsAbleToAttack = true;
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponentInParent<Animator>();
+    }
     public virtual void Attack(Vector3 AttackPosition) 
     {
         if (!IsAbleToAttack) return;
 
         DamageCollidedObjects(GetAttackedColliders(AttackPosition));
+        PlayAnimation();
 
         StartCoroutine(nameof(StartCooldown));
     }
@@ -29,6 +37,10 @@ public class Weapon : MonoBehaviour
                 AttackedHealth.GetDamage(Damage);
             }
         }
+    }
+    private void PlayAnimation()
+    {
+        animator.SetTrigger(AnimationName);
     }
 
     public virtual Collider[] GetAttackedColliders(Vector3 AttackPosition)
