@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
+using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour {
     [SerializeField] private Transform SpawnPoint;
@@ -11,18 +11,26 @@ public class Tutorial : MonoBehaviour {
     [SerializeField] private GameObject HealthText;
     [SerializeField] private GameObject CounterText;
     [SerializeField] private GameObject MarketText;
+    [SerializeField] private GameObject EnemyText;
+    [SerializeField] private GameObject FinishText;
 
     [SerializeField] private GameObject Icon;
     [SerializeField] private GameObject Health;
     [SerializeField] private GameObject Counters;
     [SerializeField] private GameObject Market;
+    [SerializeField] private GameObject EnemyPrefab;
+    [SerializeField] private Transform EnemyPosition;
 
     private Transform PlayerPosition;
+    private PlayerHealth PlayerHealth;
+    private GameObject Enemy;
     private Animator _animatorText;
     private Animator _animatorPanel;
     private float WaitCompleteTime = 0.5f;
     private void Start() {
-        PlayerPosition = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        PlayerPosition = Player.transform;
+        PlayerHealth = Player.GetComponent<PlayerHealth>();
         Money.MoneyAmount = 3;
         Money.UpdateUI();
         StartCoroutine(nameof(CompleteMovement));
@@ -30,7 +38,7 @@ public class Tutorial : MonoBehaviour {
 
     private IEnumerator CompleteMovement() {
         if (!(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.UpArrow))) {
-            yield return new WaitForSeconds(0.014f);
+            yield return new WaitForEndOfFrame();
             StopCoroutine(nameof(CompleteMovement));
             StartCoroutine(nameof(CompleteMovement));
         }
@@ -50,7 +58,7 @@ public class Tutorial : MonoBehaviour {
 
     private IEnumerator CompleteAttack() {
         if (!Input.GetKey(KeyCode.W)) {
-            yield return new WaitForSeconds(0.014f);
+            yield return new WaitForEndOfFrame();
             StopCoroutine(nameof(CompleteAttack));
             StartCoroutine(nameof(CompleteAttack));
         }
@@ -70,8 +78,8 @@ public class Tutorial : MonoBehaviour {
 
     private IEnumerator CompleteWeapon() {
         StartCoroutine(nameof(DoAnimation), Icon);
-        if (!(Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Alpha5))) {
-            yield return new WaitForSeconds(0.014f);
+        if (!(Input.GetKey(KeyCode.Alpha1) || Input.GetKey(KeyCode.Alpha2) || Input.GetKey(KeyCode.Alpha3) || Input.GetKey(KeyCode.Alpha4) || Input.GetKey(KeyCode.Alpha5))) {
+            yield return new WaitForEndOfFrame();
             StopCoroutine(nameof(CompleteWeapon));
             StartCoroutine(nameof(CompleteWeapon));
         }
@@ -131,7 +139,7 @@ public class Tutorial : MonoBehaviour {
 
     private IEnumerator CompleteMarket() {
         if (Money.MoneyAmount == 3) {
-            yield return new WaitForSeconds(0.014f);
+            yield return new WaitForEndOfFrame();
             StopCoroutine(nameof(CompleteMarket));
             StartCoroutine(nameof(CompleteMarket));
         }
@@ -146,14 +154,49 @@ public class Tutorial : MonoBehaviour {
         _animatorPanel.SetBool("IsStarting", false);
 
         MarketText.SetActive(false);
+        EnemyText.SetActive(true);
+        Enemy = Instantiate(EnemyPrefab, EnemyPosition);
 
         StopCoroutine(nameof(CompleteMarket));
-        //StartCoroutine(nameof());
+        StartCoroutine(nameof(CompleteKilling));
     }
 
     public void TurnOnSlot(GameObject button) {
         Money.MoneyAmount -= int.Parse(button.GetComponentInChildren<Text>().text);
         Money.UpdateUI();
         button.SetActive(false);
+    }
+
+    private IEnumerator CompleteKilling() {
+        if (Enemy != null) {
+            PlayerHealth.LivesAmount = PlayerHealth.LivesAmount <= 0 ? 3 : PlayerHealth.LivesAmount;
+
+            yield return new WaitForEndOfFrame();
+            StopCoroutine(nameof(CompleteKilling));
+            StartCoroutine(nameof(CompleteKilling));
+        }
+
+        yield return new WaitForSeconds(WaitCompleteTime);
+
+        _animatorText = EnemyText.GetComponent<Animator>();
+        _animatorText.SetBool("IsComplete", true);
+        yield return new WaitForSeconds(1.05f);
+
+        EnemyText.SetActive(false);
+        FinishText.SetActive(true);
+
+        StopCoroutine(nameof(CompleteKilling));
+        StartCoroutine(nameof(CompleteTutorial));
+    }
+
+    private IEnumerator CompleteTutorial() {
+        yield return new WaitForSeconds(1f);
+
+        _animatorText = FinishText.GetComponent<Animator>();
+        _animatorText.SetBool("IsComplete", true);
+        yield return new WaitForSeconds(1.05f);
+
+        StopCoroutine(nameof(CompleteTutorial));
+        SceneManager.LoadScene("Arena");
     }
 }
