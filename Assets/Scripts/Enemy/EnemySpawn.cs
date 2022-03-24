@@ -7,8 +7,14 @@ using UnityEngine.AI;
 public class EnemySpawn : MonoBehaviour 
 {
     public static Action<int> OnNewWaveStart;
-
+    
+    [Header("Enemies")]
     [SerializeField] private GameObject EnemyPrefab;
+    [SerializeField] private GameObject RangeEnemyPrefab;
+
+    [Header("Rare Enemy Chances")]
+    [SerializeField] private float RangeChance;
+
     [SerializeField] private List<GameObject> SpawnPositions = new List<GameObject>();
 
     [SerializeField] private float TimeBetweenSpawn = 3f;
@@ -23,7 +29,8 @@ public class EnemySpawn : MonoBehaviour
         GlobalEventManager.OnPlayerDiedEvent += DisableIfPlayerIsDead;
     }
 
-    private IEnumerator StartSpawn() {
+    private IEnumerator StartSpawn() 
+    {
         InvokeRepeating("SpawnEnemy", TimeToWaitWave, TimeBetweenSpawn);
         yield return new WaitForSeconds(WaveTime);
         ChangeValuesForNewWave();
@@ -31,10 +38,22 @@ public class EnemySpawn : MonoBehaviour
         StartCoroutine("StartSpawn");
     }
 
-    public void SpawnEnemy() {
+    public void SpawnEnemy() 
+    {
         int i = UnityEngine.Random.Range(0, 4);
-        GameObject Enemy = Instantiate(EnemyPrefab, SpawnPositions[i].transform.position, SpawnPositions[i].transform.rotation);
+        GameObject PrefabToSpawn = ChooseEnemyToSpawn();
+        GameObject Enemy = Instantiate(PrefabToSpawn, SpawnPositions[i].transform.position, SpawnPositions[i].transform.rotation);
         Enemy.GetComponent<NavMeshAgent>().speed += WavesAmount * coefficientSpeed;
+    }
+
+    private GameObject ChooseEnemyToSpawn()
+    {
+        float Chance = UnityEngine.Random.Range(0, 100);
+        if(Chance<= RangeChance)
+        {
+            return RangeEnemyPrefab;
+        }
+        return EnemyPrefab;
     }
 
     private void ChangeValuesForNewWave() 

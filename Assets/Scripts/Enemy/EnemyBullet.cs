@@ -18,8 +18,11 @@ public class EnemyBullet : MonoBehaviour
         if(health!=null)
         {
             health.GetDamage(Damage);
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
+        if(collision.gameObject.isStatic)
+        {
+            Destroy(gameObject);
+        }
     }
 }

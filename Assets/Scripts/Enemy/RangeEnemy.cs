@@ -37,7 +37,6 @@ public class RangeEnemy : EnemyBehaviour
 
     private void MakeShot()
     {
-        print("Piu");
         _animator.SetTrigger("Shot");
         Instantiate(BulletPrefab, ShotOrigin.position, transform.rotation);
     }
