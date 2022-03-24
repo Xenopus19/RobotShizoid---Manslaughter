@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class MenuButtons : MonoBehaviour {
     [SerializeField] private Button StartGameButton = null;
     [SerializeField] private Button SettingsButton = null;
+    [SerializeField] private Button TutorialButton = null;
     [SerializeField] private Button GoToMenuSetButton = null;
     [SerializeField] private Button QuitGameButton = null;
     [SerializeField] private Button DevelopersButton = null;
@@ -17,35 +18,32 @@ public class MenuButtons : MonoBehaviour {
         Cursor.visible = (true);
         Cursor.lockState = CursorLockMode.None;
         if (StartGameButton != null)
-            StartGameButton.onClick.AddListener(StartGame);
+            StartGameButton.onClick.AddListener(delegate { OpenScene("Arena"); });
 
         if (SettingsButton != null)
-            SettingsButton.onClick.AddListener(OpenSettings);
+            SettingsButton.onClick.AddListener(delegate { SetBool("IsOpeningSet", true); });
+
+        if (TutorialButton != null)
+            TutorialButton.onClick.AddListener(delegate { OpenScene("Tutorial"); });
 
         if (GoToMenuSetButton != null)
-            GoToMenuSetButton.onClick.AddListener(CloseSettings);
+            GoToMenuSetButton.onClick.AddListener(delegate { SetBool("IsOpeningSet", false); });
 
         if (QuitGameButton != null)
             QuitGameButton.onClick.AddListener(QuitGame);
 
         if (DevelopersButton != null)
-            DevelopersButton.onClick.AddListener(OpenDevelopers);
+            DevelopersButton.onClick.AddListener(delegate { SetBool("IsOpeningDev", true); });
 
         if (GoToMenuDevButton != null)
-            GoToMenuDevButton.onClick.AddListener(CloseDevelopers);
+            GoToMenuDevButton.onClick.AddListener(delegate { SetBool("IsOpeningDev", false); });
 
         _animator = GetComponent<Animator>();
     }
 
-    public void StartGame() => SceneManager.LoadScene("Arena");
+    public void OpenScene(string sceneName) => SceneManager.LoadScene(sceneName);
 
-    public void OpenSettings() => _animator.SetBool("IsOpeningSet", true);
-
-    public void CloseSettings() => _animator.SetBool("IsOpeningSet", false);
-
-    public void OpenDevelopers() => _animator.SetBool("IsOpeningDev", true);
-
-    public void CloseDevelopers() => _animator.SetBool("IsOpeningDev", false);
+    public void SetBool(string parameter, bool isParameter) => _animator.SetBool(parameter, isParameter);
 
     public void QuitGame() => Application.Quit();
 }
