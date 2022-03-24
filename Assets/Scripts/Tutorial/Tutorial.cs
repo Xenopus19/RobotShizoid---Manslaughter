@@ -197,6 +197,7 @@ public class Tutorial : MonoBehaviour {
         yield return new WaitForSeconds(1.05f);
 
         StopCoroutine(nameof(CompleteTutorial));
+        PlayerPrefs.SetInt("Tutorial", 1);
         SceneManager.LoadScene("Arena");
     }
 }

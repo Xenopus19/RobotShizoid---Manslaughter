@@ -18,7 +18,10 @@ public class MenuButtons : MonoBehaviour {
         Cursor.visible = (true);
         Cursor.lockState = CursorLockMode.None;
         if (StartGameButton != null)
-            StartGameButton.onClick.AddListener(delegate { OpenScene("Arena"); });
+            if (PlayerPrefs.HasKey("Tutorial"))
+                StartGameButton.onClick.AddListener(delegate { OpenScene("Arena"); });
+            else
+                StartGameButton.onClick.AddListener(delegate { OpenScene("Tutorial"); });
 
         if (SettingsButton != null)
             SettingsButton.onClick.AddListener(delegate { SetBool("IsOpeningSet", true); });
