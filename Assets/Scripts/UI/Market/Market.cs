@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public struct SlotData
 {
@@ -22,6 +23,7 @@ public class Market : MonoBehaviour
 
     [SerializeField] GameObject MarketPlane;
     [SerializeField] GameObject QuitButton;
+    [SerializeField] Animator _animator;
 
     private SlotData[] CurrentWeaponSlots;
     private PlayerWeapons playerWeapons;
@@ -47,9 +49,7 @@ public class Market : MonoBehaviour
     {
         if (WaveNumber % WavesBeforeMarket != 0) return;
 
-        Time.timeScale = 0;
-        MarketPlane.SetActive(true);
-        QuitButton.SetActive(true);
+        _animator.SetBool("IsStarting", true);
         FillCurrentWeaponSlots();
         SetButtons();
     }
@@ -88,7 +88,7 @@ public class Market : MonoBehaviour
     public void TurnOffMarket()
     {
         Time.timeScale = 1;
-        MarketPlane.SetActive(false);
-        QuitButton.SetActive(false);
+        _animator.SetBool("IsStarting", false);
     }
+    public void StopTime() => Time.timeScale = 0;
 }

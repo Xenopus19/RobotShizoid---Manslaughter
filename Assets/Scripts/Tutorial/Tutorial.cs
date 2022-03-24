@@ -143,6 +143,7 @@ public class Tutorial : MonoBehaviour {
             StopCoroutine(nameof(CompleteMarket));
             StartCoroutine(nameof(CompleteMarket));
         }
+        Time.timeScale = 1;
 
         yield return new WaitForSeconds(WaitCompleteTime);
 

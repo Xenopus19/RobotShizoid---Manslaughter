@@ -247,6 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8527625285634025718}
   - component: {fileID: 84005166958072305}
+  - component: {fileID: 7560271626578250689}
   m_Layer: 0
   m_Name: Market
   m_TagString: Untagged
@@ -291,6 +292,25 @@ MonoBehaviour:
   MarketButton: {fileID: 1360332588846190256, guid: f6914ff9c1182bd4bb79f0596d82c48e, type: 3}
   MarketPlane: {fileID: 1022727750342813243}
   QuitButton: {fileID: 929749169440287329}
+--- !u!95 &7560271626578250689
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073205859368713077}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a3007deb42349b74e85343273fe3bb8a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6149116921530658146
 GameObject:
   m_ObjectHideFlags: 0
