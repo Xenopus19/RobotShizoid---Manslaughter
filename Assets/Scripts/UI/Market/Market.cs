@@ -23,6 +23,8 @@ public class Market : MonoBehaviour
 
     [SerializeField] GameObject MarketPlane;
     [SerializeField] GameObject QuitButton;
+    [SerializeField] GameObject NoMoneyText;
+    [SerializeField] GameObject PurchaseText;
     [SerializeField] Animator _animator;
 
     private SlotData[] CurrentWeaponSlots;
@@ -76,13 +78,19 @@ public class Market : MonoBehaviour
     {
         int Price = CurrentWeaponSlots[WeaponSlotIndex].Price;
 
-        if (Money.MoneyAmount < Price) return;
+        if (Money.MoneyAmount < Price) {
+            NoMoneyText.SetActive(true);
+            PurchaseText.SetActive(false);
+            return;
+        }
 
         Money.SpendMoney(Price);
         
         GameObject Weapon = CurrentWeaponSlots[WeaponSlotIndex].Weapon;
         Debug.Log("Bought " + Weapon.name);
         playerWeapons.AddWeapon(Weapon);
+        PurchaseText.SetActive(true);
+        NoMoneyText.SetActive(false);
     }
 
     public void TurnOffMarket()
