@@ -30,7 +30,6 @@ public class Weapon : MonoBehaviour
             Health AttackedHealth = collider.gameObject.GetComponent<EnemyHealth>();
             if (AttackedHealth != null)
             {
-                Debug.LogWarning(AttackedHealth.name);
                 AttackedHealth.GetDamage(Damage);
             }
         }
