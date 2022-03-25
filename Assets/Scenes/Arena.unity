@@ -5994,7 +5994,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: RangeChance
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6093287611073431790, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: m_RootOrder
