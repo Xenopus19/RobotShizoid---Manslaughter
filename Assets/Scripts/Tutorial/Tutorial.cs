@@ -21,22 +21,34 @@ public class Tutorial : MonoBehaviour {
     [SerializeField] private GameObject EnemyPrefab;
     [SerializeField] private Transform EnemyPosition;
 
-    private Transform PlayerPosition;
+    private GameObject Player;
+    private Vector3 StartPosition;
     private PlayerHealth PlayerHealth;
     private GameObject Enemy;
     private Animator _animatorText;
     private Animator _animatorPanel;
     private float WaitCompleteTime = 0.5f;
+    private bool isAttack = false;
+    private bool isWeaponChanged = false;
     private void Start() {
-        GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        PlayerPosition = Player.transform;
+        Player = GameObject.FindGameObjectWithTag("Player");
+        StartPosition = Player.transform.position;
+
         PlayerHealth = Player.GetComponent<PlayerHealth>();
+
         Money.MoneyAmount = 3;
+
+        Weapon weapon = Player.GetComponentInChildren<Weapon>();
+        weapon.OnAttack += IsAttacked;
+
+        PlayerWeapons playerWeapons = Player.GetComponent<PlayerWeapons>();
+        playerWeapons.OnWeaponChanged += IsWeaponChanged;
+
         StartCoroutine(nameof(CompleteMovement));
     }
 
     private IEnumerator CompleteMovement() {
-        if (!(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.UpArrow))) {
+        if (Player.transform.position.x == StartPosition.x && Player.transform.position.z == StartPosition.z) {
             yield return new WaitForEndOfFrame();
             StopCoroutine(nameof(CompleteMovement));
             StartCoroutine(nameof(CompleteMovement));
@@ -54,8 +66,13 @@ public class Tutorial : MonoBehaviour {
         StartCoroutine(nameof(CompleteAttack));
     }
 
+    public void IsAttacked() {
+        if (AttackText.activeInHierarchy)
+            isAttack = true;
+    }
+
     private IEnumerator CompleteAttack() {
-        if (!Input.GetKey(KeyCode.W)) {
+        if (!isAttack) {
             yield return new WaitForEndOfFrame();
             StopCoroutine(nameof(CompleteAttack));
             StartCoroutine(nameof(CompleteAttack));
@@ -74,9 +91,14 @@ public class Tutorial : MonoBehaviour {
         StartCoroutine(nameof(CompleteWeapon));
     }
 
+    public void IsWeaponChanged() { 
+        if(WeaponText.activeInHierarchy)
+            isWeaponChanged = true; 
+    }
+
     private IEnumerator CompleteWeapon() {
         StartCoroutine(nameof(DoAnimation), Icon);
-        if (!(Input.GetKey(KeyCode.Alpha1) || Input.GetKey(KeyCode.Alpha2) || Input.GetKey(KeyCode.Alpha3) || Input.GetKey(KeyCode.Alpha4) || Input.GetKey(KeyCode.Alpha5))) {
+        if (!isWeaponChanged) {
             yield return new WaitForEndOfFrame();
             StopCoroutine(nameof(CompleteWeapon));
             StartCoroutine(nameof(CompleteWeapon));
