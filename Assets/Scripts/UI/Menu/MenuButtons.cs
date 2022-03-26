@@ -11,7 +11,8 @@ public class MenuButtons : MonoBehaviour {
     [SerializeField] private Button DevelopersButton = null;
     [SerializeField] private Button GoToMenuDevButton = null;
 
-    public Animator _animator;
+    private Animator _animator;
+    private AudioSource _audioSource;
 
     private void Start() {
         Time.timeScale = 1;
@@ -42,6 +43,8 @@ public class MenuButtons : MonoBehaviour {
             GoToMenuDevButton.onClick.AddListener(delegate { SetBool("IsOpeningDev", false); });
 
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
+
     }
 
     public void OpenScene(string sceneName) => SceneManager.LoadScene(sceneName);
@@ -49,4 +52,5 @@ public class MenuButtons : MonoBehaviour {
     public void SetBool(string parameter, bool isParameter) => _animator.SetBool(parameter, isParameter);
 
     public void QuitGame() => Application.Quit();
+    public void PlayHoleSound() => _audioSource.Play();
 }
