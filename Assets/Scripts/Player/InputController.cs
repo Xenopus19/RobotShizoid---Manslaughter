@@ -11,6 +11,7 @@ public class InputController : MonoBehaviour
     }
     private void Update()
     {
+        CheckMovementKey();
         CheckWeaponChangeInput();
         CheckAttackKey();
     }
@@ -45,5 +46,20 @@ public class InputController : MonoBehaviour
         {
             Weapons.ChangeWeapon(4);
         }
+    }
+
+    private void CheckMovementKey() 
+    {
+        Movement.IsWalking = false;
+        if (Input.GetKey(KeyCode.UpArrow))
+            Movement.Move(MoveType.Up);
+        if (Input.GetKey(KeyCode.DownArrow))
+            Movement.Move(MoveType.Down);
+        if (Input.GetKey(KeyCode.RightArrow))
+            Movement.Move(MoveType.Right);
+        if (Input.GetKey(KeyCode.LeftArrow))
+            Movement.Move(MoveType.Left);
+
+        if (!Movement.IsWalking) Movement.Move(MoveType.Stand);
     }
 }
