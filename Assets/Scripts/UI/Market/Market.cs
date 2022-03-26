@@ -51,6 +51,8 @@ public class Market : MonoBehaviour
     {
         if (WaveNumber % WavesBeforeMarket != 0) return;
 
+        PurchaseText.SetActive(false);
+        NoMoneyText.SetActive(false);
         _animator.SetBool("IsStarting", true);
         FillCurrentWeaponSlots();
         SetButtons();
