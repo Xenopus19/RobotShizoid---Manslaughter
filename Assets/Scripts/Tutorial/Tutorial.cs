@@ -28,7 +28,6 @@ public class Tutorial : MonoBehaviour {
     private Animator _animatorPanel;
     private float WaitCompleteTime = 0.5f;
     private void Start() {
-        Debug.LogError("Start");
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
         PlayerPosition = Player.transform;
         PlayerHealth = Player.GetComponent<PlayerHealth>();
@@ -37,13 +36,11 @@ public class Tutorial : MonoBehaviour {
     }
 
     private IEnumerator CompleteMovement() {
-        Debug.LogError("Movement");
         if (!(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.UpArrow))) {
             yield return new WaitForEndOfFrame();
             StopCoroutine(nameof(CompleteMovement));
             StartCoroutine(nameof(CompleteMovement));
         }
-        Debug.LogError("Complete");
         yield return new WaitForSeconds(WaitCompleteTime);
 
         _animatorText = MovementText.GetComponent<Animator>();
