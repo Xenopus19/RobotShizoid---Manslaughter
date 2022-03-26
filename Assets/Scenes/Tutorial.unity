@@ -6603,6 +6603,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c468cd62a2f001c4a9e2fd6561a1b55c, type: 3}
+    - target: {fileID: 1472084327567561487, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
+      propertyPath: m_Text
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1508180900458499023, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
