@@ -41,9 +41,9 @@ public class Market : MonoBehaviour
     private void FillAllPossibleSlots()
     {
         AllPossibletWeaponSlots = new SlotData[AllPossibleWeapons.Length];
-        for(int i = 0; i<AllPossibleWeapons.Length; i++)
+        for(int i = 0; i < AllPossibleWeapons.Length; i++)
         {
-            AllPossibletWeaponSlots[i] = new SlotData(AllPossibleWeapons[i], 1);  //цена-затычка
+            AllPossibletWeaponSlots[i] = new SlotData(AllPossibleWeapons[i], i + 1);  //цена-затычка
         }
     }
 
@@ -62,7 +62,7 @@ public class Market : MonoBehaviour
     {
         CurrentWeaponSlots = new SlotData[WeaponSlotsAmount];
 
-        for(int i = 0; i<CurrentWeaponSlots.Length; i++)
+        for (int i = 0; i < CurrentWeaponSlots.Length; i++)
         {
             CurrentWeaponSlots[i] = AllPossibletWeaponSlots[Random.Range(0, AllPossibletWeaponSlots.Length)];
         }
@@ -70,7 +70,7 @@ public class Market : MonoBehaviour
 
     private void SetButtons()
     {
-        for(int i = 0; i<MarketPlane.transform.childCount; i++)
+        for (int i = 0; i < MarketPlane.transform.childCount; i++)
         {
             MarketPlane.transform.GetChild(i).GetComponent<MarketButton>().Init(CurrentWeaponSlots[i]);
         }

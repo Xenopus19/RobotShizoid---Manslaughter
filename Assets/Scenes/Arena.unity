@@ -6214,8 +6214,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 1588199438}
     m_Modifications:
     - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
+      propertyPath: WaveTime
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: RangeChance
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
+      propertyPath: TimeToWaitWave
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
+      propertyPath: coefficientTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
+      propertyPath: TimeBetweenSpawn
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
+      propertyPath: coefficientSpeed
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6093287611073431790, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: m_RootOrder

@@ -81,9 +81,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfc21cd76a11d4f89a8d9d831b629c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WallTouchDamage: 5
-  PlayerTouchDamage: 7
+  WallTouchDamage: 3
+  PlayerTouchDamage: 2
   _animator: {fileID: 727108077656679532}
+  Player: {fileID: 0}
+  Agent: {fileID: 0}
   speed: 0
 --- !u!114 &7274242843136878672
 MonoBehaviour:
@@ -145,7 +147,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 500
@@ -251,6 +253,8 @@ MonoBehaviour:
   WallTouchDamage: 5
   PlayerTouchDamage: 7
   _animator: {fileID: 0}
+  Player: {fileID: 0}
+  Agent: {fileID: 0}
   speed: 0
 --- !u!114 &2891790139452631501
 MonoBehaviour:
