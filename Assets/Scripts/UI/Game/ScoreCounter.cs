@@ -11,7 +11,7 @@ public class ScoreCounter : MonoBehaviour {
         GlobalEventManager.OnEnemyKilledEvent += IncreaseScore;
         GlobalEventManager.OnEnemyTouchedWallEvent += DecreaseScore;
         GlobalEventManager.OnPlayerDiedEvent += SaveHighScore;
-        int HighScore = PlayerPrefs.GetInt("HighScore");
+        HighScore = PlayerPrefs.GetInt("HighScore");
         scoreText = GetComponent<Text>();
         Score = 0;
     }
