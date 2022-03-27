@@ -23,10 +23,11 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private int WavesAmount = 0;
     [SerializeField] private float coefficientSpeed = 0.05f;
     [SerializeField] private float coefficientTime = 0.01f;
+
     void Start()
     {
         StartCoroutine("StartSpawn");
-        GlobalEventManager.OnPlayerDiedEvent += DisableIfPlayerIsDead;
+        GlobalEventManager.OnPlayerDiedEvent += DisableSpawningIfPlayerIsDead;
     }
 
     private IEnumerator StartSpawn() 
@@ -49,7 +50,7 @@ public class EnemySpawn : MonoBehaviour
     private GameObject ChooseEnemyToSpawn()
     {
         float Chance = UnityEngine.Random.Range(0, 100);
-        if(Chance<= RangeChance)
+        if(Chance <= RangeChance)
         {
             return RangeEnemyPrefab;
         }
@@ -63,10 +64,11 @@ public class EnemySpawn : MonoBehaviour
         OnNewWaveStart.Invoke(WavesAmount);
     }
 
-    private void DisableIfPlayerIsDead()
+    private void DisableSpawningIfPlayerIsDead()
     {
         gameObject.SetActive(false);
     }
+
     private void OnDisable()
     {
         StopAllCoroutines();

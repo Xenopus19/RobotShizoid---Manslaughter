@@ -26,7 +26,7 @@ public static class GlobalEventManager
     {
         if (OnPlayerDiedEvent != null)
         {
-            OnPlayerDiedEvent.Invoke();
+            OnPlayerDiedEvent?.Invoke();
         }
     }
 }

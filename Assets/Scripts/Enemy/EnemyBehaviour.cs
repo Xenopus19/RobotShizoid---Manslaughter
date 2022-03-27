@@ -63,7 +63,6 @@ public class EnemyBehaviour : MonoBehaviour
         if (CollidedObject == Target) 
         {
             playerHealth.GetDamage(WallTouchDamage);
-            Destroy(gameObject);
             GlobalEventManager.EnemyTouchedWall();
         } 
         else if (CollidedObject == Player) 
@@ -76,12 +75,16 @@ public class EnemyBehaviour : MonoBehaviour
     private void DisableIfPlayerIsDead()
     {
         print("sdsad");
-        gameObject.SetActive(false);
+        gameObject?.SetActive(false);
     }
 
     private void OnDisable()
     {
+        GlobalEventManager.OnPlayerDiedEvent -= DisableIfPlayerIsDead;
         StopAllCoroutines();
+    }
 
+    private void OnDestroy() {
+        GlobalEventManager.OnPlayerDiedEvent -= DisableIfPlayerIsDead;
     }
 }

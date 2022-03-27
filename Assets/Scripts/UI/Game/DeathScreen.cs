@@ -29,6 +29,7 @@ public class DeathScreen : MonoBehaviour
         gameObject.SetActive(true);
         GenerateDeathMessage();
         SetScoreText();
+        StopAllCoroutines();
     }
 
     private void TurnOffGameCanvas()
