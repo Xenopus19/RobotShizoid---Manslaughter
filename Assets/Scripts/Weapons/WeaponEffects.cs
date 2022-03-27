@@ -21,7 +21,7 @@ public class WeaponEffects : MonoBehaviour
     private void CreateEffects()
     {
         PlayAnimation();
-        PlaySound();
+        //PlaySound();
     }
 
     private void PlayAnimation()

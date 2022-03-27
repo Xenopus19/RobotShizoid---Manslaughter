@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
+  IsWalking: 0
   EdgeOfArena:
   - 25
   - -3.91919
@@ -99,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackOrigin: {fileID: 4038009953765607592}
-  Stick: {fileID: 5954854359248386767, guid: 78871435cb7e340439b41639dc474c1e, type: 3}
-  Pencil: {fileID: 7734099713240920792, guid: 3d122080ed6ece84fa2682fa6f820d30, type: 3}
+  Stick: {fileID: 8820703120369566292, guid: e02d0be45b8b17b4bb18da8544c532e9, type: 3}
+  Pencil: {fileID: 7731013256617718942, guid: 2d779c93604e5eb4ba8e95fb5d765ebe, type: 3}
   AviableWeapons:
   - {fileID: 0}
   - {fileID: 0}

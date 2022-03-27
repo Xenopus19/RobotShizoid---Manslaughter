@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7330719682387313927}
   - component: {fileID: 9165975408445786922}
   - component: {fileID: 3095351538213014710}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4835,7 +4835,7 @@ GameObject:
   m_Component:
   - component: {fileID: 149551624954815029}
   - component: {fileID: 1952686612367607168}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ElementalArrow2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4884,7 +4884,7 @@ GameObject:
   - component: {fileID: 4360644105900172655}
   - component: {fileID: 4266647083054839491}
   - component: {fileID: 800905361223291135}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9711,7 +9711,7 @@ GameObject:
   - component: {fileID: -5447189522886803983}
   - component: {fileID: 2795210182971813663}
   - component: {fileID: -4399382675900703730}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9883,7 +9883,7 @@ GameObject:
   - component: {fileID: 4179578149038873593}
   - component: {fileID: 7576835602039710865}
   - component: {fileID: 3017780860355769570}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14654,7 +14654,7 @@ GameObject:
   - component: {fileID: 8169653039900682178}
   - component: {fileID: 2905071497530343946}
   - component: {fileID: 6015471306379297938}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19470,7 +19470,7 @@ GameObject:
   - component: {fileID: 194343906734546451}
   - component: {fileID: 6839476283397126941}
   - component: {fileID: 4660495112364668316}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}

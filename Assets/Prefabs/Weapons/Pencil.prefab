@@ -144,7 +144,7 @@ MonoBehaviour:
   Damage: 2
   Cooldown: 0.1
   Icon: {fileID: 21300000, guid: c468cd62a2f001c4a9e2fd6561a1b55c, type: 3}
-  AttackRadius: 2
+  AttackRadius: 2.5
 --- !u!82 &-3959944150018978453
 AudioSource:
   m_ObjectHideFlags: 0
