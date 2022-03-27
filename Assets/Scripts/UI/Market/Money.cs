@@ -22,7 +22,7 @@ public class Money : MonoBehaviour
 
     private void AddMoney(int EnemyScore)
     {
-        MoneyAmount += Random.Range(0, (5 * EnemyScore) + 2) / 5;
+        MoneyAmount += Random.Range(0, (5 * EnemyScore) + 1) / 5;
         UpdateUI();
     }
 

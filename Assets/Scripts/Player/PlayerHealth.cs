@@ -9,6 +9,7 @@ public class PlayerHealth : Health
 
     private float InvisibilityTimePassed = 0;
     private bool IsInvisible;
+    private int LivesMax = 3;
     
     private void Update()
     {
@@ -20,6 +21,20 @@ public class PlayerHealth : Health
         if (IsInvisible) return;
         base.GetDamage(Damage);
         IsInvisible = true;
+    }
+
+    public void RecoverHealth(float Recovery) {
+        if (HealthAmount == MaxHealth) {
+            if (LivesAmount == LivesMax) 
+                return;
+
+            LivesAmount++;
+            OnLivesChange?.Invoke();
+            HealthAmount = Recovery;
+        } else {
+            HealthAmount += Recovery;
+        }
+        OnHealthChanged?.Invoke();
     }
 
     public override void Die()

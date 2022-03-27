@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyEffects : MonoBehaviour
@@ -7,12 +5,14 @@ public class EnemyEffects : MonoBehaviour
     [SerializeField] private Transform FloorBloodOrigin;
 
     [SerializeField] private GameObject RagdollPrefab;
+    [SerializeField] private GameObject BoxPrefab;
     [SerializeField] private GameObject MeatChunkParticle;
     [SerializeField] private GameObject[] FloorBloodVariants;
     private void Start()
     {
         EnemyHealth health = GetComponent<EnemyHealth>();
         health.OnDeath += CreateDeathEffects;
+        health.OnDeath += CreateHealthBox;
         health.OnHealthChanged += CreateBloodSplashes;
     }
 
@@ -27,4 +27,11 @@ public class EnemyEffects : MonoBehaviour
         GameObject Corpse = Instantiate(RagdollPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
     }   
+
+    private void CreateHealthBox() 
+    {
+        float probability = Random.value;
+        if (probability <= 0.3f)
+            Instantiate(BoxPrefab, transform.position, Quaternion.identity);
+    }
 }
