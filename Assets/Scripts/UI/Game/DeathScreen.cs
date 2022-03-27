@@ -15,7 +15,7 @@ public class DeathScreen : MonoBehaviour
     [SerializeField] private Text BestScore;
     [SerializeField] private GameObject NewBest;
 
-    private void Awake() 
+    private void Start() 
     {
         GlobalEventManager.OnPlayerDiedEvent += SetDeathScreen;
         gameObject.SetActive(false);
@@ -52,6 +52,11 @@ public class DeathScreen : MonoBehaviour
 
         if (ScoreValue > BestScoreValue)
             NewBest.SetActive(true);
+    }
+
+    private void OnDestroy() 
+    {
+        GlobalEventManager.OnPlayerDiedEvent -= SetDeathScreen;
     }
 
     public void PlayAgain() => SceneManager.LoadScene("Arena");

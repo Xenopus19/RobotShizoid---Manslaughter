@@ -62,9 +62,15 @@ public class Market : MonoBehaviour
     {
         CurrentWeaponSlots = new SlotData[WeaponSlotsAmount];
 
-        for (int i = 0; i < CurrentWeaponSlots.Length; i++)
+        for (int i = 0, temp = -1; i < CurrentWeaponSlots.Length; i++)
         {
-            CurrentWeaponSlots[i] = AllPossibletWeaponSlots[Random.Range(0, AllPossibletWeaponSlots.Length)];
+            int randIndex;
+            do 
+            {
+                randIndex = Random.Range(0, AllPossibletWeaponSlots.Length);
+                CurrentWeaponSlots[i] = AllPossibletWeaponSlots[randIndex];
+            } while (temp == randIndex);
+            temp = randIndex;
         }
     }
 

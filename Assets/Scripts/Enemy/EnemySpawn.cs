@@ -74,4 +74,9 @@ public class EnemySpawn : MonoBehaviour
         StopAllCoroutines();
         CancelInvoke();
     }
+
+    private void OnDestroy() 
+    {
+        GlobalEventManager.OnPlayerDiedEvent -= DisableSpawningIfPlayerIsDead;
+    }
 }

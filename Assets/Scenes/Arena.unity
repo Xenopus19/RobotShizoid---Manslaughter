@@ -5964,6 +5964,22 @@ PrefabInstance:
       propertyPath: _animator
       value: 
       objectReference: {fileID: 715495496}
+    - target: {fileID: 7946643594752784376, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
+      propertyPath: AllPossibleWeapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 5954854359248386767, guid: 78871435cb7e340439b41639dc474c1e, type: 3}
+    - target: {fileID: 7946643594752784376, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
+      propertyPath: AllPossibleWeapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 7734099713240920792, guid: 3d122080ed6ece84fa2682fa6f820d30, type: 3}
+    - target: {fileID: 7946643594752784376, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
+      propertyPath: AllPossibleWeapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 2129243000199288549, guid: f5f9007451024f94b90e8e945cad4375, type: 3}
+    - target: {fileID: 7946643594752784376, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
+      propertyPath: AllPossibleWeapons.Array.data[3]
+      value: 
+      objectReference: {fileID: 8324026326529331578, guid: b04f8f11da497b7458dae2467375a86b, type: 3}
     - target: {fileID: 8178696488841572352, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4662769

@@ -12,7 +12,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private float MaxDistanceToPlayer = 100f;
     private float IncreasingSpeed = 1.2f;
-    [HideInInspector]public NavMeshAgent Agent;
+    [HideInInspector] public NavMeshAgent Agent;
     private PlayerHealth playerHealth;
     public float speed;
 
