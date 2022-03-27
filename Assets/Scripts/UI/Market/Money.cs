@@ -11,7 +11,6 @@ public class Money : MonoBehaviour
     {
         MoneyText = GetComponent<Text>();
         GlobalEventManager.OnEnemyKilledEvent += AddMoney;
-        Debug.LogWarning($"start mon {MoneyAmount}");
         MoneyAmount = 0;
     }
 
@@ -24,13 +23,11 @@ public class Money : MonoBehaviour
     private void AddMoney(int EnemyScore)
     {
         MoneyAmount += Random.Range(0, (10 * EnemyScore) + 1) / 10;
-        Debug.LogWarning($"add mon {MoneyAmount}");
         UpdateUI();
     }
 
     public static void UpdateUI()
     {
-        Debug.LogWarning($"update mon {MoneyAmount}");
         MoneyText.text = $"{MoneyAmount}";
     }
 

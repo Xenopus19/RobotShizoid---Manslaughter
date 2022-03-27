@@ -13,12 +13,10 @@ public class ScoreCounter : MonoBehaviour {
         GlobalEventManager.OnPlayerDiedEvent += SaveHighScore;
         int HighScore = PlayerPrefs.GetInt("HighScore");
         scoreText = GetComponent<Text>();
-        Debug.LogWarning($"start {Score}");
         Score = 0;
     }
 
     private void IncreaseScore(int ToAdd) {
-        Debug.LogWarning($"increase {Score}");
         Score += ToAdd;
         UpdateUI();
     }
@@ -30,7 +28,6 @@ public class ScoreCounter : MonoBehaviour {
     }
 
     private void UpdateUI() {
-        Debug.LogWarning($"update {Score}");
         scoreText.text = $"{Score}";
     }
 
