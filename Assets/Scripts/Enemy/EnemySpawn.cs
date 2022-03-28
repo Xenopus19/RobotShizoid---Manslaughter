@@ -67,7 +67,7 @@ public class EnemySpawn : MonoBehaviour
     private void ChangeValuesForNewWave() 
     {
         WavesAmount++;
-        TimeBetweenSpawn -= WavesAmount * coefficientTime;
+        TimeBetweenSpawn /= WavesAmount * coefficientTime;
         OnNewWaveStart.Invoke(WavesAmount);
     }
 

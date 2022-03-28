@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FloorBloodOrigin: {fileID: 4231263644501276406}
   RagdollPrefab: {fileID: 688057128990789192, guid: a71466f60b5916e4d8d42dd6163ed412, type: 3}
+  BoxPrefab: {fileID: 0}
   MeatChunkParticle: {fileID: 2693884758799070945, guid: 6ac1e2e106b092246a9a65133bdb16c9, type: 3}
   FloorBloodVariants:
   - {fileID: 100000, guid: 358b75ea5451cf143ab19029a189097d, type: 3}
@@ -271,6 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FloorBloodOrigin: {fileID: 0}
   RagdollPrefab: {fileID: 0}
+  BoxPrefab: {fileID: 0}
   MeatChunkParticle: {fileID: 0}
   FloorBloodVariants: []
 --- !u!195 &2244082093695272174
@@ -412,9 +414,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8520887738129670689, guid: 5b1911fb53deb2846b8126b323b33238, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6936442114012761299, guid: 5b1911fb53deb2846b8126b323b33238, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2171049033639550861, guid: 5b1911fb53deb2846b8126b323b33238, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.046
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5b1911fb53deb2846b8126b323b33238, type: 3}
       propertyPath: m_Name
       value: bigvegas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324119155752900564, guid: 5b1911fb53deb2846b8126b323b33238, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806246787294034643, guid: 5b1911fb53deb2846b8126b323b33238, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b1911fb53deb2846b8126b323b33238, type: 3}
