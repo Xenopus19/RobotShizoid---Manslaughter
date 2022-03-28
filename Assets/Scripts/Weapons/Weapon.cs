@@ -4,6 +4,7 @@ using System;
 
 public class Weapon : MonoBehaviour
 {
+    public float AttackDelay;
     public Action OnAttack;
     public float Damage;
     public float Cooldown;
@@ -19,9 +20,16 @@ public class Weapon : MonoBehaviour
 
         if (OnAttack != null) OnAttack.Invoke();
 
-        DamageCollidedObjects(GetAttackedColliders(AttackPosition));
+        StartCoroutine(nameof(DoAttack), AttackPosition);
 
         StartCoroutine(nameof(StartCooldown));
+    }
+
+    private IEnumerator DoAttack(Vector3 AttackPosition)
+    {
+        yield return new WaitForSeconds(AttackDelay);
+
+        DamageCollidedObjects(GetAttackedColliders(AttackPosition));
     }
 
     public void DamageCollidedObjects(Collider[] AttackedColliders)

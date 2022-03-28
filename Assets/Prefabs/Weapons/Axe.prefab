@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cfdddb0f63a604aae13e2d1ea56fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackDelay: 0.5
   Damage: 7
   Cooldown: 1
   Icon: {fileID: 21300000, guid: 701df2614ef484f42ba5baa718728996, type: 3}
