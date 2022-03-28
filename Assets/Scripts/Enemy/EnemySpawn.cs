@@ -11,12 +11,15 @@ public class EnemySpawn : MonoBehaviour
     [Header("Enemies")]
     [SerializeField] private GameObject EnemyPrefab;
     [SerializeField] private GameObject RangeEnemyPrefab;
+    [SerializeField] private GameObject FatEnemy;
 
     [Header("Rare Enemy Chances")]
     [SerializeField] private float RangeChance;
+    [SerializeField] private float FatEnemyChance;
 
     [SerializeField] private List<GameObject> SpawnPositions = new List<GameObject>();
 
+    [Header("Wave Data")]
     [SerializeField] private float TimeBetweenSpawn = 3f;
     [SerializeField] private float TimeToWaitWave = 2.5f;
     [SerializeField] private float WaveTime = 30f;
@@ -50,9 +53,13 @@ public class EnemySpawn : MonoBehaviour
     private GameObject ChooseEnemyToSpawn()
     {
         float Chance = UnityEngine.Random.Range(0, 100);
-        if(Chance <= RangeChance)
+        if(Chance <= RangeChance && Chance > FatEnemyChance)
         {
             return RangeEnemyPrefab;
+        }
+        else if(Chance<=FatEnemyChance)
+        {
+            return FatEnemy;
         }
         return EnemyPrefab;
     }

@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
     public float Damage;
     public float Cooldown;
     public Sprite Icon;
+    public int Price;
 
     private bool IsAbleToAttack = true;
 

@@ -7,11 +7,12 @@ public struct SlotData
     public int Price;
     public Sprite Icon;
 
-    public SlotData(GameObject weapon, int price)
+    public SlotData(GameObject weapon)
     {
         Weapon = weapon;
-        Price = price;
-        Icon = weapon.GetComponent<Weapon>().Icon;
+        Weapon weaponData = weapon.GetComponent<Weapon>();
+        Price = weaponData.Price;
+        Icon = weaponData.Icon;
     }
 }
 public class Market : MonoBehaviour
@@ -43,7 +44,7 @@ public class Market : MonoBehaviour
         AllPossibletWeaponSlots = new SlotData[AllPossibleWeapons.Length];
         for(int i = 0; i < AllPossibleWeapons.Length; i++)
         {
-            AllPossibletWeaponSlots[i] = new SlotData(AllPossibleWeapons[i], i + 1);  //цена-затычка
+            AllPossibletWeaponSlots[i] = new SlotData(AllPossibleWeapons[i]);  
         }
     }
 

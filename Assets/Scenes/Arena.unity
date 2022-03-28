@@ -6214,12 +6214,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1588199438}
     m_Modifications:
     - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
+      propertyPath: FatEnemy
+      value: 
+      objectReference: {fileID: 703703628645287307, guid: edc0afcbd713745429ed5f3f2d8ab751, type: 3}
+    - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: WaveTime
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: RangeChance
-      value: 20
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
+      propertyPath: FatEnemyChance
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: TimeToWaitWave
