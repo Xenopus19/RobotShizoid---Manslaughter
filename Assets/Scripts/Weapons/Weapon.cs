@@ -16,9 +16,9 @@ public class Weapon : MonoBehaviour
     {
         if (!IsAbleToAttack) return;
 
-        DamageCollidedObjects(GetAttackedColliders(AttackPosition));
-
         if (OnAttack != null) OnAttack.Invoke();
+
+        DamageCollidedObjects(GetAttackedColliders(AttackPosition));
 
         StartCoroutine(nameof(StartCooldown));
     }

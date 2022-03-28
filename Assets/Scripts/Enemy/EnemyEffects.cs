@@ -8,9 +8,10 @@ public class EnemyEffects : MonoBehaviour
     [SerializeField] private GameObject BoxPrefab;
     [SerializeField] private GameObject MeatChunkParticle;
     [SerializeField] private GameObject[] FloorBloodVariants;
+    private EnemyHealth health;
     private void Start()
     {
-        EnemyHealth health = GetComponent<EnemyHealth>();
+        health = GetComponent<EnemyHealth>();
         health.OnDeath += CreateDeathEffects;
         health.OnDeath += CreateHealthBox;
         health.OnHealthChanged += CreateBloodSplashes;
@@ -30,8 +31,11 @@ public class EnemyEffects : MonoBehaviour
 
     private void CreateHealthBox() 
     {
+        float coefficientHealth = health.MaxHealth / 5 * 0.3f;
         float probability = Random.value;
-        if (probability <= 0.3f)
-            Instantiate(BoxPrefab, transform.position, Quaternion.identity);
+        if (probability <= coefficientHealth) {
+            GameObject Box = Instantiate(BoxPrefab, transform.position, Quaternion.identity);
+            Box.GetComponent<BoxHealth>().Recovery = coefficientHealth * 10;
+        }
     }
 }
