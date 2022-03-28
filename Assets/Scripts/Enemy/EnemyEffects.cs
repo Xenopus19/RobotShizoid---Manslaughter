@@ -8,6 +8,7 @@ public class EnemyEffects : MonoBehaviour
     [SerializeField] private GameObject BoxPrefab;
     [SerializeField] private GameObject MeatChunkParticle;
     [SerializeField] private GameObject[] FloorBloodVariants;
+    [SerializeField] private float BoxRateChance;
     private EnemyHealth health;
     private void Start()
     {
@@ -31,7 +32,7 @@ public class EnemyEffects : MonoBehaviour
 
     private void CreateHealthBox() 
     {
-        float coefficientHealth = health.MaxHealth / 5 * 0.3f;
+        float coefficientHealth = health.MaxHealth / 5 * BoxRateChance;
         float probability = Random.value;
         if (probability <= coefficientHealth) {
             GameObject Box = Instantiate(BoxPrefab, transform.position, Quaternion.identity);
