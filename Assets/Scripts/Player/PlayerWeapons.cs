@@ -9,7 +9,7 @@ public class PlayerWeapons : MonoBehaviour
 
     [SerializeField] private GameObject Stick;
     [SerializeField] private GameObject Pencil;
-    [SerializeField]private GameObject[] AviableWeapons;
+    [SerializeField] private GameObject[] AviableWeapons;
     private Weapon CurrentWeapon;
 
     public Weapon GetCurrentWeapon()
@@ -25,7 +25,7 @@ public class PlayerWeapons : MonoBehaviour
 
     public void AddWeapon(GameObject newWeapon)
     {
-        for(int i = 0; i<AviableWeapons.Length; i++)
+        for(int i = 0; i < AviableWeapons.Length; i++)
         {
             if (AviableWeapons[i] == null)
             {

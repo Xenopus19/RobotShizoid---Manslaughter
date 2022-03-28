@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
 public abstract class Health : MonoBehaviour
 {
     public float MaxHealth;
-    public float HealthAmount { get; private set; }
+    public float HealthAmount { get; protected set; }
     public Action OnHealthChanged;
 
     

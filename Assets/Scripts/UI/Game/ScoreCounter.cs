@@ -5,14 +5,15 @@ public class ScoreCounter : MonoBehaviour {
     private static int Score;
     private static int HighScore;
 
-    private Text scoreText;
+    [SerializeField] private Text scoreText;
 
     private void Start() {
         GlobalEventManager.OnEnemyKilledEvent += IncreaseScore;
         GlobalEventManager.OnEnemyTouchedWallEvent += DecreaseScore;
         GlobalEventManager.OnPlayerDiedEvent += SaveHighScore;
-        int HighScore = PlayerPrefs.GetInt("HighScore");
+        HighScore = PlayerPrefs.GetInt("HighScore");
         scoreText = GetComponent<Text>();
+        Score = 0;
     }
 
     private void IncreaseScore(int ToAdd) {
@@ -37,5 +38,12 @@ public class ScoreCounter : MonoBehaviour {
     public static void SaveHighScore() {
         if (Score > HighScore)
             PlayerPrefs.SetInt("HighScore", Score);
+    }
+
+    private void OnDestroy() 
+    {
+        GlobalEventManager.OnEnemyKilledEvent -= IncreaseScore;
+        GlobalEventManager.OnEnemyTouchedWallEvent -= DecreaseScore;
+        GlobalEventManager.OnPlayerDiedEvent -= SaveHighScore;
     }
 }

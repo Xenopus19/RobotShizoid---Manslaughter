@@ -54,6 +54,11 @@ public class DeathScreen : MonoBehaviour
             NewBest.SetActive(true);
     }
 
+    private void OnDestroy() 
+    {
+        GlobalEventManager.OnPlayerDiedEvent -= SetDeathScreen;
+    }
+
     public void PlayAgain() => SceneManager.LoadScene("Arena");
 
     public void GoToMenu() => SceneManager.LoadScene("Menu");
