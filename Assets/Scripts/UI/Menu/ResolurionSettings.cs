@@ -1,15 +1,27 @@
 using UnityEngine.UI;
 using UnityEngine;
 using System.Linq;
-using System;
 
 public class ResolurionSettings : MonoBehaviour {
 
     [Header("Settings Objects")]
     [SerializeField] private Dropdown ResolutionDropdown;
+    [SerializeField] private Toggle FullscreenToggleObject;
 
     private Resolution[] resolutions;
-    private void Start() => AddResolutionOptions();
+    private bool LastFullScreenSettings;
+    private void Start() {
+        LastFullScreenSettings = Screen.fullScreen;
+        FullscreenToggleObject.isOn = Screen.fullScreen;
+        AddResolutionOptions(); 
+    }
+
+    private void Update() {
+        if (LastFullScreenSettings != Screen.fullScreen) {
+            FullscreenToggleObject.isOn = Screen.fullScreen;
+            LastFullScreenSettings = Screen.fullScreen;
+        }
+    }
 
     private void AddResolutionOptions() {
         Resolution[] res = Screen.resolutions;
@@ -33,5 +45,9 @@ public class ResolurionSettings : MonoBehaviour {
     public void SetResolution() {
         Screen.SetResolution(resolutions[ResolutionDropdown.value].width, resolutions[ResolutionDropdown.value].height, true);
         PlayerPrefs.SetInt("Resolution", ResolutionDropdown.value);
+    }
+
+    public void SetFullscreen(bool isFullscreen) {
+        Screen.fullScreen = isFullscreen;
     }
 }

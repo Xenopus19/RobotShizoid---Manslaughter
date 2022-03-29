@@ -7,7 +7,7 @@ public class Money : MonoBehaviour
 
     private static Text MoneyText;
 
-    private void Start()
+    private void Awake()
     {
         MoneyText = GetComponent<Text>();
         GlobalEventManager.OnEnemyKilledEvent += AddMoney;
