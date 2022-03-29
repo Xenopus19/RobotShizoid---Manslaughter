@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour
     public float Cooldown;
     public Sprite Icon;
     public int Price;
+    public WeaponEffects weaponEffects;
 
     private bool IsAbleToAttack = true;
 
@@ -30,6 +31,7 @@ public class Weapon : MonoBehaviour
         yield return new WaitForSeconds(AttackDelay);
 
         DamageCollidedObjects(GetAttackedColliders(AttackPosition));
+        if(weaponEffects != null) weaponEffects.PlaySlash();
     }
 
     public void DamageCollidedObjects(Collider[] AttackedColliders)

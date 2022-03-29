@@ -51,6 +51,7 @@ MonoBehaviour:
   Cooldown: 0.5
   Icon: {fileID: 21300000, guid: 8655c13116253da4db172f807eb1b36f, type: 3}
   Price: 1
+  weaponEffects: {fileID: 6926741116500551564}
   AttackRadius: 3
 --- !u!82 &-7491372718736883393
 AudioSource:
@@ -165,6 +166,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: db976133db4998b49a5a8efd6fb6152c, type: 3}
   - {fileID: 8300000, guid: 4bf939596ec263e40a527df77e7bc369, type: 3}
   - {fileID: 8300000, guid: a2b611ceb8ea2f64295af085e9159f8f, type: 3}
+  SlashPrefab: {fileID: 4087395338901116957, guid: 8f651c158e51b5a47a42c01ef2dea467, type: 3}
 --- !u!1 &8527072846565275989
 GameObject:
   m_ObjectHideFlags: 0
