@@ -31,7 +31,7 @@ public class Weapon : MonoBehaviour
         yield return new WaitForSeconds(AttackDelay);
 
         DamageCollidedObjects(GetAttackedColliders(AttackPosition));
-        if(weaponEffects != null) weaponEffects.PlaySlash();
+        if(weaponEffects != null) weaponEffects.PlaySlash(AttackPosition);
     }
 
     public void DamageCollidedObjects(Collider[] AttackedColliders)

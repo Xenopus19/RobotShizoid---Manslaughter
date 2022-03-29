@@ -27,7 +27,7 @@ public class WeaponEffects : MonoBehaviour
         animator.SetTrigger(AnimationName);
     }
 
-    public void PlaySlash() => Instantiate(SlashPrefab, gameObject.transform.position, Quaternion.identity);
+    public void PlaySlash(Vector3 AttackPos) => Instantiate(SlashPrefab, AttackPos, Quaternion.identity);
 
     private void PlaySound()
     {

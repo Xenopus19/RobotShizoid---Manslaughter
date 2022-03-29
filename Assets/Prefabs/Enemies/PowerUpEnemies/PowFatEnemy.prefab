@@ -116,8 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloorBloodOrigin: {fileID: 4231263644501276406}
-  RagdollPrefab: {fileID: 688057128990789192, guid: a71466f60b5916e4d8d42dd6163ed412, type: 3}
-  BoxPrefab: {fileID: 0}
+  RagdollPrefab: {fileID: 4740641191875568376, guid: 129f6c4d3ffaadc49b8579109726c284, type: 3}
+  BoxPrefab: {fileID: 1689385884757280347, guid: fc3b919eecfecfe40b49f7f255b5c9f9, type: 3}
   MeatChunkParticle: {fileID: 2693884758799070945, guid: 6ac1e2e106b092246a9a65133bdb16c9, type: 3}
   FloorBloodVariants:
   - {fileID: 100000, guid: 358b75ea5451cf143ab19029a189097d, type: 3}

@@ -13,7 +13,7 @@ public class LivesBar : MonoBehaviour
     }
     private void UpdateLivesPanel()
     {
-        Debug.Log("Sa sasla sa sa sa sa sasla");
+        //Debug.Log("Sa sasla sa sa sa sa sasla");
         if (playerHealth.LivesAmount < transform.childCount)
         {
             DestroyLiveIcon();
