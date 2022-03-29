@@ -25,7 +25,6 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private float WaveTime = 30f;
     [SerializeField] private int WavesAmount = 0;
     [SerializeField] private float coefficientSpeed = 0.05f;
-    [SerializeField] private float coefficientTime = 0.01f;
 
     void Start()
     {
@@ -53,11 +52,11 @@ public class EnemySpawn : MonoBehaviour
     private GameObject ChooseEnemyToSpawn()
     {
         float Chance = UnityEngine.Random.Range(0, 100);
-        if(Chance <= RangeChance && Chance > FatEnemyChance)
+        if (Chance <= RangeChance && Chance > FatEnemyChance)
         {
             return RangeEnemyPrefab;
         }
-        else if(Chance<=FatEnemyChance)
+        else if (Chance <= FatEnemyChance)
         {
             return FatEnemy;
         }
@@ -67,7 +66,6 @@ public class EnemySpawn : MonoBehaviour
     private void ChangeValuesForNewWave() 
     {
         WavesAmount++;
-        TimeBetweenSpawn /= WavesAmount * coefficientTime;
         OnNewWaveStart.Invoke(WavesAmount);
     }
 

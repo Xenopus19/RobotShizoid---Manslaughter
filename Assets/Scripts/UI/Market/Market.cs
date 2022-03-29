@@ -107,4 +107,7 @@ public class Market : MonoBehaviour
         _animator.SetBool("IsStarting", false);
     }
     public void StopTime() => Time.timeScale = 0;
+    private void OnDestroy() {
+        EnemySpawn.OnNewWaveStart -= TurnOnMarket;
+    }
 }
