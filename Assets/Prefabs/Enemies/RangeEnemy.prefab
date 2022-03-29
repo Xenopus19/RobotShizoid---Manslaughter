@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2650776591973957434}
   - component: {fileID: 5526050635681635019}
   - component: {fileID: 5506912719018620523}
+  - component: {fileID: -4052030050329143487}
   m_Layer: 0
   m_Name: RangeEnemy
   m_TagString: Untagged
@@ -181,6 +182,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 1
+--- !u!114 &-4052030050329143487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703703628645287307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3277ceb88554aa543abff7077f77f69c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RareEnemyChance: 15
+  RareEnemyPrefab: {fileID: 703703628645287307, guid: 0d6d2c70ec8c2604083b8ee6a0355566, type: 3}
 --- !u!1 &2590846865929135435
 GameObject:
   m_ObjectHideFlags: 0

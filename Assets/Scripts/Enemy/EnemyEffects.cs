@@ -10,16 +10,19 @@ public class EnemyEffects : MonoBehaviour
     [SerializeField] private GameObject[] FloorBloodVariants;
     [SerializeField] private float BoxRateChance;
     private EnemyHealth health;
+    private Animator animator;
     private void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         health = GetComponent<EnemyHealth>();
         health.OnDeath += CreateDeathEffects;
         health.OnDeath += CreateHealthBox;
-        health.OnHealthChanged += CreateBloodSplashes;
+        health.OnHealthChanged += CreateDamageGotEffect;
     }
 
-    private void CreateBloodSplashes()
+    private void CreateDamageGotEffect()
     {
+        animator.SetTrigger("GotDamage");
         Instantiate(MeatChunkParticle, transform);
     }
 
