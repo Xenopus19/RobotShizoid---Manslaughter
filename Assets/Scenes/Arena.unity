@@ -6267,7 +6267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: coefficientTime
-      value: 0.3
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: TimeBetweenSpawn
