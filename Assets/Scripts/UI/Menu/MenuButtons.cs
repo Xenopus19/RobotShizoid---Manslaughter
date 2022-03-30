@@ -10,6 +10,7 @@ public class MenuButtons : MonoBehaviour {
     [SerializeField] private Button QuitGameButton = null;
     [SerializeField] private Button DevelopersButton = null;
     [SerializeField] private Button GoToMenuDevButton = null;
+    [SerializeField] private GameObject WaitingPanel;
 
     private Animator _animator;
     private AudioSource _audioSource;
@@ -47,7 +48,10 @@ public class MenuButtons : MonoBehaviour {
 
     }
 
-    public void OpenScene(string sceneName) => SceneManager.LoadScene(sceneName);
+    public void OpenScene(string sceneName) {
+        WaitingPanel.SetActive(true);
+        SceneManager.LoadScene(sceneName);
+    }
 
     public void SetBool(string parameter, bool isParameter) => _animator.SetBool(parameter, isParameter);
 
