@@ -5535,11 +5535,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1901852831609516153, guid: bd91cc1156189304da78dc7030fdbabd, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 325.0542
+      value: 260
       objectReference: {fileID: 0}
     - target: {fileID: 1901852831609516153, guid: bd91cc1156189304da78dc7030fdbabd, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80.957
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 1901852831609516153, guid: bd91cc1156189304da78dc7030fdbabd, type: 3}
       propertyPath: m_LocalScale.x
