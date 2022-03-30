@@ -53,5 +53,4 @@ public class MenuButtons : MonoBehaviour {
 
     public void QuitGame() => Application.Quit();
     public void PlayHoleSound() => _audioSource.Play();
-    public void OpenTutorial() => SceneManager.LoadScene("Tutorial");
 }
