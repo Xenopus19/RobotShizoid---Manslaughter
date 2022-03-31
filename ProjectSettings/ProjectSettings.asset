@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: RobotShizoid - Manslaughter
-  defaultCursor: {fileID: 2800000, guid: 6e9263908bd20b04a9268d77bcdac311, type: 3}
+  defaultCursor: {fileID: 2800000, guid: b270a8ce24b20ec448b8b72f74d68f8c, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -261,7 +261,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: e7a46e63f4887bf4b8e24f922e4c05e0, type: 3}
+      m_Icon: {fileID: 2800000, guid: 68f69a76cc581c34cbf3211387f8f14d, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

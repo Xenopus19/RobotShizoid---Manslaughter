@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Text: "Hey! I hope you have enough patience.\nThe rules are very simple: kill
     or be killed. \n\nAnyway you will be. Oops, spoilers.\n\nPlay the Manslaughter.
     If you don't, you will be sucked into a \nblack hole, before you know it.\nWith
-    love (or not), Moskovskaya Olga \nand Korniichuk Alexandra."
+    love (or not), Moskovskaya Olga \nand Korniychuk Alexandra."
 --- !u!222 &7074386
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2697,6 +2697,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1029211794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6790975553407513343, guid: be65b15cd646f624f8c6536545ec28c2, type: 3}
+  m_PrefabInstance: {fileID: 8541199714314881192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1029211795 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5218391599635313156, guid: be65b15cd646f624f8c6536545ec28c2, type: 3}
+  m_PrefabInstance: {fileID: 8541199714314881192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1029211796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029211794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623de0959c7485347b7ca021e167a8fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gungnir: {fileID: 1954384145}
 --- !u!1 &1033249468
 GameObject:
   m_ObjectHideFlags: 0
@@ -5115,6 +5138,79 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1901852831609516153, guid: bd91cc1156189304da78dc7030fdbabd, type: 3}
   m_PrefabInstance: {fileID: 1662178989}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1673917972
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1029211795}
+    m_Modifications:
+    - target: {fileID: 1944474738581052859, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944474738581052859, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944474738581052859, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.59999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944474738581052859, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.59999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944474738581052859, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5086883
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944474738581052859, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.35155225
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944474738581052859, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.750986
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944474738581052859, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.98074394
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944474738581052859, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.19529818
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944474738581052859, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944474738581052859, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944474738581052859, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 22.524
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944474738581052859, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944474738581052859, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083702401408750641, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_Name
+      value: Gungnir
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083702401408750641, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
 --- !u!1 &1708597381
 GameObject:
   m_ObjectHideFlags: 0
@@ -5787,6 +5883,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943134719}
   m_CullTransparentMesh: 1
+--- !u!1 &1954384145 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9083702401408750641, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
+  m_PrefabInstance: {fileID: 1673917972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1965427754
 GameObject:
   m_ObjectHideFlags: 0

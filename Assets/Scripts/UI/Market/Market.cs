@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public struct SlotData
 {
@@ -26,6 +27,7 @@ public class Market : MonoBehaviour
     [SerializeField] GameObject NoMoneyText;
     [SerializeField] GameObject PurchaseText;
     [SerializeField] Animator _animator;
+    [SerializeField] string[] achiveText = new string[2];
 
     private SlotData[] CurrentWeaponSlots;
     private PlayerWeapons playerWeapons;
@@ -33,6 +35,7 @@ public class Market : MonoBehaviour
 
     private void Start()
     {
+        CheckAchievement();
         EnemySpawn.OnNewWaveStart += TurnOnMarket;
         playerWeapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerWeapons>();
         FillAllPossibleSlots();
@@ -97,6 +100,10 @@ public class Market : MonoBehaviour
         GameObject Weapon = CurrentWeaponSlots[WeaponSlotIndex].Weapon;
         Debug.Log("Bought " + Weapon.name);
         playerWeapons.AddWeapon(Weapon);
+        if (Weapon.name == "Gungnir") {
+            PlayerPrefs.SetInt("Nakopyl", 1);
+            CheckAchievement();
+        }
         PurchaseText.SetActive(true);
         NoMoneyText.SetActive(false);
     }
@@ -106,7 +113,16 @@ public class Market : MonoBehaviour
         Time.timeScale = 1;
         _animator.SetBool("IsStarting", false);
     }
+
+    private void CheckAchievement() {
+        if (PlayerPrefs.HasKey("Nakopyl")) {
+            PurchaseText.GetComponent<Text>().text = achiveText[0];
+            PurchaseText.GetComponent<Text>().text = achiveText[1];
+        }
+    }
+
     public void StopTime() => Time.timeScale = 0;
+
     private void OnDestroy() {
         EnemySpawn.OnNewWaveStart -= TurnOnMarket;
     }
