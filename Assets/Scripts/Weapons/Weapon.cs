@@ -14,7 +14,10 @@ public class Weapon : MonoBehaviour
 
     private bool IsAbleToAttack = true;
 
-
+    private void Start()
+    {
+        if (weaponEffects == null) weaponEffects = GetComponent<WeaponEffects>();
+    }
     public virtual void Attack(Vector3 AttackPosition) 
     {
         if (!IsAbleToAttack) return;
@@ -31,7 +34,7 @@ public class Weapon : MonoBehaviour
         yield return new WaitForSeconds(AttackDelay);
 
         DamageCollidedObjects(GetAttackedColliders(AttackPosition));
-        if(weaponEffects != null) weaponEffects.PlaySlash(AttackPosition);
+        if(weaponEffects != null) weaponEffects.CreateDelayedEffects(AttackPosition);
     }
 
     public void DamageCollidedObjects(Collider[] AttackedColliders)

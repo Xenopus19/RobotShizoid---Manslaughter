@@ -19,7 +19,12 @@ public class WeaponEffects : MonoBehaviour
     private void CreateEffects()
     {
         PlayAnimation();
-        //PlaySound();
+    }
+
+    public void CreateDelayedEffects(Vector3 AttackPos)
+    {
+        PlaySlash(AttackPos);
+        PlaySound();
     }
 
     private void PlayAnimation()
@@ -27,7 +32,10 @@ public class WeaponEffects : MonoBehaviour
         animator.SetTrigger(AnimationName);
     }
 
-    public void PlaySlash(Vector3 AttackPos) => Instantiate(SlashPrefab, AttackPos, Quaternion.identity);
+    private void PlaySlash(Vector3 AttackPos)
+    {
+        if (SlashPrefab != null) Instantiate(SlashPrefab, AttackPos, Quaternion.identity);
+    }
 
     private void PlaySound()
     {

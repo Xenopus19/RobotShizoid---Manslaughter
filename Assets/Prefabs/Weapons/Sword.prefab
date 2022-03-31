@@ -48,9 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationName: Sword
   StrikeSoundVariations:
-  - {fileID: 8300000, guid: db976133db4998b49a5a8efd6fb6152c, type: 3}
-  - {fileID: 8300000, guid: 4bf939596ec263e40a527df77e7bc369, type: 3}
-  - {fileID: 8300000, guid: a2b611ceb8ea2f64295af085e9159f8f, type: 3}
+  - {fileID: 8300000, guid: 45119dc16aabeb043b513cfefde74fac, type: 3}
+  - {fileID: 8300000, guid: a9618b0649be95a4b8df08c5606e7f2f, type: 3}
+  - {fileID: 8300000, guid: 70d7fe6b18e80894bb9b51435b5e80bd, type: 3}
   SlashPrefab: {fileID: 4087395338901116957, guid: e9b382e7bf3112547a7c166b56e5ebad, type: 3}
 --- !u!114 &74867971305941601
 MonoBehaviour:
@@ -83,13 +83,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -9039990162309823103, guid: 337dced4103e1cb43b698abff95c5df6, type: 2}
   m_audioClip: {fileID: 8300000, guid: db976133db4998b49a5a8efd6fb6152c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.214
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 72
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

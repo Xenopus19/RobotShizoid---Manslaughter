@@ -65,13 +65,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -9039990162309823103, guid: 337dced4103e1cb43b698abff95c5df6, type: 2}
   m_audioClip: {fileID: 8300000, guid: db976133db4998b49a5a8efd6fb6152c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.427
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 72
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -163,9 +163,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationName: Sword
   StrikeSoundVariations:
-  - {fileID: 8300000, guid: db976133db4998b49a5a8efd6fb6152c, type: 3}
-  - {fileID: 8300000, guid: 4bf939596ec263e40a527df77e7bc369, type: 3}
-  - {fileID: 8300000, guid: a2b611ceb8ea2f64295af085e9159f8f, type: 3}
+  - {fileID: 8300000, guid: 5cffc0b2da667944b9f13bf307e0f3fe, type: 3}
+  - {fileID: 8300000, guid: f61bc2ed8e1aad643bc34e82819fb5a6, type: 3}
   SlashPrefab: {fileID: 4087395338901116957, guid: 8f651c158e51b5a47a42c01ef2dea467, type: 3}
 --- !u!1 &8527072846565275989
 GameObject:
