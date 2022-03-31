@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 6406595586632624061}
   - component: {fileID: 645928438212697802}
   - component: {fileID: 2949025546989699734}
-  - component: {fileID: 7355440637662380106}
+  - component: {fileID: 2336235351283799762}
   m_Layer: 0
   m_Name: Spear
   m_TagString: Untagged
@@ -132,6 +132,7 @@ MonoBehaviour:
   Cooldown: 1.5
   Icon: {fileID: 21300000, guid: f243322f3aa3d8445ab137eb91b59b0f, type: 3}
   Price: 2
+  weaponEffects: {fileID: 2949025546989699734}
   AttackLength: 7
   AttackWidth: 1
 --- !u!114 &2949025546989699734
@@ -148,10 +149,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationName: Spear
   StrikeSoundVariations:
-  - {fileID: 8300000, guid: 4bf939596ec263e40a527df77e7bc369, type: 3}
-  - {fileID: 8300000, guid: 0ebaf8cc2583cdb4a9c9891c4469f0ba, type: 3}
-  - {fileID: 8300000, guid: a2b611ceb8ea2f64295af085e9159f8f, type: 3}
---- !u!82 &7355440637662380106
+  - {fileID: 8300000, guid: f35812954979a9943ae5dbf592049e80, type: 3}
+  - {fileID: 8300000, guid: cb3ec77b1803ca04ab3549637b303a8b, type: 3}
+  - {fileID: 8300000, guid: 08961efb37f509e40b7af5e79c2e7d3a, type: 3}
+  SlashPrefab: {fileID: 0}
+--- !u!82 &2336235351283799762
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,15 +163,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -9039990162309823103, guid: 337dced4103e1cb43b698abff95c5df6, type: 2}
-  m_audioClip: {fileID: 8300000, guid: a2b611ceb8ea2f64295af085e9159f8f, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 87
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

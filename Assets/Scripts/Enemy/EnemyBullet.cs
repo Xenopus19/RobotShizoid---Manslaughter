@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] private float Damage;
