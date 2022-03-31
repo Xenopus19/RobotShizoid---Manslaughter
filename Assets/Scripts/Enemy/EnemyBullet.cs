@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -16,12 +14,12 @@ public class EnemyBullet : MonoBehaviour
     {
         PlayerHealth health = collision.gameObject.GetComponent<PlayerHealth>();
 
-        if(health!=null)
+        if (health != null)
         {
             health.GetDamage(Damage);
             Destroy(gameObject);
         }
-        if(collision.gameObject.isStatic)
+        if (collision.gameObject.isStatic)
         {
             Destroy(gameObject);
         }
