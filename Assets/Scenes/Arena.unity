@@ -6031,6 +6031,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -5.3308105
       objectReference: {fileID: 0}
+    - target: {fileID: 1457790220717849427, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b0d80f0ce09375842bf975eed8a73f51, type: 2}
     - target: {fileID: 1508180900458499023, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6062,6 +6066,10 @@ PrefabInstance:
     - target: {fileID: 2274873260858499313, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242112019620717590, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3555632769181736226, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
       propertyPath: m_Name
@@ -6127,6 +6135,10 @@ PrefabInstance:
       propertyPath: EnemySpawnObject
       value: 
       objectReference: {fileID: 28998540}
+    - target: {fileID: 5287233750037815127, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5376468418426143659, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
       propertyPath: m_IsActive
       value: 1
