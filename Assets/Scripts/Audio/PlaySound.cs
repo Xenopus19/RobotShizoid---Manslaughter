@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlaySoundTutorial : MonoBehaviour {
+public class PlaySound : MonoBehaviour {
     [SerializeField] private AudioSource SoundPlayer;
     public void PlayCompleteSound() => SoundPlayer.Play();
 }

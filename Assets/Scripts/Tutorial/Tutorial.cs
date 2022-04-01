@@ -56,7 +56,7 @@ public class Tutorial : MonoBehaviour {
         yield return new WaitForSeconds(WaitCompleteTime);
 
         _animatorText = MovementText.GetComponent<Animator>();
-        _animatorText.SetBool("IsComplete", true);
+        _animatorText.SetTrigger("IsComplete");
         yield return new WaitForSeconds(1.05f);
 
         MovementText.SetActive(false);
@@ -81,7 +81,7 @@ public class Tutorial : MonoBehaviour {
         yield return new WaitForSeconds(WaitCompleteTime);
 
         _animatorText = AttackText.GetComponent<Animator>();
-        _animatorText.SetBool("IsComplete", true);
+        _animatorText.SetTrigger("IsComplete");
         yield return new WaitForSeconds(1.05f);
 
         AttackText.SetActive(false);
@@ -107,7 +107,7 @@ public class Tutorial : MonoBehaviour {
         yield return new WaitForSeconds(WaitCompleteTime);
 
         _animatorText = WeaponText.GetComponent<Animator>();
-        _animatorText.SetBool("IsComplete", true);
+        _animatorText.SetTrigger("IsComplete");
         yield return new WaitForSeconds(1.05f);
 
         WeaponText.SetActive(false);
@@ -130,7 +130,7 @@ public class Tutorial : MonoBehaviour {
         yield return new WaitForSeconds(8f);
 
         _animatorText = HealthText.GetComponent<Animator>();
-        _animatorText.SetBool("IsComplete", true);
+        _animatorText.SetTrigger("IsComplete");
         yield return new WaitForSeconds(1.05f);
 
         HealthText.SetActive(false);
@@ -146,7 +146,7 @@ public class Tutorial : MonoBehaviour {
         yield return new WaitForSeconds(10f);
 
         _animatorText = CounterText.GetComponent<Animator>();
-        _animatorText.SetBool("IsComplete", true);
+        _animatorText.SetTrigger("IsComplete");
         yield return new WaitForSeconds(1.05f);
 
         CounterText.SetActive(false);
@@ -168,7 +168,7 @@ public class Tutorial : MonoBehaviour {
         yield return new WaitForSeconds(WaitCompleteTime);
 
         _animatorText = MarketText.GetComponent<Animator>();
-        _animatorText.SetBool("IsComplete", true);
+        _animatorText.SetTrigger("IsComplete");
         yield return new WaitForSeconds(1.05f);
 
         _animatorPanel = Market.GetComponent<Animator>();
@@ -200,7 +200,7 @@ public class Tutorial : MonoBehaviour {
         yield return new WaitForSeconds(WaitCompleteTime);
 
         _animatorText = EnemyText.GetComponent<Animator>();
-        _animatorText.SetBool("IsComplete", true);
+        _animatorText.SetTrigger("IsComplete");
         yield return new WaitForSeconds(1.05f);
 
         EnemyText.SetActive(false);
@@ -214,7 +214,7 @@ public class Tutorial : MonoBehaviour {
         yield return new WaitForSeconds(1f);
 
         _animatorText = FinishText.GetComponent<Animator>();
-        _animatorText.SetBool("IsComplete", true);
+        _animatorText.SetTrigger("IsComplete");
         yield return new WaitForSeconds(1.05f);
 
         StopCoroutine(nameof(CompleteTutorial));

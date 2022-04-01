@@ -4,20 +4,26 @@ using UnityEngine;
 public class ScoreCounter : MonoBehaviour {
     private static int Score;
     private static int HighScore;
-    private static int HumansAmount;
+    public static int HumansAmount;
 
     [SerializeField] private Text scoreText;
+    [SerializeField] private GameObject humansTextGO;
+    private Text _humansText;
+    private Animator _textAnimator;
 
     private void Start() {
         GlobalEventManager.OnEnemyKilledEvent += IncreaseScore;
         GlobalEventManager.OnEnemyTouchedWallEvent += DecreaseScore;
         GlobalEventManager.OnPlayerDiedEvent += SaveProgress;
 
-        HighScore = PlayerPrefs.GetInt("HighScore");
-        scoreText = GetComponent<Text>();
-
         Score = 0;
+
+        HighScore = PlayerPrefs.GetInt("HighScore");
         HumansAmount = PlayerPrefs.GetInt("Humans");
+
+        scoreText = GetComponent<Text>();
+        _humansText = humansTextGO.GetComponent<Text>();
+        _textAnimator = humansTextGO.GetComponent<Animator>();
     }
 
     private void IncreaseScore(int ToAdd) {
@@ -35,12 +41,17 @@ public class ScoreCounter : MonoBehaviour {
     private void IncreaseHumans() {
         HumansAmount++;
         if (HumansAmount % 50 == 0) {
-
+            ShowAchieve();
         }
     }
 
     private void UpdateUI() {
         scoreText.text = $"{Score}";
+    }
+
+    private void ShowAchieve() {
+        _humansText.text = $"You've killed {HumansAmount} humans";
+        _textAnimator.SetTrigger("IsComplete");
     }
 
     public static int GetScore() => Score;

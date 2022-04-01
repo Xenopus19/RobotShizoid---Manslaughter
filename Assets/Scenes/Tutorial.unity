@@ -436,6 +436,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4584341988389943277, guid: ecf4d97431efd564aad1cc75f90b6664, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b0d80f0ce09375842bf975eed8a73f51, type: 2}
     - target: {fileID: 6666317728442462801, guid: ecf4d97431efd564aad1cc75f90b6664, type: 3}
       propertyPath: m_Name
       value: HealthText
@@ -679,6 +683,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4584341988389943277, guid: ecf4d97431efd564aad1cc75f90b6664, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b0d80f0ce09375842bf975eed8a73f51, type: 2}
     - target: {fileID: 6666317728442462801, guid: ecf4d97431efd564aad1cc75f90b6664, type: 3}
       propertyPath: m_Name
       value: FinishText
@@ -985,6 +993,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4584341988389943277, guid: ecf4d97431efd564aad1cc75f90b6664, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b0d80f0ce09375842bf975eed8a73f51, type: 2}
     - target: {fileID: 6666317728442462801, guid: ecf4d97431efd564aad1cc75f90b6664, type: 3}
       propertyPath: m_Name
       value: WeaponText
@@ -1684,6 +1696,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4584341988389943277, guid: ecf4d97431efd564aad1cc75f90b6664, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b0d80f0ce09375842bf975eed8a73f51, type: 2}
     - target: {fileID: 6666317728442462801, guid: ecf4d97431efd564aad1cc75f90b6664, type: 3}
       propertyPath: m_Name
       value: MarketText
@@ -3134,6 +3150,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4584341988389943277, guid: ecf4d97431efd564aad1cc75f90b6664, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b0d80f0ce09375842bf975eed8a73f51, type: 2}
     - target: {fileID: 6666317728442462801, guid: ecf4d97431efd564aad1cc75f90b6664, type: 3}
       propertyPath: m_Name
       value: CountersText
@@ -3445,6 +3465,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -48
       objectReference: {fileID: 0}
+    - target: {fileID: 4584341988389943277, guid: ecf4d97431efd564aad1cc75f90b6664, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b0d80f0ce09375842bf975eed8a73f51, type: 2}
     - target: {fileID: 6666317728442462801, guid: ecf4d97431efd564aad1cc75f90b6664, type: 3}
       propertyPath: m_Name
       value: TextAttack
@@ -6073,6 +6097,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4584341988389943277, guid: ecf4d97431efd564aad1cc75f90b6664, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b0d80f0ce09375842bf975eed8a73f51, type: 2}
     - target: {fileID: 6666317728442462801, guid: ecf4d97431efd564aad1cc75f90b6664, type: 3}
       propertyPath: m_Name
       value: EnemyText
@@ -6707,6 +6735,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -33
       objectReference: {fileID: 0}
+    - target: {fileID: 842864033547353805, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.3308716
+      objectReference: {fileID: 0}
     - target: {fileID: 1237246265750383660, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
       propertyPath: m_Type
       value: 0
@@ -6715,6 +6747,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c468cd62a2f001c4a9e2fd6561a1b55c, type: 3}
+    - target: {fileID: 1457790220717849427, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b0d80f0ce09375842bf975eed8a73f51, type: 2}
     - target: {fileID: 1472084327567561487, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
       propertyPath: m_Text
       value: 3
