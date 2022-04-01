@@ -32,7 +32,6 @@ public class Tutorial : MonoBehaviour {
     private bool isWeaponChanged = false;
     private void Start() {
         Player = GameObject.FindGameObjectWithTag("Player");
-        StartPosition = Player.transform.position;
 
         PlayerHealth = Player.GetComponent<PlayerHealth>();
 
@@ -53,6 +52,8 @@ public class Tutorial : MonoBehaviour {
             StopCoroutine(nameof(CompleteMovement));
             StartCoroutine(nameof(CompleteMovement));
         }
+        Debug.LogError($"STX = {StartPosition.x}, PX = {Player.transform.position.x}");
+        Debug.LogError($"STZ = {StartPosition.z}, PZ = {Player.transform.position.z}");
         yield return new WaitForSeconds(WaitCompleteTime);
 
         _animatorText = MovementText.GetComponent<Animator>();
@@ -91,9 +92,9 @@ public class Tutorial : MonoBehaviour {
         StartCoroutine(nameof(CompleteWeapon));
     }
 
-    public void IsWeaponChanged() { 
-        if(WeaponText.activeInHierarchy)
-            isWeaponChanged = true; 
+    public void IsWeaponChanged() {
+        if (WeaponText.activeInHierarchy)
+            isWeaponChanged = true;
     }
 
     private IEnumerator CompleteWeapon() {
