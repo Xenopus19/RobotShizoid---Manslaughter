@@ -24,7 +24,6 @@ public class InputController : MonoBehaviour {
     public void Attack() => Weapons.DoAttack();
 
     public void ChangeWeapon() {
-        print("change");
         Weapons.NextWeapon();
     }
 }
