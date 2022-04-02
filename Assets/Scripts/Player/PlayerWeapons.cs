@@ -11,6 +11,7 @@ public class PlayerWeapons : MonoBehaviour
     [SerializeField] private GameObject Pencil;
     [SerializeField] private GameObject[] AviableWeapons;
     private Weapon CurrentWeapon;
+    private int CurrentWeaponIndex;
 
     public Weapon GetCurrentWeapon()
     {
@@ -21,6 +22,18 @@ public class PlayerWeapons : MonoBehaviour
         AddWeapon(Stick);
         AddWeapon(Pencil);
         ChangeWeapon(0);
+    }
+
+    public void NextWeapon()
+    {
+        if(AviableWeapons[CurrentWeaponIndex+1] == null)
+        {
+            ChangeWeapon(0);
+        }
+        else
+        {
+            ChangeWeapon(CurrentWeaponIndex+1);
+        }
     }
 
     public void AddWeapon(GameObject newWeapon)
@@ -45,6 +58,7 @@ public class PlayerWeapons : MonoBehaviour
                 Destroy(CurrentWeapon.gameObject);
 
             CurrentWeapon = Instantiate(AviableWeapons[NewWeaponIndex], AttackOrigin).GetComponent<Weapon>();
+            CurrentWeaponIndex = NewWeaponIndex;
 
             if (OnWeaponChanged != null)
                 OnWeaponChanged.Invoke();
