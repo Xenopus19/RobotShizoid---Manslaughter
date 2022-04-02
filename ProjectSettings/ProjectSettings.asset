@@ -146,6 +146,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.DefaultCompany.RobotShizoidManslaughter
     Standalone: com.DefaultCompany.RobotShizoid-Manslaughter
   buildNumber:
     Standalone: 0
