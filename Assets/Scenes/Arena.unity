@@ -1891,6 +1891,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4839214052100418715, guid: 806970fb863d8704e9a390cafdf27d81, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -9039990162309823103, guid: 337dced4103e1cb43b698abff95c5df6, type: 2}
     - target: {fileID: 5386059383688742197, guid: 806970fb863d8704e9a390cafdf27d81, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1927,6 +1931,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: cb5bf73d781a3544c8233070c4207286, type: 2}
+    - target: {fileID: 7110019752500117456, guid: 806970fb863d8704e9a390cafdf27d81, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -9039990162309823103, guid: 337dced4103e1cb43b698abff95c5df6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 806970fb863d8704e9a390cafdf27d81, type: 3}
 --- !u!224 &589037857 stripped
@@ -6440,7 +6448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6166057173070730565, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 224.3
+      value: -191
       objectReference: {fileID: 0}
     - target: {fileID: 6166057173070730565, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
       propertyPath: m_AnchoredPosition.y
