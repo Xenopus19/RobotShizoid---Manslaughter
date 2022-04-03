@@ -2018,7 +2018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3379172897205200150, guid: 972aedca432adfd42b1e0eb7e7a8a0cd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3379172897205200151, guid: 972aedca432adfd42b1e0eb7e7a8a0cd, type: 3}
       propertyPath: sharedProfile
@@ -2819,6 +2819,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927405381}
   m_CullTransparentMesh: 1
+--- !u!1 &985339372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3379172897205200150, guid: 972aedca432adfd42b1e0eb7e7a8a0cd, type: 3}
+  m_PrefabInstance: {fileID: 584793073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1021916591 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1901852831609516152, guid: bd91cc1156189304da78dc7030fdbabd, type: 3}
@@ -3671,6 +3676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MenuCanvas: {fileID: 1965427754}
   player: {fileID: 1656633612}
+  postProcessing: {fileID: 985339372}
 --- !u!1 &1246606569
 GameObject:
   m_ObjectHideFlags: 0
@@ -5376,7 +5382,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656633610}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: ee6a31eb7dac9a74f86360487fe5cdcf, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 9b81c3918ee16dc40becf27b7ed3bd39, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 1189971627}

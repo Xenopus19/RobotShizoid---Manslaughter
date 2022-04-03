@@ -7,6 +7,7 @@ public class CutsceneSkip : MonoBehaviour
 {
     [SerializeField] private GameObject MenuCanvas;
     [SerializeField] private VideoPlayer player;
+    [SerializeField] private GameObject postProcessing;
     private float CutsceneLength;
 
     private void Start()
@@ -24,6 +25,7 @@ public class CutsceneSkip : MonoBehaviour
     public void SkipCutscene()
     {
         MenuCanvas.SetActive(true);
+        postProcessing.SetActive(true);
         gameObject.SetActive(false);
     }
 }
