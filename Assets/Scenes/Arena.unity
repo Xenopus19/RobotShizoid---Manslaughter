@@ -3178,6 +3178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuStage
       objectReference: {fileID: 0}
+    - target: {fileID: 7291562467537324207, guid: be65b15cd646f624f8c6536545ec28c2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8541199714588302736, guid: be65b15cd646f624f8c6536545ec28c2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
