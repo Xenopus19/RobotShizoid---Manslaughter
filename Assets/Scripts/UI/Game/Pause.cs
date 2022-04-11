@@ -34,7 +34,7 @@ public class Pause : MonoBehaviour
         }
     }
 
-    private void DoPause() {
+    public void DoPause() {
         Time.timeScale = 0;
         PauseCanvas.SetActive(true);
     }
