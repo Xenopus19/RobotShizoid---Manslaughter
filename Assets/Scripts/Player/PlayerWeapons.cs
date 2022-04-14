@@ -13,15 +13,20 @@ public class PlayerWeapons : MonoBehaviour
     private Weapon CurrentWeapon;
     private int CurrentWeaponIndex;
 
-    public Weapon GetCurrentWeapon()
-    {
-        return CurrentWeapon;
-    }
+    private BloodDrive bloodDrive;
+
     private void Start()
     {
+        bloodDrive = GetComponent<BloodDrive>();
+
         AddWeapon(Stick);
         AddWeapon(Pencil);
         ChangeWeapon(0);
+    }
+
+    public Weapon GetCurrentWeapon()
+    {
+        return CurrentWeapon;
     }
 
     public void NextWeapon()
@@ -66,8 +71,8 @@ public class PlayerWeapons : MonoBehaviour
     }
 
     public void DoAttack()
-    { 
-        if(CurrentWeapon!=null)
-        CurrentWeapon.Attack(AttackOrigin.position);
+    {
+        if (CurrentWeapon != null) 
+            CurrentWeapon.Attack(AttackOrigin.position, bloodDrive);
     }
 }

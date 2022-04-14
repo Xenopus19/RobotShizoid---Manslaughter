@@ -1,16 +1,44 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BloodDrive : MonoBehaviour
-{
+public class BloodDrive : MonoBehaviour {
+    public float DriveValue { get; private set; }
     private const float DRIVE_MAX_VALUE = 100f;
 
-    public float DriveValue { get; private set; }
+    [SerializeField] float BloodDriveTime;
 
-    public float GetDriveFillPercent()
-    {
+    public Action OnDriveValueChange;
+    public Action OnBooldDrive;
+
+    private bool IsBloodDrive = false;
+
+    public float GetDriveFillPercent() {
         return DriveValue / DRIVE_MAX_VALUE;
     }
 
+    public void IncreaseDriveValue(float toAdd) {
+        if (!IsBloodDrive) {
+            DriveValue += toAdd;
+            OnDriveValueChange?.Invoke();
+            if (DriveValue == DRIVE_MAX_VALUE) {
+                OnBooldDrive?.Invoke();
+                StartCoroutine(nameof(BloodDriveProcess));
+            }
+        }
+        print(DriveValue);
+    }
+
+    private void DecreaseDriveValue() {
+        DriveValue = 0;
+        OnDriveValueChange?.Invoke();
+        IsBloodDrive = false;
+    }
+
+    private IEnumerator BloodDriveProcess() {
+        IsBloodDrive = true;
+        //Effects
+        yield return new WaitForSeconds(BloodDriveTime);
+        DecreaseDriveValue();
+    }
 }
