@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -2978987181360064336}
   - component: {fileID: 5586642170506913818}
   - component: {fileID: 3171825871289309467}
+  - component: {fileID: 6928303377276830305}
   m_Layer: 6
   m_Name: Shizoid
   m_TagString: Player
@@ -137,6 +138,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &6928303377276830305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063377500034208592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c202c5d0f4cf8b443ad6580f92bf8928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BloodDriveTime: 7
 --- !u!1 &2745722372925976551
 GameObject:
   m_ObjectHideFlags: 0

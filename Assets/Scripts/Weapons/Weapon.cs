@@ -10,20 +10,23 @@ public class Weapon : MonoBehaviour
     public float Cooldown;
     public Sprite Icon;
     public int Price;
+    public float Drive;
     public WeaponEffects weaponEffects;
 
     private bool IsAbleToAttack = true;
+    private BloodDrive bloodDrive;
 
     private void Start()
     {
         if (weaponEffects == null) weaponEffects = GetComponent<WeaponEffects>();
     }
-    public virtual void Attack(Vector3 AttackPosition) 
+    public virtual void Attack(Vector3 AttackPosition, BloodDrive _bloodDrive) 
     {
         if (!IsAbleToAttack) return;
 
         if (OnAttack != null) OnAttack.Invoke();
 
+        bloodDrive = _bloodDrive;
         StartCoroutine(nameof(DoAttack), AttackPosition);
 
         StartCoroutine(nameof(StartCooldown));
@@ -45,6 +48,7 @@ public class Weapon : MonoBehaviour
             if (AttackedHealth != null)
             {
                 AttackedHealth.GetDamage(Damage);
+                if (bloodDrive != null) bloodDrive.IncreaseDriveValue(Drive);
             }
         }
     }
