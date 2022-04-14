@@ -9,7 +9,7 @@ public class BloodDrive : MonoBehaviour {
     [SerializeField] float BloodDriveTime;
 
     public Action OnDriveValueChange;
-    public Action OnBooldDrive;
+    public Action<float> OnBloodDrive;
 
     private bool IsBloodDrive = false;
 
@@ -22,7 +22,7 @@ public class BloodDrive : MonoBehaviour {
             DriveValue += toAdd;
             OnDriveValueChange?.Invoke();
             if (DriveValue == DRIVE_MAX_VALUE) {
-                OnBooldDrive?.Invoke();
+                OnBloodDrive?.Invoke(BloodDriveTime);
                 StartCoroutine(nameof(BloodDriveProcess));
             }
         }
