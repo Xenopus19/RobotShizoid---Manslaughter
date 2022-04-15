@@ -21,7 +21,7 @@ public class BloodDrive : MonoBehaviour {
         if (!IsBloodDrive) {
             DriveValue += toAdd;
             OnDriveValueChange?.Invoke();
-            if (DriveValue == DRIVE_MAX_VALUE) {
+            if (DriveValue >= DRIVE_MAX_VALUE) {
                 OnBloodDrive?.Invoke(BloodDriveTime);
                 StartCoroutine(nameof(BloodDriveProcess));
             }
@@ -36,6 +36,7 @@ public class BloodDrive : MonoBehaviour {
     }
 
     private IEnumerator BloodDriveProcess() {
+        Debug.LogError("KIIILL");
         IsBloodDrive = true;
         //Effects
         yield return new WaitForSeconds(BloodDriveTime);
