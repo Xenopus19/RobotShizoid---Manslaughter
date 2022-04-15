@@ -11,7 +11,7 @@ public class BloodDrive : MonoBehaviour {
     public Action OnDriveValueChange;
     public Action<float> OnBloodDrive;
 
-    private bool IsBloodDrive = false;
+    public bool IsBloodDrive = false;
 
     public float GetDriveFillPercent() {
         return DriveValue / DRIVE_MAX_VALUE;
@@ -21,12 +21,11 @@ public class BloodDrive : MonoBehaviour {
         if (!IsBloodDrive) {
             DriveValue += toAdd;
             OnDriveValueChange?.Invoke();
-            if (DriveValue == DRIVE_MAX_VALUE) {
+            if (DriveValue >= DRIVE_MAX_VALUE) {
                 OnBloodDrive?.Invoke(BloodDriveTime);
                 StartCoroutine(nameof(BloodDriveProcess));
             }
         }
-        print(DriveValue);
     }
 
     private void DecreaseDriveValue() {

@@ -45,9 +45,17 @@ public class Weapon : MonoBehaviour
         foreach (Collider collider in AttackedColliders)
         {
             Health AttackedHealth = collider.gameObject.GetComponent<EnemyHealth>();
+            EnemyEffects enemyEffects = collider.gameObject.GetComponent<EnemyEffects>();
             if (AttackedHealth != null)
             {
-                AttackedHealth.GetDamage(Damage);
+                float randomDamage = UnityEngine.Random.Range(Damage - 1, Damage + 2);
+                if (bloodDrive != null && bloodDrive.IsBloodDrive) {
+                    AttackedHealth.GetDamage(Damage * 1.25f);
+                } else {
+                    AttackedHealth.GetDamage(Damage);
+                }
+
+                enemyEffects.InstantiateDamage(randomDamage);
                 if (bloodDrive != null) bloodDrive.IncreaseDriveValue(Drive);
             }
         }

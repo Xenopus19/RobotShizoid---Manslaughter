@@ -122,6 +122,7 @@ MonoBehaviour:
   RagdollPrefab: {fileID: 5178938063644683412, guid: 78ea66a3639b51244b6654e4060b48b2, type: 3}
   BoxPrefab: {fileID: 1689385884757280347, guid: fc3b919eecfecfe40b49f7f255b5c9f9, type: 3}
   MeatChunkParticle: {fileID: 2693884758799070945, guid: 6ac1e2e106b092246a9a65133bdb16c9, type: 3}
+  DamageText: {fileID: 1280998518041759356, guid: de6682a3e32e43e4c8d68ca11edd9e80, type: 3}
   FloorBloodVariants:
   - {fileID: 100000, guid: 358b75ea5451cf143ab19029a189097d, type: 3}
   - {fileID: 100000, guid: cfc7596704bbd7f489156fcd4c05c7e9, type: 3}
@@ -5071,6 +5072,7 @@ MonoBehaviour:
   RagdollPrefab: {fileID: 0}
   BoxPrefab: {fileID: 0}
   MeatChunkParticle: {fileID: 0}
+  DamageText: {fileID: 0}
   FloorBloodVariants: []
   BoxRateChance: 0
 --- !u!195 &2244082093695272174
