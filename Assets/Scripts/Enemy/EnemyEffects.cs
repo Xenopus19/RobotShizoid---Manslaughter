@@ -23,7 +23,6 @@ public class EnemyEffects : MonoBehaviour
     }
 
     public void InstantiateDamage(float Damage) {
-        print("instantiate");
         GameObject text = Instantiate(DamageText, transform);
         text.GetComponent<TextMeshPro>().text = $"+{Mathf.RoundToInt(Damage)}";
     }

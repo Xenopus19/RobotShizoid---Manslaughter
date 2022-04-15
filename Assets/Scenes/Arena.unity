@@ -11220,6 +11220,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6251405320789455014, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 152
+      objectReference: {fileID: 0}
     - target: {fileID: 6634481793595941638, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
       propertyPath: m_Color.a
       value: 1
