@@ -3,7 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Tutorial : MonoBehaviour {
+public class Tutorial : MonoBehaviour
+{
+    [SerializeField] private Transform SpawnPoint;
     [SerializeField] private GameObject MovementText;
     [SerializeField] private GameObject AttackText;
     [SerializeField] private GameObject WeaponText;
@@ -13,7 +15,6 @@ public class Tutorial : MonoBehaviour {
     [SerializeField] private GameObject EnemyText;
     [SerializeField] private GameObject FinishText;
 
-    [SerializeField] private GameObject AttackButton;
     [SerializeField] private GameObject Icon;
     [SerializeField] private GameObject Health;
     [SerializeField] private GameObject Counters;
@@ -21,18 +22,20 @@ public class Tutorial : MonoBehaviour {
     [SerializeField] private GameObject EnemyPrefab;
     [SerializeField] private Transform EnemyPosition;
 
-    private Animator _playerAnimator;
+    private GameObject Player;
+    private Vector3 StartPosition;
     private PlayerHealth PlayerHealth;
     private GameObject Enemy;
     private Animator _animatorText;
-    private Animator _animator;
+    private Animator _animatorPanel;
     private float WaitCompleteTime = 0.5f;
     private bool isAttack = false;
     private bool isWeaponChanged = false;
-    private void Start() {
-        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+    private void Start()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player");
+        StartPosition = Player.transform.position;
 
-        _playerAnimator = Player.GetComponentInChildren<Animator>();
         PlayerHealth = Player.GetComponent<PlayerHealth>();
 
         Money.MoneyAmount = 3;
@@ -46,8 +49,10 @@ public class Tutorial : MonoBehaviour {
         StartCoroutine(nameof(CompleteMovement));
     }
 
-    private IEnumerator CompleteMovement() {
-        if (_playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) {
+    private IEnumerator CompleteMovement()
+    {
+        if (Player.transform.position.x == StartPosition.x && Player.transform.position.z == StartPosition.z)
+        {
             yield return new WaitForEndOfFrame();
             StopCoroutine(nameof(CompleteMovement));
             StartCoroutine(nameof(CompleteMovement));
@@ -65,14 +70,16 @@ public class Tutorial : MonoBehaviour {
         StartCoroutine(nameof(CompleteAttack));
     }
 
-    public void IsAttacked() {
+    public void IsAttacked()
+    {
         if (AttackText.activeInHierarchy)
             isAttack = true;
     }
 
-    private IEnumerator CompleteAttack() {
-        StartCoroutine(nameof(DoAnimation), AttackButton);
-        if (!isAttack) {
+    private IEnumerator CompleteAttack()
+    {
+        if (!isAttack)
+        {
             yield return new WaitForEndOfFrame();
             StopCoroutine(nameof(CompleteAttack));
             StartCoroutine(nameof(CompleteAttack));
@@ -91,14 +98,17 @@ public class Tutorial : MonoBehaviour {
         StartCoroutine(nameof(CompleteWeapon));
     }
 
-    public void IsWeaponChanged() {
+    public void IsWeaponChanged()
+    {
         if (WeaponText.activeInHierarchy)
             isWeaponChanged = true;
     }
 
-    private IEnumerator CompleteWeapon() {
+    private IEnumerator CompleteWeapon()
+    {
         StartCoroutine(nameof(DoAnimation), Icon);
-        if (!isWeaponChanged) {
+        if (!isWeaponChanged)
+        {
             yield return new WaitForEndOfFrame();
             StopCoroutine(nameof(CompleteWeapon));
             StartCoroutine(nameof(CompleteWeapon));
@@ -117,14 +127,16 @@ public class Tutorial : MonoBehaviour {
         StartCoroutine(nameof(CompleteHealth));
     }
 
-    private IEnumerator DoAnimation(GameObject _gameobject) {
-        _animator = _gameobject.GetComponent<Animator>();
-        _animator.SetBool("IsStarting", true);
+    private IEnumerator DoAnimation(GameObject panel)
+    {
+        _animatorPanel = panel.GetComponent<Animator>();
+        _animatorPanel.SetBool("IsStarting", true);
         yield return new WaitForSeconds(0.67f);
         StopCoroutine(nameof(DoAnimation));
     }
 
-    private IEnumerator CompleteHealth() {
+    private IEnumerator CompleteHealth()
+    {
         StartCoroutine(nameof(DoAnimation), Health);
 
         yield return new WaitForSeconds(8f);
@@ -140,7 +152,8 @@ public class Tutorial : MonoBehaviour {
         StartCoroutine(nameof(CompleteCounters));
     }
 
-    private IEnumerator CompleteCounters() {
+    private IEnumerator CompleteCounters()
+    {
         StartCoroutine(nameof(DoAnimation), Counters);
 
         yield return new WaitForSeconds(10f);
@@ -157,8 +170,10 @@ public class Tutorial : MonoBehaviour {
         StartCoroutine(nameof(CompleteMarket));
     }
 
-    private IEnumerator CompleteMarket() {
-        if (Money.MoneyAmount == 3) {
+    private IEnumerator CompleteMarket()
+    {
+        if (Money.MoneyAmount == 3)
+        {
             yield return new WaitForEndOfFrame();
             StopCoroutine(nameof(CompleteMarket));
             StartCoroutine(nameof(CompleteMarket));
@@ -171,8 +186,8 @@ public class Tutorial : MonoBehaviour {
         _animatorText.SetTrigger("IsComplete");
         yield return new WaitForSeconds(1.05f);
 
-        _animator = Market.GetComponent<Animator>();
-        _animator.SetBool("IsStarting", false);
+        _animatorPanel = Market.GetComponent<Animator>();
+        _animatorPanel.SetBool("IsStarting", false);
 
         MarketText.SetActive(false);
         EnemyText.SetActive(true);
@@ -182,14 +197,17 @@ public class Tutorial : MonoBehaviour {
         StartCoroutine(nameof(CompleteKilling));
     }
 
-    public void TurnOnSlot(GameObject button) {
+    public void TurnOnSlot(GameObject button)
+    {
         Money.MoneyAmount -= int.Parse(button.GetComponentInChildren<Text>().text);
         Money.UpdateUI();
         button.SetActive(false);
     }
 
-    private IEnumerator CompleteKilling() {
-        if (Enemy != null) {
+    private IEnumerator CompleteKilling()
+    {
+        if (Enemy != null)
+        {
             PlayerHealth.LivesAmount = PlayerHealth.LivesAmount <= 0 ? 3 : PlayerHealth.LivesAmount;
 
             yield return new WaitForEndOfFrame();
@@ -210,7 +228,8 @@ public class Tutorial : MonoBehaviour {
         StartCoroutine(nameof(CompleteTutorial));
     }
 
-    private IEnumerator CompleteTutorial() {
+    private IEnumerator CompleteTutorial()
+    {
         yield return new WaitForSeconds(1f);
 
         _animatorText = FinishText.GetComponent<Animator>();
