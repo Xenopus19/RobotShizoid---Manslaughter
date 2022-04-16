@@ -11,7 +11,7 @@ public class BloodDrive : MonoBehaviour {
     public Action OnDriveValueChange;
     public Action<float> OnBloodDrive;
 
-    public bool IsBloodDrive = false;
+    [HideInInspector]public bool IsBloodDrive = false;
 
     public float GetDriveFillPercent() {
         return DriveValue / DRIVE_MAX_VALUE;

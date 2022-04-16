@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -2978987181360064336}
   - component: {fileID: 5586642170506913818}
   - component: {fileID: 3171825871289309467}
+  - component: {fileID: 272106175684239352}
   m_Layer: 6
   m_Name: Shizoid
   m_TagString: Player
@@ -101,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackOrigin: {fileID: 4038009953765607592}
   Stick: {fileID: 5954854359248386767, guid: 78871435cb7e340439b41639dc474c1e, type: 3}
-  Pencil: {fileID: 7734099713240920792, guid: 3d122080ed6ece84fa2682fa6f820d30, type: 3}
+  Pencil: {fileID: 2727471735477930458, guid: 8c53eee8d91d6504bab48a92da4df68c, type: 3}
   AviableWeapons:
   - {fileID: 0}
   - {fileID: 0}
@@ -151,6 +152,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &272106175684239352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063377500034208592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c202c5d0f4cf8b443ad6580f92bf8928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BloodDriveTime: 7
+  IsBloodDrive: 0
 --- !u!1 &2745722372925976551
 GameObject:
   m_ObjectHideFlags: 0
