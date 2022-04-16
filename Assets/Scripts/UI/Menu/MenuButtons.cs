@@ -45,7 +45,6 @@ public class MenuButtons : MonoBehaviour {
 
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
-
     }
 
     public void OpenScene(string sceneName) {
@@ -56,5 +55,6 @@ public class MenuButtons : MonoBehaviour {
     public void SetBool(string parameter, bool isParameter) => _animator.SetBool(parameter, isParameter);
 
     public void QuitGame() => Application.Quit();
+
     public void PlayHoleSound() => _audioSource.Play();
 }

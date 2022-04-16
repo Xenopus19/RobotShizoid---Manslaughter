@@ -4,7 +4,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour {
-    [SerializeField] private Transform SpawnPoint;
     [SerializeField] private GameObject MovementText;
     [SerializeField] private GameObject AttackText;
     [SerializeField] private GameObject WeaponText;
@@ -14,6 +13,7 @@ public class Tutorial : MonoBehaviour {
     [SerializeField] private GameObject EnemyText;
     [SerializeField] private GameObject FinishText;
 
+    [SerializeField] private GameObject AttackButton;
     [SerializeField] private GameObject Icon;
     [SerializeField] private GameObject Health;
     [SerializeField] private GameObject Counters;
@@ -21,19 +21,18 @@ public class Tutorial : MonoBehaviour {
     [SerializeField] private GameObject EnemyPrefab;
     [SerializeField] private Transform EnemyPosition;
 
-    private GameObject Player;
-    private Vector3 StartPosition;
+    private Animator _playerAnimator;
     private PlayerHealth PlayerHealth;
     private GameObject Enemy;
     private Animator _animatorText;
-    private Animator _animatorPanel;
+    private Animator _animator;
     private float WaitCompleteTime = 0.5f;
     private bool isAttack = false;
     private bool isWeaponChanged = false;
     private void Start() {
-        Player = GameObject.FindGameObjectWithTag("Player");
-        StartPosition = Player.transform.position;
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
 
+        _playerAnimator = Player.GetComponentInChildren<Animator>();
         PlayerHealth = Player.GetComponent<PlayerHealth>();
 
         Money.MoneyAmount = 3;
@@ -48,7 +47,7 @@ public class Tutorial : MonoBehaviour {
     }
 
     private IEnumerator CompleteMovement() {
-        if (Player.transform.position.x == StartPosition.x && Player.transform.position.z == StartPosition.z) {
+        if (_playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) {
             yield return new WaitForEndOfFrame();
             StopCoroutine(nameof(CompleteMovement));
             StartCoroutine(nameof(CompleteMovement));
@@ -72,6 +71,7 @@ public class Tutorial : MonoBehaviour {
     }
 
     private IEnumerator CompleteAttack() {
+        StartCoroutine(nameof(DoAnimation), AttackButton);
         if (!isAttack) {
             yield return new WaitForEndOfFrame();
             StopCoroutine(nameof(CompleteAttack));
@@ -91,9 +91,9 @@ public class Tutorial : MonoBehaviour {
         StartCoroutine(nameof(CompleteWeapon));
     }
 
-    public void IsWeaponChanged() { 
-        if(WeaponText.activeInHierarchy)
-            isWeaponChanged = true; 
+    public void IsWeaponChanged() {
+        if (WeaponText.activeInHierarchy)
+            isWeaponChanged = true;
     }
 
     private IEnumerator CompleteWeapon() {
@@ -117,9 +117,9 @@ public class Tutorial : MonoBehaviour {
         StartCoroutine(nameof(CompleteHealth));
     }
 
-    private IEnumerator DoAnimation(GameObject panel) {
-        _animatorPanel = panel.GetComponent<Animator>();
-        _animatorPanel.SetBool("IsStarting", true);
+    private IEnumerator DoAnimation(GameObject _gameobject) {
+        _animator = _gameobject.GetComponent<Animator>();
+        _animator.SetBool("IsStarting", true);
         yield return new WaitForSeconds(0.67f);
         StopCoroutine(nameof(DoAnimation));
     }
@@ -171,8 +171,8 @@ public class Tutorial : MonoBehaviour {
         _animatorText.SetTrigger("IsComplete");
         yield return new WaitForSeconds(1.05f);
 
-        _animatorPanel = Market.GetComponent<Animator>();
-        _animatorPanel.SetBool("IsStarting", false);
+        _animator = Market.GetComponent<Animator>();
+        _animator.SetBool("IsStarting", false);
 
         MarketText.SetActive(false);
         EnemyText.SetActive(true);

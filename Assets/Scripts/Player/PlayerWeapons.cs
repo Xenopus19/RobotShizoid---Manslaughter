@@ -11,16 +11,34 @@ public class PlayerWeapons : MonoBehaviour
     [SerializeField] private GameObject Pencil;
     [SerializeField] private GameObject[] AviableWeapons;
     private Weapon CurrentWeapon;
+    private int CurrentWeaponIndex;
+
+    private BloodDrive bloodDrive;
+
+    private void Start()
+    {
+        bloodDrive = GetComponent<BloodDrive>();
+
+        AddWeapon(Stick);
+        AddWeapon(Pencil);
+        ChangeWeapon(0);
+    }
 
     public Weapon GetCurrentWeapon()
     {
         return CurrentWeapon;
     }
-    private void Start()
+
+    public void NextWeapon()
     {
-        AddWeapon(Stick);
-        AddWeapon(Pencil);
-        ChangeWeapon(0);
+        if(AviableWeapons[CurrentWeaponIndex+1] == null)
+        {
+            ChangeWeapon(0);
+        }
+        else
+        {
+            ChangeWeapon(CurrentWeaponIndex+1);
+        }
     }
 
     public void AddWeapon(GameObject newWeapon)
@@ -45,6 +63,7 @@ public class PlayerWeapons : MonoBehaviour
                 Destroy(CurrentWeapon.gameObject);
 
             CurrentWeapon = Instantiate(AviableWeapons[NewWeaponIndex], AttackOrigin).GetComponent<Weapon>();
+            CurrentWeaponIndex = NewWeaponIndex;
 
             if (OnWeaponChanged != null)
                 OnWeaponChanged.Invoke();
@@ -52,8 +71,8 @@ public class PlayerWeapons : MonoBehaviour
     }
 
     public void DoAttack()
-    { 
-        if(CurrentWeapon!=null)
-        CurrentWeapon.Attack(AttackOrigin.position);
+    {
+        if (CurrentWeapon != null) 
+            CurrentWeapon.Attack(AttackOrigin.position, bloodDrive);
     }
 }

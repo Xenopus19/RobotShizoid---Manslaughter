@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class EnemyEffects : MonoBehaviour
@@ -7,6 +8,7 @@ public class EnemyEffects : MonoBehaviour
     [SerializeField] private GameObject RagdollPrefab;
     [SerializeField] private GameObject BoxPrefab;
     [SerializeField] private GameObject MeatChunkParticle;
+    [SerializeField] private GameObject DamageText;
     [SerializeField] private GameObject[] FloorBloodVariants;
     [SerializeField] private float BoxRateChance;
     private EnemyHealth health;
@@ -18,6 +20,11 @@ public class EnemyEffects : MonoBehaviour
         health.OnDeath += CreateDeathEffects;
         health.OnDeath += CreateHealthBox;
         health.OnHealthChanged += CreateDamageGotEffect;
+    }
+
+    public void InstantiateDamage(float Damage) {
+        GameObject text = Instantiate(DamageText, transform);
+        text.GetComponent<TextMeshPro>().text = $"+{Mathf.RoundToInt(Damage)}";
     }
 
     private void CreateDamageGotEffect()

@@ -14737,6 +14737,7 @@ MonoBehaviour:
   Cooldown: 0.24
   Icon: {fileID: 21300000, guid: a08eacc27716b894191a2b1797e4479c, type: 3}
   Price: 240
+  Drive: 7
   weaponEffects: {fileID: 4435562658442604957}
   AttackLength: 9999
   AttackWidth: 9999
