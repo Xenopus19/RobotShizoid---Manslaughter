@@ -48,9 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackDelay: 0.5
   Damage: 4
-  Cooldown: 1.2
+  Cooldown: 1
   Icon: {fileID: 21300000, guid: 2e333bd200ae06640a5f61eb91c68c25, type: 3}
   Price: 4
+  Drive: 8
   weaponEffects: {fileID: 8707176793527870401}
   AttackRadius: 2
 --- !u!114 &8707176793527870401

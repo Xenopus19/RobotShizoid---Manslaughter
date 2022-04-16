@@ -88,7 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackOrigin: {fileID: 4038009953765607592}
   Stick: {fileID: 5954854359248386767, guid: 78871435cb7e340439b41639dc474c1e, type: 3}
-  Pencil: {fileID: 5859080612243693204, guid: 567e6d5069fa0824d8bece8c31a134f9, type: 3}
+  Pencil: {fileID: 2727471735477930458, guid: 8c53eee8d91d6504bab48a92da4df68c, type: 3}
   AviableWeapons:
   - {fileID: 0}
   - {fileID: 0}
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BloodDriveTime: 7
+  IsBloodDrive: 0
 --- !u!1 &2745722372925976551
 GameObject:
   m_ObjectHideFlags: 0
