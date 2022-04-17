@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SphereMelee : Weapon
 {
-    [SerializeField] float AttackRadius;
+    [SerializeField] public float AttackRadius;
     
 
     public override Collider[] GetAttackedColliders(Vector3 AttackPosition)
