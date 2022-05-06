@@ -20,6 +20,7 @@ public class ArenaSwitch : MonoBehaviour
     {
         SelectRandomArenaIndex();
         Arena.SetActive(false);
+        DeleteArenaGameObjects();
         Arena = Arenas[ArenaIndex];
         Arena.SetActive(true);
     }
@@ -32,6 +33,14 @@ public class ArenaSwitch : MonoBehaviour
             SelectedArenaIndex = GetRandomArenaIndex();
         } while (ArenaIndex == SelectedArenaIndex);
         ArenaIndex = SelectedArenaIndex;
+    }
+
+    private void DeleteArenaGameObjects()
+    {
+        GameObject[] EnemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject Enemy in EnemyObjects)
+            Destroy(Enemy);
+        Destroy(GameObject.FindGameObjectWithTag("PlayerObject"));
     }
 
     private int GetRandomArenaIndex() =>

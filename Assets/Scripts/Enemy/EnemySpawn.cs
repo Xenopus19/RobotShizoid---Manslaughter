@@ -27,7 +27,7 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private ArenaSwitch arenaSwitch;
     private static int WavesAmount = 0;
 
-    void Start()
+    void OnEnable()
     {
         WavesAmount = 0;
         StartCoroutine("StartSpawn");
@@ -69,13 +69,14 @@ public class EnemySpawn : MonoBehaviour
     private void ChangeValuesForNewWave() 
     {
         WavesAmount++;
-        OnNewWaveStart.Invoke(WavesAmount);
+        if(WavesAmount % 5 != 0)
+            OnNewWaveStart.Invoke(WavesAmount);
     }
 
     private void CheckArenaSwitch()
     {
-
-        arenaSwitch.SwitchArena();
+        if (WavesAmount % 5 == 0)
+            arenaSwitch.SwitchArena();
     }
 
     private void DisableSpawningIfPlayerIsDead() =>
