@@ -69,13 +69,13 @@ public class EnemySpawn : MonoBehaviour
     private void ChangeValuesForNewWave() 
     {
         WavesAmount++;
-        if(WavesAmount % 5 != 0)
+        if (false)
             OnNewWaveStart.Invoke(WavesAmount);
     }
 
     private void CheckArenaSwitch()
     {
-        if (WavesAmount % 5 == 0)
+        if (true)
             arenaSwitch.SwitchArena();
     }
 

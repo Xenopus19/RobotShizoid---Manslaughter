@@ -6,6 +6,8 @@ public class ArenaSwitch : MonoBehaviour
     [SerializeField] List<GameObject> Arenas = new List<GameObject>();
     private GameObject Arena;
     private int ArenaIndex;
+
+    [SerializeField] GameObject SwitchPanel;
     void Awake() =>
         TurnOnArena();
 
@@ -19,6 +21,7 @@ public class ArenaSwitch : MonoBehaviour
     public void SwitchArena()
     {
         SelectRandomArenaIndex();
+        SwitchPanel.SetActive(true);
         Arena.SetActive(false);
         DeleteArenaGameObjects();
         Arena = Arenas[ArenaIndex];
