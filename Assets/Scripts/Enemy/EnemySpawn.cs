@@ -23,11 +23,13 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private float TimeBetweenSpawn = 3f;
     [SerializeField] private float TimeToWaitWave = 2.5f;
     [SerializeField] private float WaveTime = 30f;
-    [SerializeField] private int WavesAmount = 0;
     [SerializeField] private float coefficientSpeed = 0.05f;
+    [SerializeField] private ArenaSwitch arenaSwitch;
+    private static int WavesAmount = 0;
 
-    void Start()
+    void OnEnable()
     {
+        WavesAmount = 0;
         StartCoroutine("StartSpawn");
         GlobalEventManager.OnPlayerDiedEvent += DisableSpawningIfPlayerIsDead;
     }
@@ -37,6 +39,7 @@ public class EnemySpawn : MonoBehaviour
         InvokeRepeating("SpawnEnemy", TimeToWaitWave, TimeBetweenSpawn);
         yield return new WaitForSeconds(WaveTime);
         ChangeValuesForNewWave();
+        CheckArenaSwitch();
         CancelInvoke("SpawnEnemy");
         StartCoroutine("StartSpawn");
     }
@@ -66,13 +69,18 @@ public class EnemySpawn : MonoBehaviour
     private void ChangeValuesForNewWave() 
     {
         WavesAmount++;
-        OnNewWaveStart.Invoke(WavesAmount);
+        if (WavesAmount % 5 != 0)
+            OnNewWaveStart.Invoke(WavesAmount);
     }
 
-    private void DisableSpawningIfPlayerIsDead()
+    private void CheckArenaSwitch()
     {
-        gameObject.SetActive(false);
+        if (WavesAmount % 5 == 0)
+            arenaSwitch.SwitchArena();
     }
+
+    private void DisableSpawningIfPlayerIsDead() =>
+        gameObject.SetActive(false);
 
     private void OnDisable()
     {
@@ -80,8 +88,6 @@ public class EnemySpawn : MonoBehaviour
         CancelInvoke();
     }
 
-    private void OnDestroy() 
-    {
+    private void OnDestroy() =>
         GlobalEventManager.OnPlayerDiedEvent -= DisableSpawningIfPlayerIsDead;
-    }
 }

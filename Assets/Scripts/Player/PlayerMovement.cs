@@ -12,13 +12,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(MoveType moveType = MoveType.Stand)
     {
-        if (moveType == MoveType.Up && transform.position.z < EdgeOfArena[0] - 0.1f)
+        if (moveType == MoveType.Up && transform.localPosition.z < EdgeOfArena[0] - 0.1f)
             Walk(Vector3.forward, "IsUp");
-        if (moveType == MoveType.Down && transform.position.z > EdgeOfArena[1] + 0.1f)
+        if (moveType == MoveType.Down && transform.localPosition.z > EdgeOfArena[1] + 0.1f)
             Walk(Vector3.back, "IsDown");
-        if (moveType == MoveType.Right && transform.position.x < EdgeOfArena[2] - 0.1f)
+        if (moveType == MoveType.Right && transform.localPosition.x < EdgeOfArena[2] - 0.1f)
             Walk(Vector3.right, "IsRight");
-        if (moveType == MoveType.Left && transform.position.x > EdgeOfArena[3] + 0.1f)
+        if (moveType == MoveType.Left && transform.localPosition.x > EdgeOfArena[3] + 0.1f)
             Walk(Vector3.left, "IsLeft");
 
         if (moveType == MoveType.Stand) Stand();
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Walk(Vector3 direction, string anim)
     {
-        transform.Translate(direction * moveSpeed * Time.deltaTime);
+        transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
         IsWalking = true;
         _animator.SetBool(anim, true);
         if (!_audioSource.isPlaying)
