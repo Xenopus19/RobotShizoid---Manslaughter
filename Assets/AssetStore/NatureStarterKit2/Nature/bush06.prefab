@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 431114}
-  - component: {fileID: 19396168}
   - component: {fileID: 3319532}
   - component: {fileID: 2355844}
   m_Layer: 0
@@ -33,15 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!193 &19396168
-Tree:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171474}
-  m_SpeedTreeWindAsset: {fileID: 0}
-  m_TreeData: {fileID: 11486172}
 --- !u!33 &3319532
 MeshFilter:
   m_ObjectHideFlags: 0
