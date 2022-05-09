@@ -169,15 +169,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 703703628645287307, guid: 357e00efbca806a4587bf5d06785fd02, type: 3}
   RangeEnemyPrefab: {fileID: 703703628645287307, guid: 51a2db9b1436e8b47836e500bfc168ef, type: 3}
-  RangeChance: 10
+  FatEnemy: {fileID: 703703628645287307, guid: edc0afcbd713745429ed5f3f2d8ab751, type: 3}
+  RangeChance: 30
+  FatEnemyChance: 15
   SpawnPositions:
   - {fileID: 6093287609779529486}
   - {fileID: 6093287610397225659}
   - {fileID: 6093287610219000162}
   - {fileID: 6093287609502881164}
-  TimeBetweenSpawn: 1
-  TimeToWaitWave: 2.5
-  WaveTime: 30
-  WavesAmount: 0
-  coefficientSpeed: 0.2
-  coefficientTime: 0.1
+  TimeBetweenSpawn: 2
+  TimeToWaitWave: 0
+  WaveTime: 40
+  coefficientSpeed: 0.4
+  arenaSwitch: {fileID: 0}

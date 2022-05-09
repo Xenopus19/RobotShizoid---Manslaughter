@@ -24,7 +24,7 @@ public class EnemyEffects : MonoBehaviour
 
     public void InstantiateDamage(float Damage) {
         GameObject text = Instantiate(DamageText, transform);
-        text.GetComponent<TextMeshPro>().text = $"+{Mathf.RoundToInt(Damage)}";
+        text.GetComponent<TextMeshPro>().text = $"-{Mathf.RoundToInt(Damage)}";
     }
 
     private void CreateDamageGotEffect()

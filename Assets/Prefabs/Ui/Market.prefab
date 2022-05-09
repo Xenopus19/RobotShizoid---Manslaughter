@@ -285,11 +285,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AllPossibleWeapons:
-  - {fileID: 7734099713240920792, guid: 3d122080ed6ece84fa2682fa6f820d30, type: 3}
   - {fileID: 5954854359248386767, guid: 78871435cb7e340439b41639dc474c1e, type: 3}
-  - {fileID: 8324026326529331578, guid: b04f8f11da497b7458dae2467375a86b, type: 3}
+  - {fileID: 7734099713240920792, guid: 3d122080ed6ece84fa2682fa6f820d30, type: 3}
   - {fileID: 2129243000199288549, guid: f5f9007451024f94b90e8e945cad4375, type: 3}
+  - {fileID: 8324026326529331578, guid: b04f8f11da497b7458dae2467375a86b, type: 3}
   - {fileID: 8820703120369566292, guid: e02d0be45b8b17b4bb18da8544c532e9, type: 3}
+  - {fileID: 7731013256617718942, guid: 2d779c93604e5eb4ba8e95fb5d765ebe, type: 3}
+  - {fileID: 5859080612243693204, guid: 567e6d5069fa0824d8bece8c31a134f9, type: 3}
+  - {fileID: 2727471735477930458, guid: 8c53eee8d91d6504bab48a92da4df68c, type: 3}
+  - {fileID: 5954854359248386767, guid: c1eb0044b36a7664c8e5cd47baa0a2d0, type: 3}
+  - {fileID: 9083702401408750641, guid: 4079a4c5873675d46bb7126c3a4f6649, type: 3}
   WavesBeforeMarket: 1
   WeaponSlotsAmount: 2
   MarketButton: {fileID: 1360332588846190256, guid: f6914ff9c1182bd4bb79f0596d82c48e, type: 3}
@@ -298,6 +303,9 @@ MonoBehaviour:
   NoMoneyText: {fileID: 8139039526074664696}
   PurchaseText: {fileID: 8072532128642879188}
   _animator: {fileID: 7560271626578250689}
+  achiveText:
+  - You've earned our respect, but not this weapon
+  - You've earned our respect and this weapon
 --- !u!95 &7560271626578250689
 Animator:
   serializedVersion: 3
