@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Instantiation : MonoBehaviour {
     [SerializeField] private GameObject PlayerPrefab;
-    private void OnEnable() =>
-        Instantiate();
+    public void Init(Vector3 Position) =>
+        Instantiate(Position);
 
-    public void Instantiate() => 
-        Instantiate(PlayerPrefab, transform.position, transform.rotation);
+    private void Instantiate(Vector3 Position) => 
+        Instantiate(PlayerPrefab, Position, transform.rotation);
 }
