@@ -9,9 +9,7 @@ public class EnemySpawn : MonoBehaviour
     public static Action<int> OnNewWaveStart;
     
     [Header("Enemies")]
-    [SerializeField] private GameObject EnemyPrefab;
-    [SerializeField] private GameObject RangeEnemyPrefab;
-    [SerializeField] private GameObject FatEnemy;
+    [SerializeField] private List<GameObject> Enemies = new List<GameObject>();
 
     [Header("Rare Enemy Chances")]
     [SerializeField] private float RangeChance;
@@ -54,16 +52,14 @@ public class EnemySpawn : MonoBehaviour
 
     private GameObject ChooseEnemyToSpawn()
     {
-        float Chance = UnityEngine.Random.Range(0, 100);
-        if (Chance <= RangeChance && Chance > FatEnemyChance)
+        float Chance = UnityEngine.Random.value;
+        float j = 0.5f;
+        for (int i = 0; i < Enemies.Count; i++, j /= 2)
         {
-            return RangeEnemyPrefab;
+            if(Chance >= j)
+                return Enemies[i];
         }
-        else if (Chance <= FatEnemyChance)
-        {
-            return FatEnemy;
-        }
-        return EnemyPrefab;
+        return Enemies[0];
     }
 
     private void ChangeValuesForNewWave() 

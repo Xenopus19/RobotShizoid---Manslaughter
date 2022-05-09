@@ -170,6 +170,10 @@ MonoBehaviour:
   EnemyPrefab: {fileID: 703703628645287307, guid: 357e00efbca806a4587bf5d06785fd02, type: 3}
   RangeEnemyPrefab: {fileID: 703703628645287307, guid: 51a2db9b1436e8b47836e500bfc168ef, type: 3}
   FatEnemy: {fileID: 703703628645287307, guid: edc0afcbd713745429ed5f3f2d8ab751, type: 3}
+  Enemies:
+  - {fileID: 703703628645287307, guid: 357e00efbca806a4587bf5d06785fd02, type: 3}
+  - {fileID: 703703628645287307, guid: 51a2db9b1436e8b47836e500bfc168ef, type: 3}
+  - {fileID: 703703628645287307, guid: edc0afcbd713745429ed5f3f2d8ab751, type: 3}
   RangeChance: 30
   FatEnemyChance: 15
   SpawnPositions:
