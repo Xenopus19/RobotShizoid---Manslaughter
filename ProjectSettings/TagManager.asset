@@ -9,6 +9,7 @@ TagManager:
   - WeaponIcon
   - Blood
   - PlayerObject
+  - Meat
   layers:
   - Default
   - TransparentFX

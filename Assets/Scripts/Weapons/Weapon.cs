@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 {
     public float AttackDelay;
     public Action OnAttack;
+    public Action OnAttackEnemies;
     public float Damage;
     public float Cooldown;
     public Sprite Icon;
@@ -14,21 +15,22 @@ public class Weapon : MonoBehaviour
     public WeaponEffects weaponEffects;
 
     private bool IsAbleToAttack = true;
-    private BloodDrive bloodDrive;
+    public BloodDrive bloodDrive;
     private BloodDriveEffects driveEffects;
 
-    private void Start()
+    private void Awake()
     {
         if (weaponEffects == null) weaponEffects = GetComponent<WeaponEffects>();
         driveEffects = GetComponent<BloodDriveEffects>();
     }
+
     public virtual void Attack(Vector3 AttackPosition, BloodDrive _bloodDrive) 
     {
         if (!IsAbleToAttack) return;
 
-        if (OnAttack != null) OnAttack.Invoke();
-
         bloodDrive = _bloodDrive;
+
+        if (OnAttack != null) OnAttack.Invoke();
 
         StartCoroutine(nameof(DoAttack), AttackPosition);
 
@@ -60,6 +62,8 @@ public class Weapon : MonoBehaviour
 
                 enemyEffects.InstantiateDamage(randomDamage);
                 if (bloodDrive != null) bloodDrive.IncreaseDriveValue(Drive);
+                
+                if (OnAttackEnemies != null) OnAttackEnemies.Invoke();
             }
         }
     }

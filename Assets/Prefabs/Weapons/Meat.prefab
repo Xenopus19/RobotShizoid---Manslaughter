@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3552657277941480298}
   - component: {fileID: 8772890546408452168}
   - component: {fileID: -5036722827390742568}
+  - component: {fileID: 115110869304333434}
   m_Layer: 0
   m_Name: Meat
   m_TagString: Meat
@@ -103,6 +104,7 @@ MonoBehaviour:
   Price: 1
   Drive: 1
   weaponEffects: {fileID: 0}
+  bloodDrive: {fileID: 0}
   AttackRadius: 2.5
   ForwardShift: 0
 --- !u!82 &8772890546408452168
@@ -217,3 +219,17 @@ MonoBehaviour:
   StrikeSoundVariations:
   - {fileID: 8300000, guid: 3242c6fad3203d449b72a4ad84842f0f, type: 3}
   SlashPrefab: {fileID: 0}
+--- !u!114 &115110869304333434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202805330670004620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acfe05a7c2d0dd4a9d6aad0287f8b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeatPrefab: {fileID: 675540691942024277, guid: 667cbcd4aeb282343b06b756502b7b41, type: 3}
+  weapon: {fileID: 3552657277941480298}
