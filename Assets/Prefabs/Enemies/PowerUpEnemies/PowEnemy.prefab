@@ -84,6 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WallTouchDamage: 5
   PlayerTouchDamage: 5
+  EnemyMeatTouchDamage: 1
   _animator: {fileID: 727108077656679532}
   Player: {fileID: 0}
   Agent: {fileID: 0}
@@ -256,6 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WallTouchDamage: 5
   PlayerTouchDamage: 7
+  EnemyMeatTouchDamage: 0
   _animator: {fileID: 0}
   Player: {fileID: 0}
   Agent: {fileID: 0}

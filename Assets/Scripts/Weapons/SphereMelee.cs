@@ -4,8 +4,6 @@ public class SphereMelee : Weapon
 {
     [SerializeField] public float AttackRadius;
     [SerializeField] public float ForwardShift;
-    
-    
 
     public override Collider[] GetAttackedColliders(Vector3 AttackPosition)
     {

@@ -5,6 +5,7 @@ public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField] private float WallTouchDamage;
     [SerializeField] private float PlayerTouchDamage;
+    [SerializeField] private float EnemyMeatTouchDamage;
     public Animator _animator;
 
     private GameObject Target;
@@ -14,6 +15,7 @@ public class EnemyBehaviour : MonoBehaviour
     private float IncreasingSpeed = 1.2f;
     [HideInInspector] public NavMeshAgent Agent;
     private PlayerHealth playerHealth;
+    private EnemyHealth enemyHealth;
     public float speed;
 
     public void Start() 
@@ -21,9 +23,12 @@ public class EnemyBehaviour : MonoBehaviour
         GlobalEventManager.OnPlayerDiedEvent += DisableIfPlayerIsDead;
         Agent = GetComponent<NavMeshAgent>();
         speed = Agent.speed;
+
         Player = GameObject.FindGameObjectWithTag("Player");
         Target = GameObject.FindGameObjectWithTag("Target");
+
         playerHealth = Player.GetComponent<PlayerHealth>();
+        enemyHealth = GetComponent<EnemyHealth>();
     }
 
     public void Update() 
@@ -70,6 +75,11 @@ public class EnemyBehaviour : MonoBehaviour
         {
             playerHealth.GetDamage(PlayerTouchDamage);
             _animator.SetFloat("ProbabilityAnimation", Random.value);
+        }
+        else if (CollidedObject.tag == "Meat")
+        {
+            enemyHealth.GetDamage(EnemyMeatTouchDamage);
+            Destroy(CollidedObject);
         }
     }
 
