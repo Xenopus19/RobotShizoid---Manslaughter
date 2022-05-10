@@ -25,6 +25,10 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private ArenaSwitch arenaSwitch;
     private static int WavesAmount = 0;
 
+    [Header("Arena Borders")]
+    [SerializeField] Transform MinPos;
+    [SerializeField] Transform MaxPos;
+
     void OnEnable()
     {
         WavesAmount = 0;
@@ -47,20 +51,36 @@ public class EnemySpawn : MonoBehaviour
         int i = UnityEngine.Random.Range(0, 4);
         GameObject PrefabToSpawn = ChooseEnemyToSpawn();
         GameObject Enemy = Instantiate(PrefabToSpawn, SpawnPositions[i].transform.position, SpawnPositions[i].transform.rotation);
-        Enemy.GetComponent<NavMeshAgent>().speed += WavesAmount * coefficientSpeed;
+        ConfigEnemy(Enemy);
     }
-
     private GameObject ChooseEnemyToSpawn()
     {
-        float Chance = UnityEngine.Random.value;
+        /*float Chance = UnityEngine.Random.value;
         float j = 0.5f;
         for (int i = 0; i < Enemies.Count; i++, j /= 2)
         {
-            if(Chance >= j)
+            if (Chance >= j)
                 return Enemies[i];
         }
-        return Enemies[0];
+        return Enemies[0];*/
+
+        int Index = UnityEngine.Random.Range(0, Enemies.Count);
+        return Enemies[Index];
     }
+
+    private void ConfigEnemy(GameObject Enemy)
+    {
+        Enemy.GetComponent<NavMeshAgent>().speed += WavesAmount * coefficientSpeed;
+
+        RandomSpawnOnArena randomSpawnOnArena = Enemy.GetComponent<RandomSpawnOnArena>();
+        if (randomSpawnOnArena != null && MinPos != null && MaxPos != null)
+        {
+            randomSpawnOnArena.MaxPosition = MaxPos.position;
+            randomSpawnOnArena.MinPosition = MinPos.position;
+        }
+    }
+
+    
 
     private void ChangeValuesForNewWave() 
     {

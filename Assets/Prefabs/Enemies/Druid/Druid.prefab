@@ -92,6 +92,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 2898752363230084594, guid: 0d1f63b91383f0f499a0ebc88ee679c5, type: 3}
   TimeBetweenShots: 2
   ShotOrigin: {fileID: 5307835605687861567}
+  IsMovable: 1
 --- !u!114 &7274242843136878672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloorBloodOrigin: {fileID: 4231263644501276406}
-  RagdollPrefab: {fileID: 5178938063644683412, guid: 78ea66a3639b51244b6654e4060b48b2, type: 3}
+  RagdollPrefab: {fileID: 6133344643294774552, guid: 75be24723ab28dc43bc6c42141f41f2b, type: 3}
   BoxPrefab: {fileID: 1689385884757280347, guid: fc3b919eecfecfe40b49f7f255b5c9f9, type: 3}
   MeatChunkParticle: {fileID: 2693884758799070945, guid: 6ac1e2e106b092246a9a65133bdb16c9, type: 3}
   DamageText: {fileID: 1280998518041759356, guid: de6682a3e32e43e4c8d68ca11edd9e80, type: 3}

@@ -92,6 +92,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 2898752363230084594, guid: a749367bb9c07d34e89d696f24d83a26, type: 3}
   TimeBetweenShots: 2
   ShotOrigin: {fileID: 5307835605687861567}
+  IsMovable: 1
 --- !u!114 &7274242843136878672
 MonoBehaviour:
   m_ObjectHideFlags: 0
