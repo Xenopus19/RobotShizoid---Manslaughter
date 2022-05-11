@@ -11,7 +11,7 @@ public class Meat : MonoBehaviour
 
     private void CreateMeat()
     {
-        //if(weapon.bloodDrive.IsBloodDrive)
+        if (weapon.bloodDrive.IsBloodDrive)
             Instantiate(MeatPrefab, transform.position, Quaternion.identity);
     }
 }
