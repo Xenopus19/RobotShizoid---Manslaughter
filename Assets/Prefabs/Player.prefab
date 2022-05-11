@@ -227,10 +227,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shizoid
       objectReference: {fileID: 0}
-    - target: {fileID: 7888027847699253034, guid: 2854b8688b6bb9442b0cb9963a90b917, type: 3}
-      propertyPath: Stick
-      value: 
-      objectReference: {fileID: 202805330670004620, guid: 4b954ecae26842f4a8a457369f80b41a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2854b8688b6bb9442b0cb9963a90b917, type: 3}
 --- !u!4 &349578994206782939 stripped

@@ -89,7 +89,7 @@ MonoBehaviour:
   _animator: {fileID: 9128201828384468533}
   Player: {fileID: 0}
   Agent: {fileID: 0}
-  speed: 0
+  speed: 2
   BulletPrefab: {fileID: 2898752363230084594, guid: 0d1f63b91383f0f499a0ebc88ee679c5, type: 3}
   TimeBetweenShots: 2
   ShotOrigin: {fileID: 5307835605687861567}

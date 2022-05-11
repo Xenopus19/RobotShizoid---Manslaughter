@@ -55,7 +55,9 @@ MonoBehaviour:
   Price: 3
   Drive: 7
   weaponEffects: {fileID: 6123972530458312832}
-  AttackRadius: 1.25
+  bloodDrive: {fileID: 0}
+  AttackRadius: 1.5
+  ForwardShift: 0
 --- !u!114 &6123972530458312832
 MonoBehaviour:
   m_ObjectHideFlags: 0

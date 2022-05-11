@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackOrigin: {fileID: 4038009953765607592}
-  Stick: {fileID: 5954854359248386767, guid: 78871435cb7e340439b41639dc474c1e, type: 3}
-  Pencil: {fileID: 5954854359248386767, guid: c1eb0044b36a7664c8e5cd47baa0a2d0, type: 3}
+  Stick: {fileID: 2727471735477930458, guid: 8c53eee8d91d6504bab48a92da4df68c, type: 3}
+  Pencil: {fileID: 202805330670004620, guid: 4b954ecae26842f4a8a457369f80b41a, type: 3}
   AviableWeapons:
   - {fileID: 0}
   - {fileID: 0}
