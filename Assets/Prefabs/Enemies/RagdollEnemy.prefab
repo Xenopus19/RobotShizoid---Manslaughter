@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a5107ffefa6204fa6abb3c1c194e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
+  MaxHealth: 9
   ScoreBonus: 1
 --- !u!114 &-8794442123007926253
 MonoBehaviour:
@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WallTouchDamage: 5
   PlayerTouchDamage: 7
+  EnemyMeatTouchDamage: 0
   _animator: {fileID: 0}
   Player: {fileID: 0}
   Agent: {fileID: 0}
@@ -175,6 +176,7 @@ MonoBehaviour:
   RagdollPrefab: {fileID: 0}
   BoxPrefab: {fileID: 0}
   MeatChunkParticle: {fileID: 0}
+  DamageText: {fileID: 0}
   FloorBloodVariants: []
   BoxRateChance: 0
 --- !u!195 &-8414338599864464931

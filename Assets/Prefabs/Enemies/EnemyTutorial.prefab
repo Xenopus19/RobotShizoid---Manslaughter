@@ -83,6 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WallTouchDamage: 3
   PlayerTouchDamage: 2
+  EnemyMeatTouchDamage: 0
   _animator: {fileID: 727108077656679532}
   Player: {fileID: 0}
   Agent: {fileID: 0}
@@ -126,7 +127,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: aec54d7a991d7b644b145d550a4b7831, type: 3}
   - {fileID: 100000, guid: 14987c031123b98408a165a8bf1288d4, type: 3}
   - {fileID: 100000, guid: 43dd1ba2a5dde844eb01240da13ab96b, type: 3}
-  BoxRateChance: 0.05
+  BoxRateChance: 0
 --- !u!65 &2650776591973957434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -255,6 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WallTouchDamage: 5
   PlayerTouchDamage: 7
+  EnemyMeatTouchDamage: 0
   _animator: {fileID: 0}
   Player: {fileID: 0}
   Agent: {fileID: 0}

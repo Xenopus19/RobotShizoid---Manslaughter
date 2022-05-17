@@ -169,7 +169,7 @@ MonoBehaviour:
   MeatChunkParticle: {fileID: 3757364313744610727, guid: 25fe3586510141949af759de6d1fe0d5, type: 3}
   DamageText: {fileID: 1280998518041759356, guid: de6682a3e32e43e4c8d68ca11edd9e80, type: 3}
   FloorBloodVariants: []
-  BoxRateChance: 0.3
+  BoxRateChance: 0.35
 --- !u!114 &8044505981119295953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a5107ffefa6204fa6abb3c1c194e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
+  MaxHealth: 9
   ScoreBonus: 3
 --- !u!114 &4771475002687018441
 MonoBehaviour:

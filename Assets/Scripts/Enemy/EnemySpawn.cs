@@ -55,17 +55,17 @@ public class EnemySpawn : MonoBehaviour
     }
     private GameObject ChooseEnemyToSpawn()
     {
-        /*float Chance = UnityEngine.Random.value;
-        float j = 0.5f;
-        for (int i = 0; i < Enemies.Count; i++, j /= 2)
+        float Chance = UnityEngine.Random.value;
+        float ChanceEnemy = Enemies.Count * 0.1f;
+        for (int i = 0; i < Enemies.Count; i++, ChanceEnemy += 0.1f)
         {
-            if (Chance >= j)
+            if (Chance <= ChanceEnemy)
                 return Enemies[i];
         }
-        return Enemies[0];*/
+        return Enemies[Enemies.Count - 1];
 
-        int Index = UnityEngine.Random.Range(0, Enemies.Count);
-        return Enemies[Index];
+        //int Index = UnityEngine.Random.Range(0, Enemies.Count);
+        //return Enemies[Index];
     }
 
     private void ConfigEnemy(GameObject Enemy)
