@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1497343135606967016}
   - component: {fileID: 3431920641762072386}
-  - component: {fileID: 8906398115051923757}
+  - component: {fileID: -4259057190826370614}
   m_Layer: 0
-  m_Name: TurretSpawn
+  m_Name: TurretGotDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Time: 2
---- !u!82 &8906398115051923757
+--- !u!82 &-4259057190826370614
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,7 +56,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -9039990162309823103, guid: 337dced4103e1cb43b698abff95c5df6, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 67b9c008ec15ae145935bc71cf31dfa7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e77b727dab239d74e966c74331553d0b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.775
   m_Pitch: 1

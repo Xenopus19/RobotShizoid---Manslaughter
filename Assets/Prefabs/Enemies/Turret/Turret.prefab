@@ -118,6 +118,7 @@ Transform:
   m_Children:
   - {fileID: 3943468368542926999}
   - {fileID: 7089408952838585166}
+  - {fileID: 4650463909347710370}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -165,7 +166,7 @@ MonoBehaviour:
   FloorBloodOrigin: {fileID: 0}
   RagdollPrefab: {fileID: 4740641191875568376, guid: 129f6c4d3ffaadc49b8579109726c284, type: 3}
   BoxPrefab: {fileID: 1689385884757280347, guid: fc3b919eecfecfe40b49f7f255b5c9f9, type: 3}
-  MeatChunkParticle: {fileID: 3757364313744610727, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+  MeatChunkParticle: {fileID: 3757364313744610727, guid: 25fe3586510141949af759de6d1fe0d5, type: 3}
   DamageText: {fileID: 1280998518041759356, guid: de6682a3e32e43e4c8d68ca11edd9e80, type: 3}
   FloorBloodVariants: []
   BoxRateChance: 0.3
@@ -197,6 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WallTouchDamage: 0
   PlayerTouchDamage: 0
+  EnemyMeatTouchDamage: 0
   _animator: {fileID: 1908426627289118883}
   Player: {fileID: 0}
   Agent: {fileID: 0}
@@ -315,6 +317,68 @@ Transform:
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: d4bf64dae66a6384e8abc058dac59762, type: 3}
   m_PrefabInstance: {fileID: 1908426627296398787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6074905025711759178
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7813146629219200979}
+    m_Modifications:
+    - target: {fileID: 1497343135606967016, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497343135606967016, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497343135606967016, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497343135606967016, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497343135606967016, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497343135606967016, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497343135606967016, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497343135606967016, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497343135606967016, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497343135606967016, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497343135606967016, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757364313744610727, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+      propertyPath: m_Name
+      value: TurretSpawn
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+--- !u!4 &4650463909347710370 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1497343135606967016, guid: da2d0e56408ace64ab38012a357c95ae, type: 3}
+  m_PrefabInstance: {fileID: 6074905025711759178}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8023969150300637035
 PrefabInstance:

@@ -30,6 +30,7 @@ public class DashEnemy : EnemyBehaviour
 
     private void PerformDash()
     {
+        GetComponent<AudioSource>().Play();
         _animator.SetTrigger("Dash");
         TimeFromLastDash = 0;
         Vector3 Force = transform.forward * DashSpeed;
