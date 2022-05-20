@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class MenuButtons : MonoBehaviour {
     [SerializeField] private Button StartGameButton = null;
     [SerializeField] private Button SettingsButton = null;
-    [SerializeField] private Button TutorialButton = null;
     [SerializeField] private Button GoToMenuSetButton = null;
     [SerializeField] private Button QuitGameButton = null;
     [SerializeField] private Button DevelopersButton = null;
@@ -20,16 +19,10 @@ public class MenuButtons : MonoBehaviour {
         Cursor.visible = (true);
         Cursor.lockState = CursorLockMode.None;
         if (StartGameButton != null)
-            if (PlayerPrefs.HasKey("Tutorial"))
-                StartGameButton.onClick.AddListener(delegate { OpenScene("Arena"); });
-            else
-                StartGameButton.onClick.AddListener(delegate { OpenScene("Tutorial"); });
+            StartGameButton.onClick.AddListener(delegate { OpenScene("Arena"); });
 
         if (SettingsButton != null)
             SettingsButton.onClick.AddListener(delegate { SetBool("IsOpeningSet", true); });
-
-        if (TutorialButton != null)
-            TutorialButton.onClick.AddListener(delegate { OpenScene("Tutorial"); });
 
         if (GoToMenuSetButton != null)
             GoToMenuSetButton.onClick.AddListener(delegate { SetBool("IsOpeningSet", false); });
