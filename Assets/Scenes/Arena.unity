@@ -2103,7 +2103,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5224724021066578429}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7026,6 +7026,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1617631583}
     - target: {fileID: 1817873675954736895, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817873675954736895, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1220
       objectReference: {fileID: 0}
@@ -7093,6 +7097,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4037862829257039488, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4062014932145107677, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7133,6 +7141,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -255
       objectReference: {fileID: 0}
+    - target: {fileID: 5219549960741289686, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
+      propertyPath: BGM
+      value: 
+      objectReference: {fileID: 372959558}
     - target: {fileID: 5224724020601484923, guid: 8f64b2a93a9a6bd41a57c00718421fd4, type: 3}
       propertyPath: MenuButton
       value: 
