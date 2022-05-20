@@ -6,17 +6,21 @@ public class RangeEnemy : EnemyBehaviour
 
     [SerializeField] private float TimeBetweenShots;
     [SerializeField] private Transform ShotOrigin;
+    [SerializeField] private bool IsMovable = true;
     private bool IsNearPlayer;
 
     private new void Update()
     {
+        if (!IsMovable) speed = 0;
         Move();
         if (IsNearPlayer) transform.LookAt(Player.transform);
     }
+
+
     public override void ReactOnPlayer()
     {
         Agent.speed = 0;
-        Agent.SetDestination(Player.transform.position);
+        //Agent.SetDestination(Player.transform.position);
         if(!IsNearPlayer)
         {
             InvokeRepeating(nameof(MakeShot), 0f, TimeBetweenShots);

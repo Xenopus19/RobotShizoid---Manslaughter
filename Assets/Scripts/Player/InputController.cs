@@ -1,29 +1,65 @@
-using System;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class InputController : MonoBehaviour {
-    private GameObject Player;
+public class InputController : MonoBehaviour
+{
+    private PlayerMovement Movement;
     private PlayerWeapons Weapons;
-
-    [SerializeField] private Button ButtonAttack;
-    [SerializeField] private Button ButtonWeaponChange;
-    private void Start() {
-        Player = GameObject.FindGameObjectWithTag("Player");
-        Weapons = Player.GetComponent<PlayerWeapons>();
-        AddListenerToButtons();
+    private void Start()
+    {
+        Movement = GetComponent<PlayerMovement>();
+        Weapons = GetComponent<PlayerWeapons>();
+    }
+    private void Update()
+    {
+        CheckMovementKey();
+        CheckWeaponChangeInput();
+        CheckAttackKey();
     }
 
-    private void AddListenerToButtons() {
-        if (ButtonAttack != null)
-            ButtonAttack.onClick.AddListener(Attack);
-        if (ButtonWeaponChange != null)
-            ButtonWeaponChange.onClick.AddListener(ChangeWeapon);
+    private void CheckAttackKey()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Weapons.DoAttack();
+        }
     }
 
-    public void Attack() => Weapons.DoAttack();
+    private void CheckWeaponChangeInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Weapons.ChangeWeapon(0);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Weapons.ChangeWeapon(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Weapons.ChangeWeapon(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Weapons.ChangeWeapon(3);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            Weapons.ChangeWeapon(4);
+        }
+    }
 
-    public void ChangeWeapon() {
-        Weapons.NextWeapon();
+    private void CheckMovementKey()
+    {
+        Movement.IsWalking = false;
+        if (Input.GetKey(KeyCode.UpArrow))
+            Movement.Move(MoveType.Up);
+        if (Input.GetKey(KeyCode.DownArrow))
+            Movement.Move(MoveType.Down);
+        if (Input.GetKey(KeyCode.RightArrow))
+            Movement.Move(MoveType.Right);
+        if (Input.GetKey(KeyCode.LeftArrow))
+            Movement.Move(MoveType.Left);
+
+        if (!Movement.IsWalking) Movement.Move(MoveType.Stand);
     }
 }

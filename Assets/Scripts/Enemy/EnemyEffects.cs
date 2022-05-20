@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class EnemyEffects : MonoBehaviour
@@ -7,6 +8,7 @@ public class EnemyEffects : MonoBehaviour
     [SerializeField] private GameObject RagdollPrefab;
     [SerializeField] private GameObject BoxPrefab;
     [SerializeField] private GameObject MeatChunkParticle;
+    [SerializeField] private GameObject DamageText;
     [SerializeField] private GameObject[] FloorBloodVariants;
     [SerializeField] private float BoxRateChance;
     private EnemyHealth health;
@@ -20,6 +22,12 @@ public class EnemyEffects : MonoBehaviour
         health.OnHealthChanged += CreateDamageGotEffect;
     }
 
+    public void InstantiateDamage(float Damage)
+    {
+        GameObject text = Instantiate(DamageText, transform);
+        text.GetComponent<TextMeshPro>().text = $"-{Mathf.RoundToInt(Damage)}";
+    }
+
     private void CreateDamageGotEffect()
     {
         animator.SetTrigger("GotDamage");
@@ -28,16 +36,18 @@ public class EnemyEffects : MonoBehaviour
 
     private void CreateDeathEffects()
     {
-        Instantiate(FloorBloodVariants[Random.Range(0, FloorBloodVariants.Length - 1)], FloorBloodOrigin.position, Quaternion.identity);
+        if(FloorBloodOrigin != null)
+            Instantiate(FloorBloodVariants[Random.Range(0, FloorBloodVariants.Length - 1)], FloorBloodOrigin.position, Quaternion.identity);
         GameObject Corpse = Instantiate(RagdollPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
-    }   
+    }
 
-    private void CreateHealthBox() 
+    private void CreateHealthBox()
     {
         float coefficientHealth = health.MaxHealth / 5 * BoxRateChance;
         float probability = Random.value;
-        if (probability <= coefficientHealth) {
+        if (probability <= coefficientHealth)
+        {
             GameObject Box = Instantiate(BoxPrefab, transform.position, Quaternion.identity);
             Box.GetComponent<BoxHealth>().Recovery = coefficientHealth * 10;
         }

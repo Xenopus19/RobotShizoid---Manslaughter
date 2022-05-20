@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 5506912719018620523}
   m_Layer: 0
   m_Name: PowRangeEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,6 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WallTouchDamage: 6
   PlayerTouchDamage: 1
+  EnemyMeatTouchDamage: 1
   _animator: {fileID: 2022213915084835841}
   Player: {fileID: 0}
   Agent: {fileID: 0}
@@ -92,6 +93,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 2898752363230084594, guid: a749367bb9c07d34e89d696f24d83a26, type: 3}
   TimeBetweenShots: 1.5
   ShotOrigin: {fileID: 5307835605687861567}
+  IsMovable: 1
 --- !u!114 &7274242843136878672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,8 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a5107ffefa6204fa6abb3c1c194e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 8
-  ScoreBonus: 6
+  MaxHealth: 7
+  ScoreBonus: 5
 --- !u!114 &2521230395051708279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +124,7 @@ MonoBehaviour:
   RagdollPrefab: {fileID: 5178938063644683412, guid: 78ea66a3639b51244b6654e4060b48b2, type: 3}
   BoxPrefab: {fileID: 1689385884757280347, guid: fc3b919eecfecfe40b49f7f255b5c9f9, type: 3}
   MeatChunkParticle: {fileID: 2693884758799070945, guid: 6ac1e2e106b092246a9a65133bdb16c9, type: 3}
+  DamageText: {fileID: 1280998518041759356, guid: de6682a3e32e43e4c8d68ca11edd9e80, type: 3}
   FloorBloodVariants:
   - {fileID: 100000, guid: 358b75ea5451cf143ab19029a189097d, type: 3}
   - {fileID: 100000, guid: cfc7596704bbd7f489156fcd4c05c7e9, type: 3}
@@ -130,7 +133,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: aec54d7a991d7b644b145d550a4b7831, type: 3}
   - {fileID: 100000, guid: 14987c031123b98408a165a8bf1288d4, type: 3}
   - {fileID: 100000, guid: 43dd1ba2a5dde844eb01240da13ab96b, type: 3}
-  BoxRateChance: 0.5
+  BoxRateChance: 0.55
 --- !u!65 &2650776591973957434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -154,7 +157,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2.2
+  m_Speed: 2.64
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 500
@@ -5051,6 +5054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WallTouchDamage: 5
   PlayerTouchDamage: 7
+  EnemyMeatTouchDamage: 0
   _animator: {fileID: 0}
   Player: {fileID: 0}
   Agent: {fileID: 0}
@@ -5071,6 +5075,7 @@ MonoBehaviour:
   RagdollPrefab: {fileID: 0}
   BoxPrefab: {fileID: 0}
   MeatChunkParticle: {fileID: 0}
+  DamageText: {fileID: 0}
   FloorBloodVariants: []
   BoxRateChance: 0
 --- !u!195 &2244082093695272174

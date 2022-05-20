@@ -16,7 +16,7 @@ public class CutsceneSkip : MonoBehaviour
     {
         if (CutsceneWasShown)
         {
-            SkipCutscene();
+            SkipCutscene(); 
         }
         else
         {

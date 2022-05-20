@@ -133,6 +133,7 @@ MonoBehaviour:
   Cooldown: 1.2
   Icon: {fileID: 21300000, guid: 2028e0dae1e10c74b9f2ad0141ec0bad, type: 3}
   Price: 3
+  Drive: 5
   weaponEffects: {fileID: 0}
   AttackLength: 2.5
   AttackWidth: 2
