@@ -227,7 +227,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shizoid
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2517313853598160546, guid: 2854b8688b6bb9442b0cb9963a90b917, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2854b8688b6bb9442b0cb9963a90b917, type: 3}
 --- !u!4 &349578994206782939 stripped
 Transform:
