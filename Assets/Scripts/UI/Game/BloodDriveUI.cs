@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BloodDriveUI : MonoBehaviour {
     [SerializeField] private GameObject driveEffects;
-    [SerializeField] private AudioSource BGM;
+    [SerializeField] private List<GameObject> BGMG = new List<GameObject>();
 
     private GameObject Player;
     private Image BloodDriveScale;
@@ -29,14 +31,25 @@ public class BloodDriveUI : MonoBehaviour {
 
     private void BeginDriveEffects(float DriveTime)
     {
+        AudioSource BGM = DefineBGM();
         driveEffects.SetActive(true);
         BGM.pitch = 0.5f;
         BGM.spatialBlend = 0.5f;
 
-        StartCoroutine(FinishEffects(DriveTime));
+        StartCoroutine(FinishEffects(DriveTime, BGM));
     }
 
-    private IEnumerator FinishEffects(float DriveTime)
+    private AudioSource DefineBGM()
+    {
+        for (int i = 0; i < BGMG.Count; i++)
+        {
+            if (BGMG[i].activeInHierarchy)
+                return BGMG[i].GetComponent<AudioSource>();
+        }
+        return null;
+    }
+
+    private IEnumerator FinishEffects(float DriveTime, AudioSource BGM)
     {
         yield return new WaitForSeconds(DriveTime);
         BGM.pitch = 1;
