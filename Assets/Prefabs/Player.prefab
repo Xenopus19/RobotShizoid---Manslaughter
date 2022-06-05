@@ -227,6 +227,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shizoid
       objectReference: {fileID: 0}
+    - target: {fileID: 7888027847699253034, guid: 2854b8688b6bb9442b0cb9963a90b917, type: 3}
+      propertyPath: Stick
+      value: 
+      objectReference: {fileID: 5954854359248386767, guid: 78871435cb7e340439b41639dc474c1e, type: 3}
+    - target: {fileID: 7888027847699253034, guid: 2854b8688b6bb9442b0cb9963a90b917, type: 3}
+      propertyPath: Pencil
+      value: 
+      objectReference: {fileID: 7734099713240920792, guid: 3d122080ed6ece84fa2682fa6f820d30, type: 3}
     m_RemovedComponents:
     - {fileID: -2517313853598160546, guid: 2854b8688b6bb9442b0cb9963a90b917, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2854b8688b6bb9442b0cb9963a90b917, type: 3}
