@@ -2196,6 +2196,10 @@ PrefabInstance:
       propertyPath: DeathCamera
       value: 
       objectReference: {fileID: 1254027419}
+    - target: {fileID: 1741600850798484941, guid: 806970fb863d8704e9a390cafdf27d81, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 744
+      objectReference: {fileID: 0}
     - target: {fileID: 2204624078264661553, guid: 806970fb863d8704e9a390cafdf27d81, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -6261,10 +6265,94 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1702216556907275513, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702216556907275513, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702216556907275513, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702216556907275513, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070086903071083848, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 133
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495752508820834754, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495752508820834754, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495752508820834754, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495752508820834754, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218043970984365759, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218043970984365759, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218043970984365759, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218043970984365759, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3583692674414608155, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3583692674414608155, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3583692674414608155, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3583692674414608155, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3863001084831850274, guid: ce09310e00d44d448b2048275870738a, type: 3}
       propertyPath: DeathCamera
       value: 
       objectReference: {fileID: 1254027419}
+    - target: {fileID: 8224756104514408243, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224756104514408243, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224756104514408243, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224756104514408243, guid: ce09310e00d44d448b2048275870738a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8873001922027135180, guid: ce09310e00d44d448b2048275870738a, type: 3}
       propertyPath: m_Name
       value: GameCanvas
