@@ -36,7 +36,7 @@ public class EnemySpawn : MonoBehaviour
     {
         WavesAmount = 0;
         StartCoroutine("StartSpawn");
-        GlobalEventManager.OnPlayerDiedEvent += DisableSpawningIfPlayerIsDead;
+        GlobalEvents.OnPlayerDiedEvent += DisableSpawningIfPlayerIsDead;
     }
 
     private IEnumerator StartSpawn() 
@@ -116,6 +116,6 @@ public class EnemySpawn : MonoBehaviour
 
     private void OnDestroy()
     {
-        GlobalEventManager.OnPlayerDiedEvent -= DisableSpawningIfPlayerIsDead;
+        GlobalEvents.OnPlayerDiedEvent -= DisableSpawningIfPlayerIsDead;
     }
 }

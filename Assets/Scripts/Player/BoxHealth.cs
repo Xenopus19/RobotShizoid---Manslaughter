@@ -1,10 +1,15 @@
 using UnityEngine;
 
 public class BoxHealth : MonoBehaviour {
-    public float Recovery;
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Player") {
-            collision.gameObject.GetComponent<PlayerHealth>().RecoverHealth(Recovery);
+    public float RecoverHealthAmount;
+    private void OnCollisionEnter(Collision collision) 
+    {
+        PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+
+        if (playerHealth != null) 
+        {
+            playerHealth.RecoverHealth(RecoverHealthAmount);
+
             Destroy(gameObject);
         }
     }

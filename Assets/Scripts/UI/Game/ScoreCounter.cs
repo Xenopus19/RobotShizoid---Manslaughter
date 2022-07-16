@@ -12,9 +12,9 @@ public class ScoreCounter : MonoBehaviour {
     private Animator _textAnimator;
 
     private void Start() {
-        GlobalEventManager.OnEnemyKilledEvent += IncreaseScore;
-        GlobalEventManager.OnEnemyTouchedWallEvent += DecreaseScore;
-        GlobalEventManager.OnPlayerDiedEvent += SaveProgress;
+        GlobalEvents.OnEnemyKilledEvent += IncreaseScore;
+        GlobalEvents.OnEnemyTouchedWallEvent += DecreaseScore;
+        GlobalEvents.OnPlayerDiedEvent += SaveProgress;
 
         Score = 0;
 
@@ -74,8 +74,8 @@ public class ScoreCounter : MonoBehaviour {
 
     private void OnDestroy() 
     {
-        GlobalEventManager.OnEnemyKilledEvent -= IncreaseScore;
-        GlobalEventManager.OnEnemyTouchedWallEvent -= DecreaseScore;
-        GlobalEventManager.OnPlayerDiedEvent -= SaveProgress;
+        GlobalEvents.OnEnemyKilledEvent -= IncreaseScore;
+        GlobalEvents.OnEnemyTouchedWallEvent -= DecreaseScore;
+        GlobalEvents.OnPlayerDiedEvent -= SaveProgress;
     }
 }

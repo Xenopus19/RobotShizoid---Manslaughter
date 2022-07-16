@@ -49,7 +49,7 @@ public class EnemyEffects : MonoBehaviour
         if (probability <= coefficientHealth)
         {
             GameObject Box = Instantiate(BoxPrefab, transform.position, Quaternion.identity);
-            Box.GetComponent<BoxHealth>().Recovery = coefficientHealth * 10;
+            Box.GetComponent<BoxHealth>().RecoverHealthAmount = coefficientHealth * 10;
         }
     }
 }

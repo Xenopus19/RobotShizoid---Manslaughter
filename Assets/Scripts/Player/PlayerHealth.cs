@@ -47,7 +47,7 @@ public class PlayerHealth : Health
 
         if (LivesAmount < 0)
         {
-            GlobalEventManager.PlayerDied();
+            GlobalEvents.PlayerDied();
             gameObject.SetActive(false);
         }
         else

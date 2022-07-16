@@ -1,6 +1,6 @@
 using System;
 
-public static class GlobalEventManager
+public static class GlobalEvents
 {
     public static Action OnPlayerDiedEvent;
     public static Action<int> OnEnemyKilledEvent;

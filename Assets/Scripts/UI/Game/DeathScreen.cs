@@ -17,7 +17,7 @@ public class DeathScreen : MonoBehaviour
 
     private void Awake() 
     {
-        GlobalEventManager.OnPlayerDiedEvent += SetDeathScreen;
+        GlobalEvents.OnPlayerDiedEvent += SetDeathScreen;
         gameObject.SetActive(false);
     }
 
@@ -56,7 +56,7 @@ public class DeathScreen : MonoBehaviour
 
     private void OnDestroy() 
     {
-        GlobalEventManager.OnPlayerDiedEvent -= SetDeathScreen;
+        GlobalEvents.OnPlayerDiedEvent -= SetDeathScreen;
     }
 
     public void PlayAgain() => SceneManager.LoadScene("Arena");

@@ -20,7 +20,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void Start() 
     {
-        GlobalEventManager.OnPlayerDiedEvent += DisableIfPlayerIsDead;
+        GlobalEvents.OnPlayerDiedEvent += DisableIfPlayerIsDead;
         Agent = GetComponent<NavMeshAgent>();
         speed = Agent.speed;
 
@@ -68,7 +68,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (CollidedObject == Target) 
         {
             playerHealth.GetDamage(WallTouchDamage);
-            GlobalEventManager.EnemyTouchedWall();
+            GlobalEvents.EnemyTouchedWall();
             Destroy(gameObject);
         } 
         else if (CollidedObject == Player) 
@@ -90,11 +90,11 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void OnDisable()
     {
-        GlobalEventManager.OnPlayerDiedEvent -= DisableIfPlayerIsDead;
+        GlobalEvents.OnPlayerDiedEvent -= DisableIfPlayerIsDead;
         StopAllCoroutines();
     }
 
     private void OnDestroy() {
-        GlobalEventManager.OnPlayerDiedEvent -= DisableIfPlayerIsDead;
+        GlobalEvents.OnPlayerDiedEvent -= DisableIfPlayerIsDead;
     }
 }
