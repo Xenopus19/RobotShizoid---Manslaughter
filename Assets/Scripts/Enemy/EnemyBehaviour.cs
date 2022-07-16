@@ -85,7 +85,6 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void DisableIfPlayerIsDead()
     {
-        print("sdsad");
         gameObject?.SetActive(false);
     }
 

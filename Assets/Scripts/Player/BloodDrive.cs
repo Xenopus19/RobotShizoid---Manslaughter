@@ -36,7 +36,6 @@ public class BloodDrive : MonoBehaviour {
     }
 
     private IEnumerator BloodDriveProcess() {
-        Debug.LogError("KIIILL");
         IsBloodDrive = true;
         //Effects
         yield return new WaitForSeconds(BloodDriveTime);

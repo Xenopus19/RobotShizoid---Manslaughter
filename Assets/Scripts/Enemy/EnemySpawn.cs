@@ -7,7 +7,9 @@ using UnityEngine.AI;
 public class EnemySpawn : MonoBehaviour 
 {
     public static Action<int> OnNewWaveStart;
-    
+    [Header("Boss Info")]
+    [SerializeField] private GameObject Boss;
+    [SerializeField] private Transform BossSpawnPos;
     [Header("Enemies")]
     [SerializeField] private List<GameObject> Enemies = new List<GameObject>();
 
@@ -26,8 +28,9 @@ public class EnemySpawn : MonoBehaviour
     private static int WavesAmount = 0;
 
     [Header("Arena Borders")]
-    [SerializeField] Transform MinPos;
-    [SerializeField] Transform MaxPos;
+    [SerializeField] private Transform MinPos;
+    [SerializeField] private Transform MaxPos;
+    
 
     void OnEnable()
     {
@@ -41,7 +44,7 @@ public class EnemySpawn : MonoBehaviour
         InvokeRepeating("SpawnEnemy", TimeToWaitWave, TimeBetweenSpawn);
         yield return new WaitForSeconds(WaveTime);
         ChangeValuesForNewWave();
-        CheckArenaSwitch();
+        CheckArenaSwitch(WavesAmount);
         CancelInvoke("SpawnEnemy");
         StartCoroutine("StartSpawn");
     }
@@ -89,10 +92,17 @@ public class EnemySpawn : MonoBehaviour
             OnNewWaveStart.Invoke(WavesAmount);
     }
 
-    private void CheckArenaSwitch()
+    private void CheckArenaSwitch(int wavesAmount)
     {
-        if (WavesAmount % 5 == 0)
-            arenaSwitch.SwitchArena();
+        Debug.LogError("SAS");
+        if (wavesAmount % 2 == 0)
+            SpawnBoss();
+    }
+
+    private void SpawnBoss()
+    {
+        Debug.Log("Boss must be spawned");
+        Instantiate(Boss, BossSpawnPos.position, Quaternion.identity);
     }
 
     private void DisableSpawningIfPlayerIsDead() =>
@@ -104,6 +114,8 @@ public class EnemySpawn : MonoBehaviour
         CancelInvoke();
     }
 
-    private void OnDestroy() =>
+    private void OnDestroy()
+    {
         GlobalEventManager.OnPlayerDiedEvent -= DisableSpawningIfPlayerIsDead;
+    }
 }

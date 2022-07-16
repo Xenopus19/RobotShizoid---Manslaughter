@@ -5,6 +5,7 @@ public static class GlobalEventManager
     public static Action OnPlayerDiedEvent;
     public static Action<int> OnEnemyKilledEvent;
     public static Action OnEnemyTouchedWallEvent;
+    public static Action OnBossKilled;
 
     public static void EnemyTouchedWall() 
     {
@@ -27,6 +28,14 @@ public static class GlobalEventManager
         if (OnPlayerDiedEvent != null)
         {
             OnPlayerDiedEvent?.Invoke();
+        }
+    }
+
+    public static void BossKilled()
+    {
+        if (OnBossKilled != null)
+        {
+            OnBossKilled?.Invoke();
         }
     }
 }

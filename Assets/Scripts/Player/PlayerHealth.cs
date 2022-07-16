@@ -18,6 +18,9 @@ public class PlayerHealth : Health
 
     public override void GetDamage(float Damage)
     {
+#if(UNITY_EDITOR)
+        return;
+#endif
         if (IsInvisible) return;
         base.GetDamage(Damage);
         IsInvisible = true;

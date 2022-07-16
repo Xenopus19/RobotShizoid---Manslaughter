@@ -19,7 +19,10 @@ public class ArenaSwitch : MonoBehaviour
         Arena.SetActive(true);
         instantiation = GetComponent<Instantiation>();
         instantiation.Init(GetNewPlayerPosition());
+
+        GlobalEventManager.OnBossKilled += SwitchArena;
     }
+
 
     public void SwitchArena()
     {
@@ -60,4 +63,9 @@ public class ArenaSwitch : MonoBehaviour
 
     private int GetRandomArenaIndex() =>
         Random.Range(0, Arenas.Count);
+
+    private void OnDestroy()
+    {
+        GlobalEventManager.OnBossKilled -= SwitchArena;
+    }
 }
