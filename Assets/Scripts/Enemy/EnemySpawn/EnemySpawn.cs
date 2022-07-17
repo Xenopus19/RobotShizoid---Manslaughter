@@ -21,7 +21,7 @@ public class EnemySpawn : MonoBehaviour
 
     void OnEnable()
     {
-        GlobalEventManager.OnPlayerDiedEvent += DisableSpawningIfPlayerIsDead;
+        GlobalEvents.OnPlayerDiedEvent += DisableSpawningIfPlayerIsDead;
     }
 
     public void StartSpawn(float WaveTime, WaveData wave)
@@ -82,6 +82,6 @@ public class EnemySpawn : MonoBehaviour
 
     private void OnDestroy()
     {
-        GlobalEventManager.OnPlayerDiedEvent -= DisableSpawningIfPlayerIsDead;
+        GlobalEvents.OnPlayerDiedEvent -= DisableSpawningIfPlayerIsDead;
     }
 }
