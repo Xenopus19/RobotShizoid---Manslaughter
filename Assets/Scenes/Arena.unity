@@ -667,7 +667,7 @@ PrefabInstance:
       objectReference: {fileID: 703703628645287307, guid: edc0afcbd713745429ed5f3f2d8ab751, type: 3}
     - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: WaveTime
-      value: 40
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: RangeChance
@@ -7194,7 +7194,7 @@ PrefabInstance:
       objectReference: {fileID: 703703628645287307, guid: edc0afcbd713745429ed5f3f2d8ab751, type: 3}
     - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: WaveTime
-      value: 40
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6093287611073431777, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: RangeChance
@@ -7383,6 +7383,10 @@ PrefabInstance:
       propertyPath: Boss
       value: 
       objectReference: {fileID: 1430496843018015878, guid: ac656d45dc642dd488fa30bd32bcd689, type: 3}
+    - target: {fileID: 3337690845158458008, guid: fdffb3ba4c0a1b0459e90caf9de2aa8f, type: 3}
+      propertyPath: WaveTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3337690845158458008, guid: fdffb3ba4c0a1b0459e90caf9de2aa8f, type: 3}
       propertyPath: arenaSwitch
       value: 

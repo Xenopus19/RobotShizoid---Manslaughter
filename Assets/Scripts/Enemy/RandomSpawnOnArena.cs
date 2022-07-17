@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RandomSpawnOnArena : MonoBehaviour
@@ -13,7 +11,7 @@ public class RandomSpawnOnArena : MonoBehaviour
         NewPos.y = Random.Range(MinPosition.y, MaxPosition.y);
         NewPos.x = Random.Range(MinPosition.x, MaxPosition.x);
         NewPos.z = Random.Range(MinPosition.z, MaxPosition.z);
-
+        
         transform.position = NewPos;
     }
 }

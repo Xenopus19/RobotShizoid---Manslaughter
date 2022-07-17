@@ -5,6 +5,7 @@ public class EnemyHealth : Health
 {
     public Action OnDeath;
     [SerializeField] int ScoreBonus;
+
     public override void Die()
     {
         GlobalEvents.EnemyKilled(ScoreBonus);
