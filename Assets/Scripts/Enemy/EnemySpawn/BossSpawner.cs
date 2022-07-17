@@ -27,9 +27,8 @@ public class BossSpawner : MonoBehaviour
     private void SpawnBoss()
     {
         DestroyEnemies();
-        waveController.enabled = false;
+        waveController.StopAllCoroutines();
         enemySpawn.StopSpawn();
-        enemySpawn.enabled = false;
 
         Instantiate(Boss, BossSpawnPos.position, Quaternion.identity);
     }

@@ -60,11 +60,4 @@ public class WaveController : MonoBehaviour
         if (WavesAmount % 5 != 0)
             OnNewWaveStart.Invoke(WavesAmount);
     }
-
-    private void OnDisable()
-    {
-        print("disable");
-        StopAllCoroutines();
-        CancelInvoke();
-    }
 }
