@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class Explosion : MonoBehaviour
+public class OnDestroyParticleCreator : MonoBehaviour
 {
-    [SerializeField] GameObject ExplosionPrefab;
+    [SerializeField] GameObject Particle;
     private void OnDestroy()
     {
-        Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
+        Instantiate(Particle, transform.position, Quaternion.identity);
     }
 }

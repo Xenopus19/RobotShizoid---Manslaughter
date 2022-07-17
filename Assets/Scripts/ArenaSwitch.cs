@@ -4,35 +4,55 @@ using System.Collections.Generic;
 public class ArenaSwitch : MonoBehaviour
 {
     [SerializeField] List<GameObject> Arenas = new List<GameObject>();
-    private GameObject Arena;
-    private int ArenaIndex;
-    private Instantiation instantiation;
 
-    [SerializeField] GameObject SwitchPanel;
+    [SerializeField] GameObject SwitchArenaUIEffect;
+
+    private GameObject CurrentArena;
+    private int CurrentArenaIndex;
+    private Instantiation PlayerCreator;
+    
     void Awake() =>
         StartGame();
 
     private void StartGame()
     {
-        ArenaIndex = GetRandomArenaIndex();
-        Arena = Arenas[ArenaIndex];
-        Arena.SetActive(true);
-        instantiation = GetComponent<Instantiation>();
-        instantiation.Init(GetNewPlayerPosition());
+        CurrentArenaIndex = GetRandomArenaIndex();
+        CurrentArena = Arenas[CurrentArenaIndex];
+        CurrentArena.SetActive(true);
+        PlayerCreator = GetComponent<Instantiation>();
+        PlayerCreator.Init(GetNewPlayerPosition());
 
-        GlobalEventManager.OnBossKilled += SwitchArena;
+        GlobalEvents.OnBossKilled += SwitchArena;
     }
 
 
     public void SwitchArena()
     {
-        SelectRandomArenaIndex();
-        SwitchPanel.SetActive(true);
-        Arena.SetActive(false);
-        DeleteArenaObjects();
-        Arena = Arenas[ArenaIndex];
-        Arena.SetActive(true);
+        TurnOffCurrentArena();
+
+        ChooseRandomArena();
+        CurrentArena.SetActive(true);
         ReplacePlayer();
+
+        SwitchArenaUIEffect.SetActive(true);
+    }
+
+    private void TurnOffCurrentArena()
+    {
+        CurrentArena.SetActive(false);
+        DeleteArenaObjects();
+    }
+    private void DeleteArenaObjects()
+    {
+        GameObject[] EnemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject Enemy in EnemyObjects)
+            Destroy(Enemy);
+    }
+
+    private void ChooseRandomArena()
+    {
+        SelectRandomArenaIndex();
+        CurrentArena = Arenas[CurrentArenaIndex];
     }
 
     private void SelectRandomArenaIndex()
@@ -41,16 +61,11 @@ public class ArenaSwitch : MonoBehaviour
         do
         {
             SelectedArenaIndex = GetRandomArenaIndex();
-        } while (ArenaIndex == SelectedArenaIndex);
-        ArenaIndex = SelectedArenaIndex;
+        } while (CurrentArenaIndex == SelectedArenaIndex);
+        CurrentArenaIndex = SelectedArenaIndex;
     }
 
-    private void DeleteArenaObjects()
-    {
-        GameObject[] EnemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (GameObject Enemy in EnemyObjects)
-            Destroy(Enemy);
-    }
+    
 
     private void ReplacePlayer()
     {
@@ -59,13 +74,13 @@ public class ArenaSwitch : MonoBehaviour
     }
 
     private Vector3 GetNewPlayerPosition() =>
-        GameObject.Find($"PlayerSpawnPoint{ArenaIndex + 1}").transform.position;
+        GameObject.Find($"PlayerSpawnPoint{CurrentArenaIndex + 1}").transform.position;
 
     private int GetRandomArenaIndex() =>
         Random.Range(0, Arenas.Count);
 
     private void OnDestroy()
     {
-        GlobalEventManager.OnBossKilled -= SwitchArena;
+        GlobalEvents.OnBossKilled -= SwitchArena;
     }
 }

@@ -10,7 +10,7 @@ public class Money : MonoBehaviour
     private void Awake()
     {
         MoneyText = GetComponent<Text>();
-        GlobalEventManager.OnEnemyKilledEvent += AddMoney;
+        GlobalEvents.OnEnemyKilledEvent += AddMoney;
         MoneyAmount = 0;
     }
 
@@ -33,6 +33,6 @@ public class Money : MonoBehaviour
 
     private void OnDestroy() 
     {
-        GlobalEventManager.OnEnemyKilledEvent -= AddMoney;
+        GlobalEvents.OnEnemyKilledEvent -= AddMoney;
     }
 }
