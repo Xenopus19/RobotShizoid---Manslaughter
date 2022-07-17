@@ -761,6 +761,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 6443777017398247910, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
+      propertyPath: Boss
+      value: 
+      objectReference: {fileID: 1430496843018015878, guid: ac656d45dc642dd488fa30bd32bcd689, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
 --- !u!1001 &245723241
@@ -7280,6 +7284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawnPoints
       objectReference: {fileID: 0}
+    - target: {fileID: 6443777017398247910, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
+      propertyPath: Boss
+      value: 
+      objectReference: {fileID: 1430496843018015878, guid: ac656d45dc642dd488fa30bd32bcd689, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
 --- !u!1001 &7558628760052891596
@@ -7371,6 +7379,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2572274335665687455, guid: fdffb3ba4c0a1b0459e90caf9de2aa8f, type: 3}
+      propertyPath: Boss
+      value: 
+      objectReference: {fileID: 1430496843018015878, guid: ac656d45dc642dd488fa30bd32bcd689, type: 3}
     - target: {fileID: 3337690845158458008, guid: fdffb3ba4c0a1b0459e90caf9de2aa8f, type: 3}
       propertyPath: arenaSwitch
       value: 

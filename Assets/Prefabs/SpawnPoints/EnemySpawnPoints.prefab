@@ -211,6 +211,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6093287611073431790}
   - component: {fileID: 6093287611073431777}
+  - component: {fileID: 6443777017398247910}
+  - component: {fileID: 8796967031568795855}
   m_Layer: 0
   m_Name: EnemySpawnPoints
   m_TagString: Untagged
@@ -249,23 +251,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a273ba1809e86459c312cf949a767d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boss: {fileID: 0}
-  BossSpawnPos: {fileID: 8427704126151661058}
+  TimeBetweenSpawn: 2.4
   Enemies:
   - {fileID: 703703628645287307, guid: 357e00efbca806a4587bf5d06785fd02, type: 3}
   - {fileID: 703703628645287307, guid: 51a2db9b1436e8b47836e500bfc168ef, type: 3}
   - {fileID: 703703628645287307, guid: edc0afcbd713745429ed5f3f2d8ab751, type: 3}
-  RangeChance: 30
-  FatEnemyChance: 15
+  MinPos: {fileID: 0}
+  MaxPos: {fileID: 0}
   SpawnPositions:
   - {fileID: 6093287609779529486}
   - {fileID: 6093287610397225659}
   - {fileID: 6093287610219000162}
   - {fileID: 6093287609502881164}
-  TimeBetweenSpawn: 2.4
-  TimeToWaitWave: 0
-  WaveTime: 40
-  coefficientSpeed: 0.4
-  arenaSwitch: {fileID: 0}
-  MinPos: {fileID: 0}
-  MaxPos: {fileID: 0}
+--- !u!114 &6443777017398247910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093287611073431791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e517fd697e43fe5438a2eecbf1d92aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnOnWave: 2
+  Boss: {fileID: 0}
+  BossSpawnPos: {fileID: 8427704126151661058}
+--- !u!114 &8796967031568795855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093287611073431791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d949143949a41c44f9fe38d7250b7c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeToWaitWave: 2.5
+  WaveTime: 30
+  coefficientSpeed: 0.05

@@ -36,7 +36,7 @@ public class Market : MonoBehaviour
     private void Start()
     {
         CheckAchievement();
-        EnemySpawn.OnNewWaveStart += TurnOnMarket;
+        WaveController.OnNewWaveStart += TurnOnMarket;
         playerWeapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerWeapons>();
         FillAllPossibleSlots();
     }
@@ -124,6 +124,6 @@ public class Market : MonoBehaviour
     public void StopTime() => Time.timeScale = 0;
 
     private void OnDestroy() {
-        EnemySpawn.OnNewWaveStart -= TurnOnMarket;
+        WaveController.OnNewWaveStart -= TurnOnMarket;
     }
 }
