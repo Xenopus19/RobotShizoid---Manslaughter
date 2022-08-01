@@ -24,7 +24,6 @@ public class DeathScreen : MonoBehaviour
     private void SetDeathScreen() 
     {
         DeathCamera.SetActive(true);
-        //Time.timeScale = 0;
         TurnOffGameCanvas();
         gameObject.SetActive(true);
         GenerateDeathMessage();

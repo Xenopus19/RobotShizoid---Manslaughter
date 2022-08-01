@@ -765,6 +765,10 @@ PrefabInstance:
       propertyPath: Boss
       value: 
       objectReference: {fileID: 1430496843018015878, guid: ac656d45dc642dd488fa30bd32bcd689, type: 3}
+    - target: {fileID: 8796967031568795855, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
+      propertyPath: WaveTime
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
 --- !u!1001 &245723241
@@ -2149,11 +2153,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542908596}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &551238889 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 214743168004749564, guid: ce09310e00d44d448b2048275870738a, type: 3}
-  m_PrefabInstance: {fileID: 214743168527516693}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &580149664 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918264871442892368, guid: 397e71ac2fe4f4d959524578cfabd45b, type: 3}
@@ -5589,7 +5588,7 @@ MonoBehaviour:
   - {fileID: 1588199437}
   - {fileID: 1769738460}
   - {fileID: 93452868}
-  SwitchPanel: {fileID: 551238889}
+  SwitchArenaUIEffect: {fileID: 0}
 --- !u!114 &1833758481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7288,6 +7287,10 @@ PrefabInstance:
       propertyPath: Boss
       value: 
       objectReference: {fileID: 1430496843018015878, guid: ac656d45dc642dd488fa30bd32bcd689, type: 3}
+    - target: {fileID: 8796967031568795855, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
+      propertyPath: WaveTime
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
 --- !u!1001 &7558628760052891596
@@ -7375,6 +7378,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 57264797189096118, guid: fdffb3ba4c0a1b0459e90caf9de2aa8f, type: 3}
+      propertyPath: WaveTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 413775516893031269, guid: fdffb3ba4c0a1b0459e90caf9de2aa8f, type: 3}
       propertyPath: m_RootOrder
       value: 7

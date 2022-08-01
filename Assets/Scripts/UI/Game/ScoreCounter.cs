@@ -11,6 +11,8 @@ public class ScoreCounter : MonoBehaviour {
     private Text _humansText;
     private Animator _textAnimator;
 
+    private int wallTouchScore = 1;
+
     private void Start() {
         GlobalEvents.OnEnemyKilledEvent += IncreaseScore;
         GlobalEvents.OnEnemyTouchedWallEvent += DecreaseScore;
@@ -18,7 +20,8 @@ public class ScoreCounter : MonoBehaviour {
 
         Score = 0;
 
-        HighScore = PlayerPrefs.GetInt("HighScore");
+        HighScore = Encrypting.Encrypt(PlayerPrefs.GetInt("HighScore"));
+        wallTouchScore = Encrypting.Encrypt(wallTouchScore);
         HumansAmount = PlayerPrefs.GetInt("Humans");
 
         scoreText = GetComponent<Text>();
@@ -27,26 +30,26 @@ public class ScoreCounter : MonoBehaviour {
     }
 
     private void IncreaseScore(int ToAdd) {
-        Score += ToAdd;
+        Score +=  Encrypting.Encrypt(ToAdd);
         IncreaseHumans();
         UpdateUI();
     }
 
     private void DecreaseScore() {
-        if (Score > 0)
-            Score -= 1;
+        if (Score - wallTouchScore > 0)
+            Score -= wallTouchScore;
         UpdateUI();
     }
 
     private void IncreaseHumans() {
         HumansAmount++;
-        if (HumansAmount % 50 == 0) {
+        if (HumansAmount % 50 == 0) 
             ShowAchieve();
-        }
     }
 
-    private void UpdateUI() {
-        scoreText.text = $"{Score}";
+    private void UpdateUI() 
+    {
+        scoreText.text = $"{Encrypting.Decipher(Score)}";
     }
 
     private void ShowAchieve() {
@@ -54,7 +57,7 @@ public class ScoreCounter : MonoBehaviour {
         _textAnimator.SetTrigger("IsComplete");
     }
 
-    public static int GetScore() => Score;
+    public static int GetScore() => Encrypting.Decipher(Score);
 
     public static int GetHighScore() => PlayerPrefs.GetInt("HighScore");
 
@@ -65,7 +68,7 @@ public class ScoreCounter : MonoBehaviour {
 
     private static void SaveHighScore() {
         if (Score > HighScore)
-            PlayerPrefs.SetInt("HighScore", Score);
+            PlayerPrefs.SetInt("HighScore", Encrypting.Decipher(Score));
     }
 
     private static void SaveHumansAmount() {

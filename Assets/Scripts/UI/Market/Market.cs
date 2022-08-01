@@ -89,7 +89,7 @@ public class Market : MonoBehaviour
     {
         int Price = CurrentWeaponSlots[WeaponSlotIndex].Price;
 
-        if (Money.MoneyAmount < Price) {
+        if (Encrypting.Decipher(Money.MoneyAmount) < Price) {
             NoMoneyText.SetActive(true);
             PurchaseText.SetActive(false);
             return;

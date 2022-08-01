@@ -38,7 +38,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void Move() 
     {
-        float distanceToPlayer = Math.Length(Player.transform.position.x, transform.position.x, Player.transform.position.z, transform.position.z);
+        float distanceToPlayer = Calculations.Length(Player.transform.position.x, transform.position.x, Player.transform.position.z, transform.position.z);
         if (distanceToPlayer < MaxDistanceToPlayer) 
         {
             ReactOnPlayer();

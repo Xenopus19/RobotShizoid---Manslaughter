@@ -16,19 +16,20 @@ public class Money : MonoBehaviour
 
     public static void SpendMoney(int MoneyToSpend)
     {
-        MoneyAmount -= MoneyToSpend;
+        MoneyAmount -= Encrypting.Encrypt(MoneyToSpend);
         UpdateUI();
     }
 
     private void AddMoney(int EnemyScore)
     {
-        MoneyAmount += Random.Range(0, (5 * EnemyScore) + 1) / 5;
+        int toAdd = Random.Range(0, (5 * EnemyScore) + 1) / 5;
+        MoneyAmount += Encrypting.Encrypt(toAdd);
         UpdateUI();
     }
 
     public static void UpdateUI()
     {
-        MoneyText.text = $"{MoneyAmount}";
+        MoneyText.text = $"{Encrypting.Decipher(MoneyAmount)}";
     }
 
     private void OnDestroy() 
