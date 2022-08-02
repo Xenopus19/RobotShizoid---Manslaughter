@@ -40,9 +40,10 @@ public class MenuButtons : MonoBehaviour {
         _audioSource = GetComponent<AudioSource>();
     }
 
-    public void OpenScene(string sceneName) {
+    public void OpenScene(string sceneName) 
+    {
         WaitingPanel.SetActive(true);
-        SceneManager.LoadScene(sceneName);
+        WaitingPanel.GetComponent<SceneTransition>().LoadScene(sceneName);
     }
 
     public void SetBool(string parameter, bool isParameter) => _animator.SetBool(parameter, isParameter);
