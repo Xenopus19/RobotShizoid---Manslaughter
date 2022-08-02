@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Encrypting : MonoBehaviour
 {
-    private static int EncryptValue;
+    private static int EncryptValue = 1;
 
     void Awake() =>
         GenerateValue();

@@ -765,6 +765,10 @@ PrefabInstance:
       propertyPath: Boss
       value: 
       objectReference: {fileID: 1430496843018015878, guid: ac656d45dc642dd488fa30bd32bcd689, type: 3}
+    - target: {fileID: 6443777017398247910, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
+      propertyPath: SpawnOnWave
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8796967031568795855, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: WaveTime
       value: 10
@@ -7287,6 +7291,10 @@ PrefabInstance:
       propertyPath: Boss
       value: 
       objectReference: {fileID: 1430496843018015878, guid: ac656d45dc642dd488fa30bd32bcd689, type: 3}
+    - target: {fileID: 6443777017398247910, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
+      propertyPath: SpawnOnWave
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8796967031568795855, guid: d5aad4fa2d4cc56449d2d3a5c8a223ad, type: 3}
       propertyPath: WaveTime
       value: 10
@@ -7390,6 +7398,10 @@ PrefabInstance:
       propertyPath: Boss
       value: 
       objectReference: {fileID: 1430496843018015878, guid: ac656d45dc642dd488fa30bd32bcd689, type: 3}
+    - target: {fileID: 2572274335665687455, guid: fdffb3ba4c0a1b0459e90caf9de2aa8f, type: 3}
+      propertyPath: SpawnOnWave
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3337690845158458008, guid: fdffb3ba4c0a1b0459e90caf9de2aa8f, type: 3}
       propertyPath: WaveTime
       value: 10

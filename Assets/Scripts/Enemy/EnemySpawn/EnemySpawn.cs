@@ -26,7 +26,6 @@ public class EnemySpawn : MonoBehaviour
     {
         CurrentWave = wave;
         InvokeRepeating(nameof(SpawnEnemy), TimeBetweenSpawn, TimeBetweenSpawn);
-        print(IsInvoking());
         EndSpawnOverSeconds(WaveTime);
     }
 

@@ -43,21 +43,20 @@ public class WaveController : MonoBehaviour
 
     private IEnumerator StartSpawn()
     {
+        ChangeValuesForNewWave();
         CurrentWave = new WaveData(WavesAmount, coefficientSpeed);
         yield return new WaitForSeconds(TimeToWaitWave);
-        print("Start spawn");
         enemySpawn.StartSpawn(WaveTime, CurrentWave);
 
         yield return new WaitForSeconds(WaveTime);
-        print("after vtorogo yield return");
-        ChangeValuesForNewWave();
-        StartCoroutine(nameof(StartSpawn));
+        StopCoroutine(StartSpawn());
+        StartCoroutine(StartSpawn());
     }
 
     private void ChangeValuesForNewWave()
     {
         WavesAmount++;
-        if (WavesAmount % 5 != 0)
+        if (WavesAmount != 1)
             OnNewWaveStart.Invoke(WavesAmount);
     }
 }
